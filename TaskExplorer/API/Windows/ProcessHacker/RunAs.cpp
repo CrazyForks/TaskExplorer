@@ -426,7 +426,7 @@ NTSTATUS RunAsLimitedUser(PWSTR CommandLine)
 
                     // The user typed a name without a path so attempt to locate the executable.
                     if (filePathString = PhSearchFilePath(fileName->Buffer, L".exe"))
-                        PhMoveReference((PVOID*)&fileName, filePathString);
+                        PhMoveReference(&fileName, filePathString);
                     else
                         PhClearReference((PVOID*)&fileName);
                 }
@@ -434,17 +434,17 @@ NTSTATUS RunAsLimitedUser(PWSTR CommandLine)
                 if (fileName)
                 {
                     // Escape the filename.
-                    PhMoveReference((PVOID*)&fileName, PhConcatStrings(3, L"\"", fileName->Buffer, L"\""));
+                    PhMoveReference(&fileName, PhConcatStrings(3, L"\"", fileName->Buffer, L"\""));
 
                     if (cmdlineArgCount == 2)
                     {
                         PPH_STRING fileArgs = PhCreateString(cmdlineArgList[1]);
 
                         // Escape the parameters.
-                        PhMoveReference((PVOID*)&fileArgs, PhConcatStrings(3, L"\"", fileArgs->Buffer, L"\""));
+                        PhMoveReference(&fileArgs, PhConcatStrings(3, L"\"", fileArgs->Buffer, L"\""));
 
                         // Create the escaped execute string.
-                        PhMoveReference((PVOID*)&executeString, PhConcatStrings(3, fileName->Buffer, L" ", fileArgs->Buffer));
+                        PhMoveReference(&executeString, PhConcatStrings(3, fileName->Buffer, L" ", fileArgs->Buffer));
 
                         // Cleanup.
                         PhDereferenceObject(fileArgs);
@@ -825,7 +825,7 @@ PPH_STRING PhpGetCurrentDesktopInfo(
 
         PhUnicodeStringToStringRef(&NtCurrentPeb()->ProcessParameters->DesktopInfo, &desktopInfoSr);
 
-        PhMoveReference((PVOID*)&desktopInfo, PhCreateString2(&desktopInfoSr));
+        PhMoveReference(&desktopInfo, PhCreateString2(&desktopInfoSr));
     }
 
     if (winstationName)

@@ -13,7 +13,7 @@ public:
 
 	void			SetUseDescr(int iDescr)	{ m_iUseDescr = iDescr; }
 
-	QSet<quint64>	Sync(QMap<quint64, CProcessPtr> ProcessList);
+	QSet<quint64>	Sync(QMap<SProcessUID, CProcessPtr> ProcessList);
 
 	CProcessPtr		GetProcess(const QModelIndex &index) const;
 
@@ -242,8 +242,8 @@ protected:
 
 	virtual STreeNode*		MkNode(const QVariant& Id) { return new SProcessNode(Id); }
 		
-	QList<QVariant>			MakeProcPath(const CProcessPtr& pProcess, const QMap<quint64, CProcessPtr>& ProcessList);
-	bool					TestProcPath(const QList<QVariant>& Path, const CProcessPtr& pProcess, const QMap<quint64, CProcessPtr>& ProcessList, int Index = 0);
+	QList<QVariant>			MakeProcPath(const CProcessPtr& pProcess, const QMap<SProcessUID, CProcessPtr>& ProcessList);
+	bool					TestProcPath(const QList<QVariant>& Path, const CProcessPtr& pProcess, const QMap<SProcessUID, CProcessPtr>& ProcessList, int Index = 0);
 	
 	int						m_iUseDescr;
 

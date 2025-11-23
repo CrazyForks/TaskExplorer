@@ -167,7 +167,7 @@ bool CWinService::UpdateDynamicData(void* pscManagerHandle, struct _ENUM_SERVICE
 							PhParseCommandLineFuzzy(&commandLine->sr, &dummyFileName, &dummyArguments, &fileName);
 
 							if (!fileName)
-								PhSwapReference((PVOID*)&fileName, commandLine);
+								PhSwapReference(&fileName, commandLine);
 						}
 						else
 						{

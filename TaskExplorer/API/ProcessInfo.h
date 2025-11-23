@@ -17,6 +17,22 @@
 #undef GetUserName
 #endif
 
+struct SProcessUID
+{
+	SProcessUID() {}
+	SProcessUID(quint64 uPid, quint64 msTime);
+	__inline quint64 Get() const { return PUID; }
+	__inline void Set(quint64 UID) { PUID = UID; }
+	quint64 PUID = 0;
+
+	bool operator==(const SProcessUID& other) const { return PUID == other.PUID; }
+	bool operator!=(const SProcessUID& other) const { return PUID != other.PUID; }
+	bool operator<(const SProcessUID& other) const { return PUID < other.PUID; }
+	bool operator<=(const SProcessUID& other) const { return PUID <= other.PUID; }
+	bool operator>(const SProcessUID& other) const { return PUID > other.PUID; }
+	bool operator>=(const SProcessUID& other) const { return PUID >= other.PUID; }
+};
+
 struct STaskStatsEx : STaskStats
 {
 	SDelta32_64 	PageFaultsDelta;
@@ -43,6 +59,9 @@ public:
 	// Basic
 	virtual quint64 GetProcessId() const				{ QReadLocker Locker(&m_Mutex); return m_ProcessId; }
 	virtual quint64 GetParentId() const					{ QReadLocker Locker(&m_Mutex); return m_ParentProcessId; }
+	virtual void SetParentUId(SProcessUID PID) 			{ QWriteLocker Locker(&m_Mutex); m_ParentProcessUId = PID; }
+	virtual SProcessUID GetProcessUId() const			{ QReadLocker Locker(&m_Mutex); return m_ProcessUId; }
+	virtual SProcessUID GetParentUId() const			{ QReadLocker Locker(&m_Mutex); return m_ParentProcessUId; }
 	virtual QString GetName() const						{ QReadLocker Locker(&m_Mutex); return m_ProcessName; }
 
 	virtual bool ValidateParent(CProcessInfo* pParent) const = 0;
@@ -202,6 +221,8 @@ protected:
 	// Basic
 	quint64							m_ProcessId;
 	quint64							m_ParentProcessId;
+	SProcessUID						m_ProcessUId;
+	SProcessUID						m_ParentProcessUId;
 	QString							m_ProcessName;
 
 	// Parameters

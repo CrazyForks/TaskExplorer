@@ -569,10 +569,10 @@ static VOID NTAPI DotNetEventCallback(
 
                 if (node)
                 {
-                    PhMoveReference((PVOID*)&node->PathText, PhCreateStringEx(moduleILPath, moduleILPathLength));
+                    PhMoveReference(&node->PathText, PhCreateStringEx(moduleILPath, moduleILPathLength));
 
                     if (moduleNativePathLength != 0)
-                        PhMoveReference((PVOID*)&node->NativePathText, PhCreateStringEx(moduleNativePath, moduleNativePathLength));
+                        PhMoveReference(&node->NativePathText, PhCreateStringEx(moduleNativePath, moduleNativePathLength));
                 }
             }
             break;

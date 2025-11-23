@@ -3662,6 +3662,10 @@ Kısmenİşaretli kutu yalnızca iş parçacığı std::list kısmına uygulanı
         <source>Not resolved...</source>
         <translation>Çözümlenemedi...</translation>
     </message>
+    <message>
+        <source>[Unknown SID]</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CSocketInfo</name>

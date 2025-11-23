@@ -109,7 +109,7 @@ void CRunAsDialog::accept()
 		if (NT_SUCCESS(PhLookupName(&username->sr, &sid, NULL, NULL)))
 		{
 			if (newUserName = PhGetSidFullName(sid, TRUE, NULL))
-				PhSwapReference((PVOID*)&username, newUserName);
+				PhSwapReference(&username, newUserName);
 
 			PhFree(sid);
 		}

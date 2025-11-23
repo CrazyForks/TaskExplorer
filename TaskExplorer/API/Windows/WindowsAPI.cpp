@@ -479,7 +479,7 @@ STATUS CWindowsAPI::MonitorDbg(CWinDbgMonitor::EModes Mode)
 
 		STATUS status = m_pDebugMonitor->SetMonitor(Mode);
 
-		foreach(const CProcessPtr& pProcess, m_ProcessList)
+		foreach(const CProcessPtr& pProcess, m_ProcessMap)
 		{
 			bool bSystem = (pProcess->GetProcessId() == (quint64)SYSTEM_PROCESS_ID);
 			if((bSystem ? (Mode & CWinDbgMonitor::eKernel) : (Mode & CWinDbgMonitor::eUser)) == 0)
@@ -907,24 +907,35 @@ bool CWindowsAPI::UpdateProcessList()
 	PROCESS_DISK_COUNTERS DiskCounters;
 	memset(&DiskCounters, 0, sizeof(DiskCounters));
 
+	QList<CProcessPtr> NewProcessList;
+
 	// Copy the process Map
-	QMap<quint64, CProcessPtr>	OldProcesses = GetProcessList();
+	QMap<SProcessUID, CProcessPtr>	OldProcesses = GetProcessMap();
 
 	for (PSYSTEM_PROCESS_INFORMATION process = PH_FIRST_PROCESS(processes); process != NULL; )
 	{
 		quint64 ProcessID = (quint64)process->UniqueProcessId;
 
+		SProcessUID UID(ProcessID, process->CreateTime.QuadPart);
+
 		// take all running processes out of the copyed std::map
-		QSharedPointer<CWinProcess> pProcess = OldProcesses.take(ProcessID).staticCast<CWinProcess>();
+		QSharedPointer<CWinProcess> pProcess = OldProcesses.take(UID).staticCast<CWinProcess>();
 		bool bAdd = false;
 		if (pProcess.isNull())
 		{
 			QWriteLocker Locker(&m_ProcessMutex);
-			CProcessPtr &pProcessRef = m_ProcessList[ProcessID];
+			CProcessPtr &pProcessRef = m_ProcessMap[UID];
 			if (pProcessRef.isNull()) // sometimes the proces was added already by sys mon or etw mon so only create one if non is listed
+			{
 				pProcessRef = QSharedPointer<CWinProcess>(new CWinProcess());
+				m_ProcessByPID[ProcessID] = pProcessRef;
+			}
 			pProcess = pProcessRef.staticCast<CWinProcess>();
 		}
+		
+		// processes can be added in this enum or by GetProcessByID called from other places (sys mon, etw mon)
+		if (pProcess->GetParentUId().Get() == 0)
+			NewProcessList.append(pProcess);
 		
 		if(!pProcess->IsFullyInitialized())
 		{
@@ -993,6 +1004,20 @@ bool CWindowsAPI::UpdateProcessList()
         }
 	}
 
+	foreach(auto& pProcess, NewProcessList)
+	{
+		auto pParent = GetProcessByID(pProcess->GetParentId()).objectCast<CWinProcess>();
+		if(pParent)
+			pProcess->SetParentUId(SProcessUID(pParent->GetProcessId(), pParent->GetRawCreateTime()));
+		else
+		{
+#ifdef _DEBUG
+			qDebug() << "Parent process not found for PID" << pProcess->GetProcessId() << "Parent PID:" << pProcess->GetParentId();
+#endif
+			pProcess->SetParentUId(SProcessUID(pProcess->GetParentId(), time(NULL) * 1000));
+		}
+	}
+
 	QMap<quint64, CProcessPtr>	Processes = GetProcessList();
 
 	if (EnableCycleCpuUsage)
@@ -1024,13 +1049,18 @@ bool CWindowsAPI::UpdateProcessList()
 	// purle all processes left as thay are not longer running
 
 	QWriteLocker Locker(&m_ProcessMutex);
-	foreach(quint64 ProcessID, OldProcesses.keys())
+	foreach(SProcessUID UID, OldProcesses.keys())
 	{
-		QSharedPointer<CWinProcess> pProcess = m_ProcessList.value(ProcessID).staticCast<CWinProcess>();
-		if (pProcess->CanBeRemoved() && !ChildCount.contains(ProcessID))
+		QSharedPointer<CWinProcess> pProcess = m_ProcessMap.value(UID).staticCast<CWinProcess>();
+		if (pProcess->CanBeRemoved() && !ChildCount.contains(pProcess->GetProcessId()))
 		{
-			m_ProcessList.remove(ProcessID);
-			Removed.insert(ProcessID);
+			auto F = m_ProcessByPID.find(pProcess->GetProcessId());
+			if (F != m_ProcessByPID.end()) {
+				if(F.value() == pProcess)
+					m_ProcessByPID.erase(F);
+			}
+			m_ProcessMap.remove(UID);
+			Removed.insert(pProcess->GetProcessId());
 		}
 		else if (!pProcess->IsMarkedForRemoval())
 		{
@@ -1039,7 +1069,7 @@ bool CWindowsAPI::UpdateProcessList()
 
 			pProcess->MarkForRemoval();
 			pProcess->UnInit();
-			Changed.insert(ProcessID);
+			Changed.insert(pProcess->GetProcessId());
 		}
 	}
 	Locker.unlock();
@@ -1161,21 +1191,28 @@ bool CWindowsAPI::UpdateThreads(CWinProcess* pProcess)
 	return pProcess->UpdateThreadData(process, m->bFullProcessInfo, iLinuxStyleCPU ? (m->sysTotalTime / m_CpuCount) : m->sysTotalTime, EnableCycleCpuUsage ? (iLinuxStyleCPU ? (m->sysTotalCycleTime / m_CpuCount) : m->sysTotalCycleTime) : 0);
 }
 
+QSharedPointer<CWinProcess> CWindowsAPI::TryAddProcessByID_NoLock(quint64 ProcessId)
+{
+	QSharedPointer<CWinProcess> pProcess = m_ProcessByPID.value(ProcessId).staticCast<CWinProcess>();
+	if(pProcess) // just in case between CSystemAPI::GetProcessByID and QWriteLocker something happened
+		return pProcess;
+
+	pProcess = QSharedPointer<CWinProcess>(new CWinProcess());
+	pProcess->moveToThread(theAPI->thread());
+	pProcess->InitStaticData(ProcessId);
+	//ASSERT(!m_ProcessList.contains(ProcessId)); 
+	m_ProcessMap.insert(SProcessUID(ProcessId, pProcess->GetRawCreateTime()), pProcess);
+	m_ProcessByPID[ProcessId] = pProcess;
+
+	return pProcess;
+}
+
 CProcessPtr CWindowsAPI::GetProcessByID(quint64 ProcessId, bool bAddIfNew)
 {
 	QSharedPointer<CWinProcess> pProcess = CSystemAPI::GetProcessByID(ProcessId, false).staticCast<CWinProcess>();
-	if (!pProcess && bAddIfNew)
-	{
+	if (!pProcess && bAddIfNew) {
 		QWriteLocker Locker(&m_ProcessMutex);
-		pProcess = m_ProcessList.value(ProcessId).staticCast<CWinProcess>();
-		if(pProcess) // just in case between CSystemAPI::GetProcessByID and QWriteLocker something happened
-			return pProcess;
-
-		pProcess = QSharedPointer<CWinProcess>(new CWinProcess());
-		pProcess->moveToThread(theAPI->thread());
-		pProcess->InitStaticData(ProcessId);
-		//ASSERT(!m_ProcessList.contains(ProcessId)); 
-		m_ProcessList.insert(ProcessId, pProcess);
+		pProcess = TryAddProcessByID_NoLock(ProcessId);
 	}
 	return pProcess;
 }

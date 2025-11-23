@@ -77,7 +77,7 @@ bool CWinHandle::InitExtData(struct _SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX* handle, 
 
 			if (typeName = PhGetObjectTypeIndexName(m_TypeIndex))
 			{
-				PhMoveReference((PVOID*)&TypeName, typeName);
+				PhMoveReference(&TypeName, typeName);
 			}
 		}
 

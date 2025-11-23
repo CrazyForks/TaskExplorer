@@ -4,6 +4,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+
+## [1.6.6] - 2025-09-??
+
+### Changed
+- updated PHlib to version 3.2.25263
+- improved process map handling
+
+### Fixed
+- fixed token info not proeprly listed, broken in 1.6.5
+- fixed issue with Environment enumeration
+
+
+
+
 ## [1.6.5] - 2025-07-05
 
 ### Changed

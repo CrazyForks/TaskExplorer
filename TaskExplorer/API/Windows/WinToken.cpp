@@ -457,7 +457,7 @@ bool CWinToken::UpdateExtendedData()
 		for (ULONG i = 0; i < privileges->PrivilegeCount; i++)
 		{
 			PPH_STRING privilegeName;
-			if (PhLookupPrivilegeName(&privileges->Privileges[i].Luid, &privilegeName))
+			if (NT_SUCCESS(PhLookupPrivilegeName(&privileges->Privileges[i].Luid, &privilegeName)))
 			{
 				PPH_STRING privilegeDisplayName = NULL;
 				PhLookupPrivilegeDisplayName(&privilegeName->sr, &privilegeDisplayName);
@@ -825,7 +825,7 @@ PPH_STRING PhpGetTokenFolderPath(
             {
                 if (profileImagePath = PhExpandEnvironmentStrings(&profileFolderPath->sr))
                 {
-                    PhMoveReference((PVOID*)&profileFolderPath, profileImagePath);
+                    PhMoveReference(&profileFolderPath, profileImagePath);
                 }
             }
 

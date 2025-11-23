@@ -49,27 +49,59 @@ CWinModule::~CWinModule()
 {
 }
 
-bool CWinModule::InitStaticData(struct _PH_MODULE_INFO* module, quint64 ProcessHandle)
+extern "C" NTSTATUS PhModuleItemReadVirtualMemoryCallback(
+	_In_ HANDLE ProcessHandle,
+	_In_ PVOID BaseAddress,
+	_Out_writes_bytes_(BufferSize) PVOID Buffer,
+	_In_ SIZE_T BufferSize,
+	_Out_opt_ PSIZE_T NumberOfBytesRead,
+	_In_opt_ PVOID Context
+)
+{
+	_PH_MODULE_INFO* moduleItem = (_PH_MODULE_INFO*)Context;
+	NTSTATUS status;
+
+	if (moduleItem)
+	{
+		SIZE_T numberOfBytesRead = 0;
+
+		if (moduleItem->Type == PH_MODULE_TYPE_KERNEL_MODULE)
+			status = KphReadVirtualMemory(ProcessHandle, BaseAddress, Buffer, BufferSize, &numberOfBytesRead);
+		else
+			status = PhReadVirtualMemory(ProcessHandle, BaseAddress, Buffer, BufferSize, &numberOfBytesRead);
+
+		if (NumberOfBytesRead)
+			*NumberOfBytesRead = numberOfBytesRead;
+	}
+	else
+	{
+		status = STATUS_INVALID_PARAMETER_6;
+	}
+
+	return status;
+}
+
+bool CWinModule::InitStaticData(struct _PH_MODULE_INFO* moduleItem, quint64 ProcessHandle)
 {
 	QWriteLocker Locker(&m_Mutex);
 
 	m_IsLoaded = true;
-	m_FileNameNt = CastPhString(module->FileName, false);
-	m_FileName = CastPhString(PhGetFileName(module->FileName));
-	m_ModuleName = CastPhString(module->Name, false);
+	m_FileNameNt = CastPhString(moduleItem->FileName, false);
+	m_FileName = CastPhString(PhGetFileName(moduleItem->FileName));
+	m_ModuleName = CastPhString(moduleItem->Name, false);
 
-	m_BaseAddress = (quint64)module->BaseAddress;
-	m_EntryPoint = (quint64)module->EntryPoint;
-	m_Size = module->Size;
-	m_Flags = module->Flags;
-	m_Type = module->Type;
-	m_LoadReason = module->LoadReason;
-	m_LoadCount = module->LoadCount;
-	m_LoadTime = FILETIME2time(module->LoadTime.QuadPart);
-	m_ParentBaseAddress = (quint64)module->ParentBaseAddress;
-	m_EnclaveType = module->EnclaveType;
-	m_EnclaveBaseAddress = (quint64)module->EnclaveBaseAddress;
-	m_EnclaveSize = module->EnclaveSize;
+	m_BaseAddress = (quint64)moduleItem->BaseAddress;
+	m_EntryPoint = (quint64)moduleItem->EntryPoint;
+	m_Size = moduleItem->Size;
+	m_Flags = moduleItem->Flags;
+	m_Type = moduleItem->Type;
+	m_LoadReason = moduleItem->LoadReason;
+	m_LoadCount = moduleItem->LoadCount;
+	m_LoadTime = FILETIME2time(moduleItem->LoadTime.QuadPart);
+	m_ParentBaseAddress = (quint64)moduleItem->ParentBaseAddress;
+	m_EnclaveType = moduleItem->EnclaveType;
+	m_EnclaveBaseAddress = (quint64)moduleItem->EnclaveBaseAddress;
+	m_EnclaveSize = moduleItem->EnclaveSize;
 
 	if (m_IsSubsystemProcess)
     {
@@ -96,12 +128,12 @@ bool CWinModule::InitStaticData(struct _PH_MODULE_INFO* module, quint64 ProcessH
 		(KsiLevel() == KphLevelMax)))
     {
         PH_REMOTE_MAPPED_IMAGE remoteMappedImage;
-        PPH_READ_VIRTUAL_MEMORY_CALLBACK readVirtualMemoryCallback;
 
-        if (m_Type == PH_MODULE_TYPE_KERNEL_MODULE)
-            readVirtualMemoryCallback = KphReadVirtualMemory;
-        else
-            readVirtualMemoryCallback = NtReadVirtualMemory;
+		PhInitializeRemoteMappedImage(
+			&remoteMappedImage,
+			PhModuleItemReadVirtualMemoryCallback,
+			moduleItem
+		);
 
         // Note:
         // On Windows 7 the LDRP_IMAGE_NOT_AT_BASE flag doesn't appear to be used
@@ -113,7 +145,7 @@ bool CWinModule::InitStaticData(struct _PH_MODULE_INFO* module, quint64 ProcessH
 
         //m_Flags &= ~LDRP_IMAGE_NOT_AT_BASE;
 
-        if (NT_SUCCESS(PhLoadRemoteMappedImageEx((HANDLE)ProcessHandle, &m_BaseAddress, m_Size, readVirtualMemoryCallback, &remoteMappedImage)))
+        if (NT_SUCCESS(PhLoadRemoteMappedImage(&remoteMappedImage, (HANDLE)ProcessHandle, &m_BaseAddress, m_Size)))
         {
 			PIMAGE_DATA_DIRECTORY dataDirectory;
 			PVOID imageBase = 0;
@@ -162,10 +194,9 @@ bool CWinModule::InitStaticData(struct _PH_MODULE_INFO* module, quint64 ProcessH
 				SetFlag(m_ImageFlags, LDRP_COR_IMAGE);
 			}
 
-			if (NT_SUCCESS(PhGetRemoteMappedImageDebugEntryByTypeEx(
+			if (NT_SUCCESS(PhGetRemoteMappedImageDebugEntryByType(
 				&remoteMappedImage,
 				IMAGE_DEBUG_TYPE_EX_DLLCHARACTERISTICS,
-				readVirtualMemoryCallback,
 				&debugEntryLength,
 				&debugEntry
 			)))
@@ -181,9 +212,8 @@ bool CWinModule::InitStaticData(struct _PH_MODULE_INFO* module, quint64 ProcessH
 				PhFree(debugEntry);
 			}
 
-			if (!NT_SUCCESS(PhGetRemoteMappedImageGuardFlagsEx(
+			if (!NT_SUCCESS(PhGetRemoteMappedImageGuardFlags(
 				&remoteMappedImage,
-				readVirtualMemoryCallback,
 				(PULONG)&m_GuardFlags
 			)))
 			{
@@ -834,9 +864,19 @@ bool CWinMainModule::InitStaticData(quint64 ProcessId, quint64 ProcessHandle, co
 
 			PVOID imageBaseAddress;
 			PH_REMOTE_MAPPED_IMAGE mappedImage;
+
+			_PH_MODULE_INFO moduleItem;
+			moduleItem.Type = m_Type;
+
+			PhInitializeRemoteMappedImage(
+				&mappedImage,
+				PhModuleItemReadVirtualMemoryCallback,
+				&moduleItem
+			);
+
 			if (NT_SUCCESS(NtReadVirtualMemory((HANDLE)ProcessHandle, PTR_ADD_OFFSET(basicInfo.PebBaseAddress, FIELD_OFFSET(PEB, ImageBaseAddress)), &imageBaseAddress, sizeof(PVOID), NULL)))
 			{
-				if (NT_SUCCESS(PhLoadRemoteMappedImage((HANDLE)ProcessHandle, imageBaseAddress, -1, &mappedImage))) // todo: xxx
+				if (NT_SUCCESS(PhLoadRemoteMappedImage(&mappedImage, (HANDLE)ProcessHandle, imageBaseAddress, -1)))
 				{
 					PVOID imageBase = 0;
 					ULONG entryPoint = 0;

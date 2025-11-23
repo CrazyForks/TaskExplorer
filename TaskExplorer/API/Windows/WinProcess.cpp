@@ -243,8 +243,7 @@ bool CWinProcess::InitStaticData(quint64 ProcessId)
 
 	m->UniqueProcessId = (HANDLE)ProcessId;
 	m_ProcessId = ProcessId;
-
-	m_CreateTimeStamp = GetTime() * 1000;
+	m_CreateTimeStamp = GetTime() * 1000; // InitStaticData should overwrite it with correct value
 
 	if (!InitStaticData())
 	{
@@ -290,6 +289,7 @@ bool CWinProcess::InitStaticData(struct _SYSTEM_PROCESS_INFORMATION* Process, bo
 		m_ProcessName = tr("System Idle Process");
 
 	m->CreateTime = Process->CreateTime;
+	m_ProcessUId = SProcessUID(m_ProcessId, m->CreateTime.QuadPart);
 	m_CreateTimeStamp = FILETIME2ms(m->CreateTime.QuadPart);
 
 	if(m->QueryHandle == NULL) // we may already have opened the handle and initialized some data if the process was seen in an ETW or FW event
@@ -453,6 +453,16 @@ bool CWinProcess::InitStaticData(bool bLoadFileName)
 		}
 		else
 			qDebug() << "failed to open QueryHandle for" << m_ProcessId;
+	}
+
+	if (m->QueryHandle && !m->CreateTime.QuadPart)
+	{
+		KERNEL_USER_TIMES times;
+		if (NT_SUCCESS(PhGetProcessTimes(m->QueryHandle, &times))) {
+			m->CreateTime = times.CreateTime;
+			m_ProcessUId = SProcessUID(m_ProcessId, m->CreateTime.QuadPart);
+			m_CreateTimeStamp = FILETIME2ms(m->CreateTime.QuadPart);
+		}
 	}
 
 	// Process flags
@@ -2045,6 +2055,7 @@ void CWinProcess::SetRawCreateTime(quint64 TimeStamp)
 {
 	QWriteLocker Locker(&m_Mutex); 
 	m->CreateTime.QuadPart = TimeStamp;
+	m_ProcessUId = SProcessUID(m_ProcessId, m->CreateTime.QuadPart);
 	m_CreateTimeStamp = FILETIME2ms(m->CreateTime.QuadPart);
 }
 
@@ -2237,7 +2248,7 @@ QMap<QString, CWinProcess::SEnvVar>	CWinProcess::GetEnvVariables() const
 		if (NT_SUCCESS(PhGetProcessEnvironment(m->QueryHandle, m->IsWow64Process, &environment, &environmentLength)))
 		{
 			enumerationKey = 0;
-			while (PhEnumProcessEnvironmentVariables(environment, environmentLength, &enumerationKey, &variable))
+			while (NT_SUCCESS(PhEnumProcessEnvironmentVariables(environment, environmentLength, &enumerationKey, &variable)))
 			{
 				// Remove the most confusing item. Some say it's just a weird per-drive current directory 
 				// with a colon used as a drive letter for some reason. It should not be here. (diversenok)
@@ -4168,7 +4179,7 @@ QString CWinProcess__QueryWmiFileName(const QString& ProviderNameSpace, const QS
 
                 if (expandedString = PhExpandEnvironmentStrings(&fileName->sr))
                 {
-                    PhMoveReference((PVOID*)&fileName, expandedString);
+                    PhMoveReference(&fileName, expandedString);
                 }
             }
 

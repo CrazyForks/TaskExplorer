@@ -682,16 +682,16 @@ CWinWnd::SWndInfo CWinWnd::GetWndInfo() const
 
 		if (NT_SUCCESS(PhGetProcessMappedFileName(processHandle, (HANDLE)WndInfo.InstanceHandle, &fileName)))
 		{
-			PhMoveReference((PVOID*)&fileName, PhResolveDevicePrefix(&fileName->sr));
-            PhMoveReference((PVOID*)&fileName, PhGetBaseName(fileName));
+			PhMoveReference(&fileName, PhResolveDevicePrefix(&fileName->sr));
+            PhMoveReference(&fileName, PhGetBaseName(fileName));
 
 			WndInfo.InstanceString = CastPhString(fileName);
 		}
 
 		if (NT_SUCCESS(PhGetProcessMappedFileName(processHandle, (HANDLE)WndInfo.InstanceHandle2, &fileName)))
 		{
-			PhMoveReference((PVOID*)&fileName, PhResolveDevicePrefix(&fileName->sr));
-            PhMoveReference((PVOID*)&fileName, PhGetBaseName(fileName));
+			PhMoveReference(&fileName, PhResolveDevicePrefix(&fileName->sr));
+            PhMoveReference(&fileName, PhGetBaseName(fileName));
 
 			WndInfo.InstanceString2 = CastPhString(fileName);
 		}

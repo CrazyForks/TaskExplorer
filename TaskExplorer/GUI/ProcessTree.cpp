@@ -375,7 +375,7 @@ void CProcessTree::OnProcessListUpdated(QSet<quint64> Added, QSet<quint64> Chang
 	if (!theGUI->isVisible() || theGUI->windowState().testFlag(Qt::WindowMinimized))
 		return;
 
-	m_Processes = theAPI->GetProcessList();
+	m_Processes = theAPI->GetProcessMap();
 
 	Added = m_pProcessModel->Sync(m_Processes);
 

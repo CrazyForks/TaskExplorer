@@ -90,13 +90,19 @@ void CSystemAPI::InitAPI()
 QMap<quint64, CProcessPtr> CSystemAPI::GetProcessList()
 {
 	QReadLocker Locker(&m_ProcessMutex);
-	return m_ProcessList;
+	return m_ProcessByPID;
+}
+
+QMap<SProcessUID, CProcessPtr> CSystemAPI::GetProcessMap()
+{
+	QReadLocker Locker(&m_ProcessMutex);
+	return m_ProcessMap;
 }
 
 CProcessPtr CSystemAPI::GetProcessByID(quint64 ProcessId, bool bAddIfNew)
 {
 	QReadLocker Locker(&m_ProcessMutex);
-	return m_ProcessList.value(ProcessId);
+	return m_ProcessByPID.value(ProcessId);
 }
 
 QMultiMap<quint64, CSocketPtr> CSystemAPI::GetSocketList()

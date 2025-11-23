@@ -76,6 +76,7 @@ public:
 	virtual bool RootAvaiable() = 0;
 
 	virtual QMap<quint64, CProcessPtr> GetProcessList();
+	virtual QMap<SProcessUID, CProcessPtr> GetProcessMap();
 	virtual CProcessPtr GetProcessByID(quint64 ProcessId, bool bAddIfNew = false);
 	virtual CThreadPtr  GetThreadByID(quint64 ThreadId);
 	virtual CProcessPtr GetProcessByThreadID(quint64 ThreadId);
@@ -209,7 +210,8 @@ protected:
 	//virtual void				UpdateStats();
 
 	mutable QReadWriteLock		m_ProcessMutex;
-	QMap<quint64, CProcessPtr>	m_ProcessList;
+	QMap<quint64, CProcessPtr>	m_ProcessByPID;
+	QMap<SProcessUID, CProcessPtr>	m_ProcessMap;
 
 	mutable QReadWriteLock		m_SocketMutex;
 	QMultiMap<quint64, CSocketPtr>	m_SocketList;

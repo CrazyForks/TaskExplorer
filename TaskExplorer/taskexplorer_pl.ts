@@ -3644,6 +3644,10 @@ PartiallyChecked state means apply only to thread std::list.</source>
         <source>Not resolved...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>[Unknown SID]</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CSocketInfo</name>

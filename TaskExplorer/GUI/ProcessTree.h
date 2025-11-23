@@ -88,7 +88,7 @@ protected:
 
 	void						UpdateIndexWidget(int HistoryColumn, int CellHeight, QMap<quint64, CHistoryGraph*>& Graphs, QMap<quint64, QPair<QPointer<CHistoryWidget>, QPersistentModelIndex> >& History);
 
-	QMap<quint64, CProcessPtr> m_Processes;
+	QMap<SProcessUID, CProcessPtr> m_Processes;
 
 private:
 	void					AddHeaderSubMenu(QMenu* m_pHeaderMenu, const QString& Label, int from, int to);

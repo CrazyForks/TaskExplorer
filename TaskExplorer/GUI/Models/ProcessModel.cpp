@@ -32,12 +32,12 @@ CProcessModel::~CProcessModel()
 {
 }
 
-QList<QVariant> CProcessModel::MakeProcPath(const CProcessPtr& pProcess, const QMap<quint64, CProcessPtr>& ProcessList)
+QList<QVariant> CProcessModel::MakeProcPath(const CProcessPtr& pProcess, const QMap<SProcessUID, CProcessPtr>& ProcessList)
 {
 	QList<QVariant> Path;
 
-	quint64 ParentID = pProcess->GetParentId();
-	CProcessPtr pParent = ProcessList.value(ParentID);
+	SProcessUID ParentUID = pProcess->GetParentUId();
+	CProcessPtr pParent = ProcessList.value(ParentUID);
 
 	if (!pParent.isNull())
 	{
@@ -47,16 +47,16 @@ QList<QVariant> CProcessModel::MakeProcPath(const CProcessPtr& pProcess, const Q
 #endif
 
 		Path = MakeProcPath(pParent, ProcessList);
-		Path.append(ParentID);
+		Path.append(ParentUID.Get());
 	}
 
 	return Path;
 }
 
-bool CProcessModel::TestProcPath(const QList<QVariant>& Path, const CProcessPtr& pProcess, const QMap<quint64, CProcessPtr>& ProcessList, int Index)
+bool CProcessModel::TestProcPath(const QList<QVariant>& Path, const CProcessPtr& pProcess, const QMap<SProcessUID, CProcessPtr>& ProcessList, int Index)
 {
-	quint64 ParentID = pProcess->GetParentId();
-	CProcessPtr pParent = ProcessList.value(ParentID);
+	SProcessUID ParentUID = pProcess->GetParentUId();
+	CProcessPtr pParent = ProcessList.value(ParentUID);
 
 	if (!pParent.isNull())
 	{
@@ -65,7 +65,7 @@ bool CProcessModel::TestProcPath(const QList<QVariant>& Path, const CProcessPtr&
 			return Path.size() == Index;
 #endif
 
-		if(Index >= Path.size() || Path[Path.size() - Index - 1] != ParentID)
+		if(Index >= Path.size() || Path[Path.size() - Index - 1] != ParentUID.Get())
 			return false;
 
 		return TestProcPath(Path, pParent, ProcessList, Index + 1);
@@ -74,7 +74,7 @@ bool CProcessModel::TestProcPath(const QList<QVariant>& Path, const CProcessPtr&
 	return Path.size() == Index;
 }
 
-QSet<quint64> CProcessModel::Sync(QMap<quint64, CProcessPtr> ProcessList)
+QSet<quint64> CProcessModel::Sync(QMap<SProcessUID, CProcessPtr> ProcessList)
 {
 	QSet<quint64> Added;
 	QMap<QList<QVariant>, QList<STreeNode*> > New;
@@ -106,21 +106,23 @@ QSet<quint64> CProcessModel::Sync(QMap<quint64, CProcessPtr> ProcessList)
 			continue;
 #endif
 
-		quint64 ID = pProcess->GetProcessId();
-
+		if(pProcess->GetParentUId().Get() == 0)
+			continue;
+		SProcessUID UID = pProcess->GetProcessUId();
+	
 		QModelIndex Index;
 		
-		QHash<QVariant, STreeNode*>::iterator I = Old.find(ID);
+		QHash<QVariant, STreeNode*>::iterator I = Old.find(UID.Get());
 		SProcessNode* pNode = I != Old.end() ? static_cast<SProcessNode*>(I.value()) : NULL;
 		if(!pNode || (m_bTree ? !TestProcPath(pNode->Path, pProcess, ProcessList) : !pNode->Path.isEmpty()))
 		{
-			pNode = static_cast<SProcessNode*>(MkNode(ID));
+			pNode = static_cast<SProcessNode*>(MkNode(UID.Get()));
 			pNode->Values.resize(columnCount());
 			if (m_bTree)
 				pNode->Path = MakeProcPath(pProcess, ProcessList);
 			pNode->pProcess = pProcess;
 			New[pNode->Path].append(pNode);
-			Added.insert(ID);
+			Added.insert(UID.Get());
 		}
 		else
 		{
@@ -474,7 +476,7 @@ QSet<quint64> CProcessModel::Sync(QMap<quint64, CProcessPtr> ProcessList)
 
 				switch(section)
 				{
-					case ePID:				
+					case ePID:
 					case eParentPID:
 					case eConsolePID:
 											if (Value.toLongLong() < 0) ColValue.Formatted = ""; 

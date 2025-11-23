@@ -535,9 +535,9 @@ void CProcessView::ShowProcess(const CProcessPtr& pProcess)
 
 void CProcessView::SyncModel()
 {
-	QMap<quint64, CProcessPtr> ProcessList;
+	QMap<SProcessUID, CProcessPtr> ProcessList;
 	foreach(const CProcessPtr& pProcess, m_Processes)
-		ProcessList.insert(pProcess->GetProcessId(), pProcess);
+		ProcessList.insert(pProcess->GetProcessUId(), pProcess);
 	m_pProcessModel->Sync(ProcessList);
 }
 

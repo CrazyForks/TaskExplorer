@@ -734,7 +734,7 @@ NTSTATUS PhpUpdateMemoryRegionTypes(
                 PPH_STRING newFileName = PhResolveDevicePrefix(&fileName->sr);
 
                 if (newFileName)
-                    PhMoveReference((PVOID*)&fileName, newFileName);
+                    PhMoveReference(&fileName, newFileName);
 
                 memoryItem->m_RegionType = MappedFileRegion;
                 memoryItem->u_Custom_Text = CastPhString(fileName);

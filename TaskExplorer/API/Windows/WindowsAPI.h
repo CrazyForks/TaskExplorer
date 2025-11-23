@@ -175,6 +175,8 @@ protected:
 
 	bool		InitWindowsInfo();
 
+	QSharedPointer<CWinProcess> TryAddProcessByID_NoLock(quint64 ProcessId);
+
 #ifdef USE_ETW_FILE_IO
 	QString		GetFileNameByID(quint64 FileId) const;
 #endif
