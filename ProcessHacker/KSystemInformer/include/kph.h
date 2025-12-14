@@ -1780,7 +1780,7 @@ typedef struct _KPH_PROCESS_CONTEXT
             ULONG Reserved : 23;
 #else
             ULONG DecidedOnProtection : 1;
-            ULONG AccessedDuringCreation : 1;
+            ULONG TrackedFromEnum : 1;
             ULONG Reserved : 21;
 #endif
 			

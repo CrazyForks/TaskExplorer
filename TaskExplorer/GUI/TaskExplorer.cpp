@@ -1485,6 +1485,8 @@ void CTaskExplorer::UpdateOptions()
 
 void CTaskExplorer::ResetAll()
 {
+	theAPI->ResetAll();
+
 	emit ReloadPanels();
 
 	QTimer::singleShot(0, this, SLOT(UpdateAll()));

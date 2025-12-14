@@ -2019,7 +2019,7 @@ QString CWinProcess::GetArchString() const
 
 	QSharedPointer<CWinMainModule> pModule = m_pModuleInfo.staticCast<CWinMainModule>();
 
-	switch (m->Architecture != IMAGE_FILE_MACHINE_UNKNOWN ? m->Architecture : pModule->GetImageMachine())
+	switch ((m->Architecture && pModule) != IMAGE_FILE_MACHINE_UNKNOWN ? m->Architecture : pModule->GetImageMachine())
 	{
 	case IMAGE_FILE_MACHINE_I386: return "x86";
 	case IMAGE_FILE_MACHINE_AMD64: return pModule && pModule->GetImageCHPEVersion() ? "x64 (ARM64X)" : "x64";

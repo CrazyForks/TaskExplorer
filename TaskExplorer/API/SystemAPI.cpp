@@ -294,3 +294,30 @@ bool CSystemAPI::RemovePersistentPreset(const QString& FileName)
 	
 	return m_PersistentPresets.remove(FileName.toLower()) != 0;
 }
+
+void CSystemAPI::ResetAll()
+{
+	QWriteLocker Locker(&m_ProcessMutex);
+	m_ProcessByPID.clear();
+	m_ProcessMap.clear();
+	m_ThreadMap.clear();
+	Locker.unlock();
+
+	QWriteLocker SocketLocker(&m_SocketMutex);
+	m_SocketList.clear();
+	SocketLocker.unlock();
+
+	QWriteLocker OpenFilesLocker(&m_OpenFilesMutex);
+	m_OpenFilesList.clear();
+	OpenFilesLocker.unlock();
+
+	QWriteLocker ServiceLocker(&m_ServiceMutex);
+	m_ServiceList.clear();
+	ServiceLocker.unlock();
+
+	QWriteLocker DriverLocker(&m_DriverMutex);
+	m_DriverList.clear();
+	DriverLocker.unlock();
+
+	UpdateAll();
+}

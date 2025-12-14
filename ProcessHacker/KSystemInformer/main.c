@@ -15,6 +15,12 @@
 
 #include <trace.h>
 
+#ifdef IS_KTE
+NTSTATUS KteStartWorkerThread();
+void KteStopWorkerThread();
+VOID KteCleanupProcesses();
+#endif
+
 KPH_PROTECTED_DATA_SECTION_RO_PUSH();
 static const BYTE KphpProtectedSectionReadOnly = 0;
 KPH_PROTECTED_DATA_SECTION_RO_POP();
@@ -83,6 +89,9 @@ VOID KphpDriverCleanup(
 {
     KPH_PAGED_CODE_PASSIVE();
 
+#ifdef IS_KTE
+    KteStopWorkerThread();
+#endif
     KphDebugInformerStop();
     KphRegistryInformerStop();
     KphObjectInformerStop();
@@ -394,6 +403,18 @@ NTSTATUS DriverEntry(
         goto Exit;
     }
 
+#ifdef IS_KTE
+    status = KteStartWorkerThread();
+    if (!NT_SUCCESS(status))
+    {
+        KphTracePrint(TRACE_LEVEL_ERROR,
+                      GENERAL,
+                      "Failed to start worker thread : %!STATUS!",
+                      status);
+        goto Exit;
+    }
+#endif
+
     KphpProtectSections();
 
 Exit:
@@ -451,3 +472,93 @@ void KphTracePrint(ULONG level, ULONG event, const char* message, ...)
     va_end(args);
 #endif
 }
+
+#ifdef IS_KTE
+
+PKEVENT KteWorkEvent = NULL;
+volatile LONG KteStopWorker = 0;
+PKTHREAD KteWorkerThread = NULL;
+
+#define TIMER_INTERVAL_MS 100
+
+static VOID KteWorkerThreadRoutineFunc(PVOID StartContext)
+{
+    UNREFERENCED_PARAMETER(StartContext);
+
+    for (;;) 
+    {
+        LARGE_INTEGER timeout;
+        timeout.QuadPart = -((LONGLONG)TIMER_INTERVAL_MS * 10000LL);
+        NTSTATUS status = KeWaitForSingleObject(KteWorkEvent, Executive, KernelMode, FALSE, &timeout);
+
+        if (InterlockedCompareExchange(&KteStopWorker, 0, 0) != 0)
+            break;
+
+        if (status == STATUS_SUCCESS) 
+        {
+            //
+            // The work event was signaled (triggered externally).
+            // 
+        }
+        else if (status == STATUS_TIMEOUT)
+        {
+            //
+            // Timeout => perform periodic work:
+            //
+
+            KteCleanupProcesses();
+        }
+    }
+
+    PsTerminateSystemThread(STATUS_SUCCESS);
+    // not reached
+}
+
+NTSTATUS KteStartWorkerThread()
+{
+    NTSTATUS status;
+    HANDLE threadHandle;
+
+    KteWorkEvent = (PKEVENT)KphAllocateNPaged(sizeof(KEVENT), KPH_TAG_THREAD_POOL);
+    if(!KteWorkEvent) 
+        return STATUS_INSUFFICIENT_RESOURCES;
+    KeInitializeEvent(KteWorkEvent, SynchronizationEvent, FALSE);
+
+    InterlockedExchange(&KteStopWorker, 0);
+
+    status = PsCreateSystemThread(&threadHandle, THREAD_ALL_ACCESS, NULL, NULL, NULL, KteWorkerThreadRoutineFunc, NULL);
+    if (!NT_SUCCESS(status))
+        return status;
+
+    status = ObReferenceObjectByHandle(threadHandle, THREAD_ALL_ACCESS, *PsThreadType, KernelMode, (PVOID*)&KteWorkerThread, NULL);
+    NT_ASSERT(NT_SUCCESS(status));
+    ObCloseHandle(threadHandle, KernelMode);
+
+    return status;
+}
+
+void KteStopWorkerThread()
+{
+    if(!KteWorkEvent)
+        return;
+
+    InterlockedExchange(&KteStopWorker, 1);
+
+    KeSetEvent(KteWorkEvent, IO_NO_INCREMENT, FALSE);
+
+    if (KteWorkerThread)
+    {
+        KeWaitForSingleObject(KteWorkerThread, Executive, KernelMode, FALSE, NULL);
+        ObDereferenceObject(KteWorkerThread);
+        KteWorkerThread = NULL;
+    }
+
+    KphFree(KteWorkEvent, KPH_TAG_THREAD_POOL);
+    KteWorkEvent = NULL;
+}
+
+void KteTriggerWorkerThread()
+{
+    KeSetEvent(KteWorkEvent, IO_NO_INCREMENT, FALSE);
+}
+#endif

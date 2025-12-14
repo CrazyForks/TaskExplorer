@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.7.1] - 2025-12-??
+
+### Changed
+- improved "Reset all Panels" behavioure
+- improved KSI Driver's proces protection behavioure
+
+### Fixed
+- fixed crash issue in CWinProcess::GetArchString()
+- fixed after dyndata download new dyn data wasnt applied untill restart
+
+
+
+
 ## [1.7.0] - 2025-12-09
 
 ### Added

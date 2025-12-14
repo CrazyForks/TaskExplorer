@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
+    <name>CAbstractTask</name>
+    <message>
+        <location filename="API/AbstractTask.cpp" line="64"/>
+        <source>0x%1</source>
+        <translation type="unfinished">0x%1</translation>
+    </message>
+</context>
+<context>
     <name>CAffinityDialog</name>
     <message>
         <location filename="GUI/AffinityDialog.cpp" line="9"/>
@@ -318,8 +326,9 @@
     </message>
     <message>
         <location filename="GUI/TaskInfo/DotNetView.cpp" line="87"/>
-        <source>Open</source>
-        <translation>Aç</translation>
+        <source>Open File</source>
+        <oldsource>Open</oldsource>
+        <translation type="unfinished">Aç</translation>
     </message>
 </context>
 <context>
@@ -367,57 +376,57 @@
         <translation type="vanished">(Oto Seçim)</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="24"/>
+        <location filename="GUI/DriverWindow.cpp" line="27"/>
         <source>Test Signing Enabled</source>
         <translation>Test İmzalama Etkin</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="26"/>
+        <location filename="GUI/DriverWindow.cpp" line="29"/>
         <source>Signature Required (CKS Enabled)</source>
         <translation>İmza Gerekli (CKS Etkin)</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="28"/>
+        <location filename="GUI/DriverWindow.cpp" line="31"/>
         <source>Signature Required</source>
         <translation>İmza Gerekli</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="90"/>
+        <location filename="GUI/DriverWindow.cpp" line="93"/>
         <source>DynData loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="92"/>
+        <location filename="GUI/DriverWindow.cpp" line="95"/>
         <source>DynData NOT loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="98"/>
+        <location filename="GUI/DriverWindow.cpp" line="101"/>
         <source>None</source>
         <translation type="unfinished">Hiçbiri</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="99"/>
+        <location filename="GUI/DriverWindow.cpp" line="102"/>
         <source>Minimal</source>
         <translation type="unfinished">Asgari</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="100"/>
+        <location filename="GUI/DriverWindow.cpp" line="103"/>
         <source>Low</source>
         <translation type="unfinished">Düşük</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="101"/>
+        <location filename="GUI/DriverWindow.cpp" line="104"/>
         <source>Medium</source>
         <translation type="unfinished">Orta</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="102"/>
+        <location filename="GUI/DriverWindow.cpp" line="105"/>
         <source>High</source>
         <translation type="unfinished">Yüksek</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="103"/>
+        <location filename="GUI/DriverWindow.cpp" line="106"/>
         <source>Maximum</source>
         <translation type="unfinished">En Yüksek</translation>
     </message>
@@ -426,7 +435,7 @@
         <translation type="vanished">Başlat</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="81"/>
+        <location filename="GUI/DriverWindow.cpp" line="84"/>
         <source>Not installed</source>
         <translation>Kurulu değil</translation>
     </message>
@@ -439,7 +448,7 @@
         <translation type="vanished">Bağlantıyı kes</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="87"/>
+        <location filename="GUI/DriverWindow.cpp" line="90"/>
         <source>Connected</source>
         <translation>Bağlandı</translation>
     </message>
@@ -456,13 +465,13 @@
         <translation type="vanished">Hata: 0x%1</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="109"/>
+        <location filename="GUI/DriverWindow.cpp" line="112"/>
         <source>Disconnected</source>
         <translation>Bağlantı kesildi</translation>
     </message>
     <message>
-        <location filename="GUI/DriverWindow.cpp" line="111"/>
-        <location filename="GUI/DriverWindow.cpp" line="113"/>
+        <location filename="GUI/DriverWindow.cpp" line="114"/>
+        <location filename="GUI/DriverWindow.cpp" line="116"/>
         <source>N/A</source>
         <translation>Yok</translation>
     </message>
@@ -539,8 +548,9 @@
     </message>
     <message>
         <location filename="GUI/Models/GDIModel.cpp" line="127"/>
-        <source>Informations</source>
-        <translation>Bilgiler</translation>
+        <source>Information</source>
+        <oldsource>Informations</oldsource>
+        <translation type="unfinished">Bilgiler</translation>
     </message>
 </context>
 <context>
@@ -979,72 +989,72 @@
 <context>
     <name>CHandleModel</name>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="110"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="114"/>
         <source>N/A</source>
         <translation>Yok</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="120"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="124"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="120"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="124"/>
         <source>Unknown process</source>
         <translation>Bilinmeyen işlem</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="172"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="176"/>
         <source>Process</source>
         <translation>İşlem</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="173"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="177"/>
         <source>Handle</source>
         <translation>Tanıtıcı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="174"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="178"/>
         <source>Type</source>
         <translation>Tür</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="175"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="179"/>
         <source>File Name</source>
         <translation>Dosya adı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="176"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="180"/>
         <source>Position</source>
         <translation>Konum</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="177"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="181"/>
         <source>Size</source>
         <translation>Boyut</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="178"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="182"/>
         <source>Granted access</source>
         <translation>Onaylanmış erişim</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="180"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="184"/>
         <source>File share access</source>
         <translation>Dosya paylaşım erişimi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="181"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="185"/>
         <source>Attributes</source>
         <translation>Öznitelikler</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="182"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="186"/>
         <source>Object address</source>
         <translation>Nesne adresi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/HandleModel.cpp" line="183"/>
+        <location filename="GUI/Models/HandleModel.cpp" line="187"/>
         <source>Original name</source>
         <translation>Orijinal ad</translation>
     </message>
@@ -1091,8 +1101,9 @@
     </message>
     <message>
         <location filename="GUI/TaskInfo/HandlesView.cpp" line="230"/>
-        <source>Open</source>
-        <translation>Aç</translation>
+        <source>Open Handle</source>
+        <oldsource>Open</oldsource>
+        <translation type="unfinished">Aç</translation>
     </message>
     <message>
         <location filename="GUI/TaskInfo/HandlesView.cpp" line="234"/>
@@ -1196,12 +1207,13 @@
     </message>
     <message>
         <location filename="GUI/TaskInfo/HandlesView.cpp" line="510"/>
-        <source>Basic informations</source>
-        <translation>Temel bilgiler</translation>
+        <source>Basic information</source>
+        <oldsource>Basic informations</oldsource>
+        <translation type="unfinished">Temel bilgiler</translation>
     </message>
     <message>
         <location filename="GUI/TaskInfo/HandlesView.cpp" line="513"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="655"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="660"/>
         <source>Name</source>
         <translation>Ad</translation>
     </message>
@@ -1216,271 +1228,300 @@
         <translation>Nesne adresi</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="518"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="519"/>
+        <source>Security information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="521"/>
         <source>Granted access</source>
         <translation>Onaylanmış erişim</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="521"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="522"/>
+        <source>Granted access (generic)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="523"/>
+        <source>Granted access (mask)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="523"/>
+        <source>0x%1</source>
+        <translation type="unfinished">0x%1</translation>
+    </message>
+    <message>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="524"/>
+        <source>SDDL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="526"/>
         <source>References</source>
         <translation>Referanslar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="524"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="529"/>
         <source>Ref. count</source>
         <translation>Ref. sayısı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="525"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="530"/>
         <source>Handles</source>
         <translation>Tanıtıcılar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="528"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="533"/>
         <source>Quota charges</source>
         <translation>Kota kullanımları</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="531"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="536"/>
         <source>Paged</source>
         <translation>Disk belleği</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="532"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="537"/>
         <source>Virtual Size</source>
         <translation>Sanal Boyut</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="535"/>
         <source>Extended informations</source>
-        <translation>Genişletilmiş bilgiler</translation>
+        <translation type="vanished">Genişletilmiş bilgiler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="544"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="549"/>
         <source>LPC mode</source>
         <translation>LPC modu</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="549"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="554"/>
         <source>Allow impersonation</source>
         <translation>Kimliğe bürünmeye izin ver</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="554"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="559"/>
         <source>Allow LPC requests</source>
         <translation>LPC isteklerine izin ver</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="559"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="564"/>
         <source>Waitable</source>
         <translation>Beklenebilir</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="564"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="569"/>
         <source>Allow object duplication</source>
         <translation>Nesne çoğaltmasına izin ver</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="569"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="574"/>
         <source>System process only</source>
         <translation>Yalnızca sistem süreci</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="574"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="579"/>
         <source>Wake policy (1)</source>
         <translation>Uyanma politikası (1)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="579"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="584"/>
         <source>Wake policy (2)</source>
         <translation>Uyanma politikası (2)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="584"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="589"/>
         <source>Wake policy (3)</source>
         <translation>Uyanma politikası (3)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="589"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="594"/>
         <source>No shared section (direct)</source>
         <translation>Paylaşılan bölüm yok (doğrudan)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="594"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="599"/>
         <source>Allow multi-handle attributes</source>
         <translation>Çoklu tanıtıcı niteliklerine izin ver</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="599"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="604"/>
         <source>UNKNOWN: %1</source>
         <translation>BİLİNMEYEN: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="602"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="607"/>
         <source>Flags</source>
         <translation>Bayraklar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="603"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="608"/>
         <source>Sequence number</source>
         <translation>Sıra numarası</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="604"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="609"/>
         <source>Port context</source>
         <translation>Bağlantı noktası bağlamı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="615"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="620"/>
         <source>Connection</source>
         <translation>Bağlantı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="616"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="621"/>
         <source>Server</source>
         <translation>Sunucu</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="617"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="622"/>
         <source>Client</source>
         <translation>İstemci</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="621"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="626"/>
         <source>Is directory</source>
         <translation>Dizin mi</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="621"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="637"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="663"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="626"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="642"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="668"/>
         <source>True</source>
         <translation>Doğru</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="621"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="637"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="663"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="626"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="642"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="668"/>
         <source>False</source>
         <translation>Yanlış</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="622"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="627"/>
         <source>File mode</source>
         <translation>Dosya modu</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="623"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="628"/>
         <source>File size</source>
         <translation>Dosya boyutu</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="625"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="630"/>
         <source>Driver Device</source>
         <translation>Sürücü Aygıtı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="626"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="631"/>
         <source>Driver Image</source>
         <translation>Sürücü Görüntüsü</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="630"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="635"/>
         <source>Section type</source>
         <translation>Bölüm türü</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="631"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="636"/>
         <source>Size</source>
         <translation>Boyut</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="632"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="637"/>
         <source>File</source>
         <translation>Dosya</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="636"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="641"/>
         <source>Count</source>
         <translation>Sayı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="637"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="642"/>
         <source>Abandoned</source>
         <translation>Terk edilmiş</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="639"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="644"/>
         <source>Owner</source>
         <translation>Sahip</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="639"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="652"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="644"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="657"/>
         <source>%1 (%2): %3</source>
         <translation>%1 (%2): %3</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="608"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="639"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="647"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="613"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="644"/>
         <location filename="GUI/TaskInfo/HandlesView.cpp" line="652"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="657"/>
         <source>unknown</source>
         <translation>bilinmeyen</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="608"/>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="647"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="540"/>
+        <source>Extended information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="613"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="652"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="656"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="661"/>
         <source>Created</source>
         <translation>Oluşturuldu</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="657"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="662"/>
         <source>Exited</source>
         <translation>Çıkıldı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="658"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="663"/>
         <source>ExitStatus</source>
         <translation>ExitStatus</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="662"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="667"/>
         <source>Remaining</source>
         <translation>Kalan</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="663"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="668"/>
         <source>Signaled</source>
         <translation>Sinyal verildi</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="712"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="717"/>
         <source>Do you want to close the selected handle(s)</source>
         <translation>Seçili tanıtıcıları kapatmak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="852"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="878"/>
         <source>Token</source>
         <translation>Belirteç</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="863"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="889"/>
         <source>Job</source>
         <translation>İş</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="873"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="899"/>
         <source>This memory region can not be edited</source>
         <translation>Bu bellek bölgesi düzenlenemez</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/HandlesView.cpp" line="879"/>
+        <location filename="GUI/TaskInfo/HandlesView.cpp" line="905"/>
         <source>Memory Editor: %1 (%2)</source>
         <translation>Bellek Düzenleyici: %1 (%2)</translation>
     </message>
@@ -1650,82 +1691,87 @@
 <context>
     <name>CMemoryModel</name>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="201"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="202"/>
         <source>Base address</source>
         <translation>Temel adres</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="202"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="203"/>
         <source>Type</source>
         <translation>Tür</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="203"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="204"/>
         <source>Size</source>
         <translation>Boyut</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="204"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="205"/>
         <source>Protection</source>
         <translation>Koruma</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="205"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="206"/>
         <source>Use</source>
         <translation>Kullanan</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="206"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="207"/>
         <source>Total WS</source>
         <translation>Toplam ÇK</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="207"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="208"/>
         <source>Private WS</source>
         <translation>Özel ÇK</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="208"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="209"/>
         <source>Shareable WS</source>
         <translation>Paylaşılabilir ÇK</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="209"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="210"/>
         <source>Shared WS</source>
         <translation>Paylaşılan ÇK</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="210"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="211"/>
         <source>Locked WS</source>
         <translation>Kilitli ÇK</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="211"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="212"/>
         <source>Committed</source>
         <translation>Adanmış</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="212"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="213"/>
         <source>Private</source>
         <translation>Özel</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="213"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="214"/>
         <source>Signing level</source>
         <translation>İmza seviyesi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="214"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="215"/>
         <source>Original protection</source>
         <translation>Orijinal koruma</translation>
     </message>
     <message>
         <location filename="GUI/Models/MemoryModel.cpp" line="216"/>
+        <source>Original pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/MemoryModel.cpp" line="217"/>
         <source>Region type</source>
         <translation>Bölge türü</translation>
     </message>
     <message>
-        <location filename="GUI/Models/MemoryModel.cpp" line="217"/>
+        <location filename="GUI/Models/MemoryModel.cpp" line="218"/>
         <source>Priority</source>
         <translation>Öncelik</translation>
     </message>
@@ -2037,6 +2083,21 @@ Değiştiriciler:
         <source>Architecture</source>
         <translation>Mimari</translation>
     </message>
+    <message>
+        <location filename="GUI/Models/ModuleModel.cpp" line="356"/>
+        <source>Enclave type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ModuleModel.cpp" line="357"/>
+        <source>Enclave base address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ModuleModel.cpp" line="358"/>
+        <source>Enclave size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CModuleSearch</name>
@@ -2059,37 +2120,41 @@ Değiştiriciler:
 <context>
     <name>CModulesView</name>
     <message>
-        <location filename="GUI/TaskInfo/ModulesView.cpp" line="29"/>
+        <location filename="GUI/TaskInfo/ModulesView.cpp" line="30"/>
         <source>Inject DLL</source>
         <translation>DLL enjekte et</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/ModulesView.cpp" line="33"/>
+        <location filename="GUI/TaskInfo/ModulesView.cpp" line="34"/>
         <source>Show Modified Pages</source>
         <translation>Değiştirilmiş sayfaları göster</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/ModulesView.cpp" line="87"/>
         <source>Open</source>
-        <translation>Aç</translation>
+        <translation type="vanished">Aç</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/ModulesView.cpp" line="91"/>
+        <location filename="GUI/TaskInfo/ModulesView.cpp" line="88"/>
+        <source>Open Module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/TaskInfo/ModulesView.cpp" line="92"/>
         <source>Unload</source>
         <translation>Kaldır</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/ModulesView.cpp" line="231"/>
+        <location filename="GUI/TaskInfo/ModulesView.cpp" line="232"/>
         <source>Do you want to unload the selected Module(s)</source>
         <translation>Seçili bileşenleri kaldırmak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/ModulesView.cpp" line="277"/>
+        <location filename="GUI/TaskInfo/ModulesView.cpp" line="278"/>
         <source>Select DLL&apos;s</source>
         <translation>DLL seç</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/ModulesView.cpp" line="277"/>
+        <location filename="GUI/TaskInfo/ModulesView.cpp" line="278"/>
         <source>DLL files (*.dll)</source>
         <translation>DLL dosyaları (*.dll)</translation>
     </message>
@@ -2346,17 +2411,17 @@ Değiştiriciler:
 <context>
     <name>CProcessInfo</name>
     <message>
-        <location filename="API/ProcessInfo.h" line="178"/>
+        <location filename="API/ProcessInfo.h" line="179"/>
         <source>System</source>
         <translation>Sistem</translation>
     </message>
     <message>
-        <location filename="API/ProcessInfo.h" line="179"/>
+        <location filename="API/ProcessInfo.h" line="180"/>
         <source>User</source>
         <translation>Kullanıcı</translation>
     </message>
     <message>
-        <location filename="API/ProcessInfo.h" line="180"/>
+        <location filename="API/ProcessInfo.h" line="181"/>
         <source>Process</source>
         <translation>İşlem</translation>
     </message>
@@ -2380,728 +2445,742 @@ Değiştiriciler:
     <name>CProcessModel</name>
     <message>
         <location filename="GUI/Models/ProcessModel.cpp" line="228"/>
-        <location filename="GUI/Models/ProcessModel.cpp" line="259"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="262"/>
         <source>, </source>
         <translation>, </translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="616"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="621"/>
         <source>Critical</source>
         <translation>Kritik</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="777"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="782"/>
         <source>Process</source>
         <translation>İşlem</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="778"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="783"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="784"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="791"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="785"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="792"/>
         <source>I/O total rate</source>
         <translation>I/O toplam oran</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="786"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="793"/>
         <source>Status</source>
         <translation>Durum</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="787"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="794"/>
         <source>Private bytes</source>
         <translation>Özel baytlar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="788"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="795"/>
         <source>User name</source>
         <translation>Kullanıcı adı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="790"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="797"/>
         <source>Services</source>
         <translation>Hizmetler</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="791"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="798"/>
         <source>Description</source>
         <translation>Açıklama</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="792"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="799"/>
         <source>Company name</source>
         <translation>Şirket adı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="793"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="800"/>
         <source>Version</source>
         <translation>Sürüm</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="797"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="804"/>
         <source>File name</source>
         <translation>Dosya adı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="798"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="805"/>
         <source>Command line</source>
         <translation>Komut satırı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="799"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="806"/>
         <source>Peak private bytes</source>
         <translation>En yüksek özel baytlar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="800"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="807"/>
         <source>Working set</source>
         <translation>Çalışma kümesi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="801"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="808"/>
         <source>Peak working set</source>
         <translation>En yüksek çalışma kümesi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="802"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="809"/>
         <source>Private WS</source>
         <translation>Özel ÇK</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="808"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="815"/>
         <source>Virtual size</source>
         <translation>Sanal boyut</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="809"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="816"/>
         <source>Peak virtual size</source>
         <translation>En yüksek sanal boyut</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="845"/>
         <source>CPU Arch.</source>
-        <translation>CPU mimari</translation>
+        <translation type="vanished">CPU mimari</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="861"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="869"/>
         <source>Mitigations</source>
         <translation>Azaltmalar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="867"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="875"/>
         <source>Page faults</source>
         <translation>Sayfa hataları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="812"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="819"/>
         <source>Session ID</source>
         <translation>Oturum KN</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="440"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="444"/>
         <source>N/A</source>
         <translation>Yok</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="485"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="489"/>
         <source>0x%1</source>
         <translation>0x%1</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="608"/>
-        <location filename="GUI/Models/ProcessModel.cpp" line="618"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="613"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="623"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="780"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="785"/>
+        <source>PID (LXSS)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ProcessModel.cpp" line="787"/>
         <source>Parent PID</source>
         <translation>Üst PID</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="781"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="788"/>
         <source>Console PID</source>
         <translation>Konsol PID</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="782"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="789"/>
         <source>Seq. number</source>
         <translation>Sıra numarası</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="783"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="790"/>
         <source>Start key</source>
         <translation>Başlangıç anahtarı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="795"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="802"/>
         <source>Network</source>
         <translation>Ağ</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="803"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="810"/>
         <source>Shared WS (slow)</source>
         <translation>Paylaşılan ÇK (düşük)</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="804"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="811"/>
         <source>Shareable WS (slow)</source>
         <translation>Paylaşılabilir ÇK (düşük)</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="806"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="813"/>
         <source>Shared commit</source>
         <translation>Paylaşılan ayırmalar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="810"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="817"/>
         <source>Debug Messages</source>
         <translation>Hata ayıklama mesajları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="813"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="820"/>
+        <source>CPU Affinity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ProcessModel.cpp" line="821"/>
         <source>Priority class</source>
         <translation>Öncelik sınıfı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="814"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="822"/>
         <source>Base priority</source>
         <translation>Temel öncelik</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="816"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="824"/>
         <source>Priority boost</source>
         <translation>Öncelik artırımı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="819"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="827"/>
         <source>GPU</source>
         <translation>GPU</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="820"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="828"/>
         <source>Shared</source>
         <translation>Paylaşılan</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="821"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="829"/>
         <source>Dedicated</source>
         <translation>Adanmış</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="822"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="830"/>
         <source>GPU Adapter</source>
         <translation>GPU adaptörü</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="824"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="832"/>
         <source>Threads</source>
         <translation>İş parçacıkları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="825"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="833"/>
         <source>Peak threads</source>
         <translation>En yüksek iş parçacıkları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="826"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="834"/>
         <source>Handles</source>
         <translation>Tanıtıcılar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="827"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="835"/>
         <source>Peak handles</source>
         <translation>En yüksek tanıtıcılar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="829"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="837"/>
         <source>Windows</source>
         <translation>Pencereler</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="830"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="838"/>
         <source>GDI handles</source>
         <translation>GDI tanıtıcıları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="831"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="839"/>
         <source>USER handles</source>
         <translation>Kullanıcı tanıtıcıları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="832"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="840"/>
         <source>Integrity</source>
         <translation>Bütünlük</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="834"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="842"/>
         <source>I/O priority</source>
         <translation>G/Ç önceliği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="835"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="843"/>
         <source>Page priority</source>
         <translation>Sayfa önceliği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="836"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="844"/>
         <source>Start time</source>
         <translation>Başlangıç zamanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="837"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="845"/>
         <source>Total CPU time</source>
         <translation>Toplam CPU zamanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="838"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="846"/>
         <source>Kernel CPU time</source>
         <translation>Çekirdek CPU zamanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="839"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="847"/>
         <source>User CPU time</source>
         <translation>Kullanıcı CPU zamanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="841"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="849"/>
         <source>Verification status</source>
         <translation>Doğrulama durumu</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="842"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="850"/>
         <source>Verified signer</source>
         <translation>Doğrulanmış imzalayan</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="844"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="852"/>
         <source>Up Time</source>
         <translation>Çalışma zamanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="846"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="853"/>
+        <source>Architecture</source>
+        <translation type="unfinished">Mimari</translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ProcessModel.cpp" line="854"/>
         <source>Elevation</source>
         <translation>Yükseltme</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="848"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="856"/>
         <source>Window title</source>
         <translation>Pencere başlığı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="849"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="857"/>
         <source>Window status</source>
         <translation>Pencere durumu</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="851"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="859"/>
         <source>Cycles</source>
         <translation>Döngüler</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="852"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="860"/>
         <source>Cycles delta</source>
         <translation>Döngü farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="853"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="861"/>
         <source>CPU graph</source>
         <translation>CPU grafiği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="854"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="862"/>
         <source>Mem. graph</source>
         <translation>Bel. grafiği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="855"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="863"/>
         <source>I/O graph</source>
         <translation>G/Ç grafiği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="856"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="864"/>
         <source>Net. graph</source>
         <translation>Ağ grafiği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="857"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="865"/>
         <source>GPU graph</source>
         <translation>GPU grafiği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="858"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="866"/>
         <source>V. Mem. graph</source>
         <translation>S. Bel. grafiği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="862"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="870"/>
         <source>Image coherency</source>
         <translation>Görüntü tutarlılığı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="863"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="871"/>
         <source>Virtualized</source>
         <translation>Sanallaştırma</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="865"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="873"/>
         <source>Context switches</source>
         <translation>Bağlam değişimleri</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="866"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="874"/>
         <source>Context switches delta</source>
         <translation>Bağlam değişimleri farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="868"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="876"/>
         <source>Page faults delta</source>
         <translation>Sayfa hataları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="869"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="877"/>
         <source>Hard faults</source>
         <translation>Katı önbellek hataları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="870"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="878"/>
         <source>Hard faults delta</source>
         <translation>Katı önbellek hataları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="873"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="881"/>
         <source>I/O reads</source>
         <translation>G/Ç okumaları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="874"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="882"/>
         <source>I/O writes</source>
         <translation>G/Ç yazmaları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="875"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="883"/>
         <source>I/O other</source>
         <translation>G/Ç diğer</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="876"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="884"/>
         <source>I/O read bytes</source>
         <translation>G/Ç okuma baytı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="877"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="885"/>
         <source>I/O write bytes</source>
         <translation>G/Ç yazma baytı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="878"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="886"/>
         <source>I/O other bytes</source>
         <translation>G/Ç diğer baytlar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="880"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="888"/>
         <source>I/O reads delta</source>
         <translation>G/Ç okumalar farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="881"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="889"/>
         <source>I/O writes delta</source>
         <translation>G/Ç yazmalar farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="882"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="890"/>
         <source>I/O other delta</source>
         <translation>G/Ç diğer fark</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="884"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="892"/>
         <source>I/O read bytes delta</source>
         <translation>G/Ç okuma baytı farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="885"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="893"/>
         <source>I/O write bytes delta</source>
         <translation>G/Ç yazma baytı farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="886"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="894"/>
         <source>I/O other bytes delta</source>
         <translation>G/Ç diğer baytlar farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="888"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="896"/>
         <source>I/O read rate</source>
         <translation>I/O okuma oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="889"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="897"/>
         <source>I/O write rate</source>
         <translation>I/O yazma oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="890"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="898"/>
         <source>I/O other rate</source>
         <translation>I/O diğer oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="894"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="902"/>
         <source>OS context</source>
         <translation>İS bağlamı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="895"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="903"/>
         <source>Thread local storage</source>
         <translation>İş parçacığı yerel depolama</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="896"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="904"/>
         <source>Paged pool</source>
         <translation>Disk belleği havuzu</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="897"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="905"/>
         <source>Peak paged pool</source>
         <translation>En yüksek disk belleği havuzu</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="898"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="906"/>
         <source>Non-paged pool</source>
         <translation>Disk belleği olmayan havuz</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="899"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="907"/>
         <source>Peak non-paged pool</source>
         <translation>En yüksek disk belleği olmayan havuz</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="901"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="909"/>
         <source>Minimum working set</source>
         <translation>En düşük çalışma kümesi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="902"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="910"/>
         <source>Maximum working set</source>
         <translation>En yüksek çalışma kümesi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="903"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="911"/>
         <source>Private bytes delta</source>
         <translation>En yüksek özel baytlar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="904"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="912"/>
         <source>Subsystem</source>
         <translation>Alt sistem</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="906"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="914"/>
         <source>Package name</source>
         <translation>Paket adı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="907"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="915"/>
         <source>App ID</source>
         <translation>Uyg KN</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="908"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="916"/>
         <source>DPI awareness</source>
         <translation>DPI tanıma</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="910"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="918"/>
         <source>Time stamp</source>
         <translation>Zaman damgası</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="911"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="919"/>
         <source>File modified time</source>
         <translation>Dosya değiştirilme zamanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="912"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="920"/>
         <source>File size</source>
         <translation>Dosya boyutu</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="914"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="922"/>
         <source>Job Object ID</source>
         <translation>İş nesnesi KN</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="915"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="923"/>
         <source>Protection</source>
         <translation>Koruma</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="916"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="924"/>
         <source>Desktop</source>
         <translation>Masaüstü</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="917"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="925"/>
         <source>Critical Process</source>
         <translation>Kritik İşlem</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="919"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="927"/>
         <source>Power throttling</source>
         <translation>Güç azaltma</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="920"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="928"/>
         <source>Running Time</source>
         <translation>Çalışma süresi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="921"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="929"/>
         <source>Suspended Time</source>
         <translation>Askı süresi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="922"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="930"/>
         <source>Hang Count</source>
         <translation>Takılma sayısı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="923"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="931"/>
         <source>Ghost Count</source>
         <translation>Hayaletleme sayısı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="925"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="933"/>
         <source>Error mode</source>
         <translation>Hata modu</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="926"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="934"/>
         <source>Code page</source>
         <translation>Kod sayfası</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="927"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="935"/>
         <source>References</source>
         <translation>Referanslar</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="928"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="936"/>
         <source>Granted access</source>
         <translation>Onaylanmış erişim</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="933"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="941"/>
         <source>Network total rate</source>
         <translation>Ağ toplam oran</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="934"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="942"/>
         <source>Network receives</source>
         <translation>Ağ alımları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="935"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="943"/>
         <source>Network sends</source>
         <translation>Ağ gönderimleri</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="936"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="944"/>
         <source>Network receive bytes</source>
         <translation>Ağ alım baytları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="937"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="945"/>
         <source>Network send bytes</source>
         <translation>Ağ gönderim baytları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="939"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="947"/>
         <source>Network receives delta</source>
         <translation>Ağ alımları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="940"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="948"/>
         <source>Network sends delta</source>
         <translation>Ağ gönderimleri farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="941"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="949"/>
         <source>Network receive bytes delta</source>
         <translation>Ağ alım baytları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="942"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="950"/>
         <source>Network send bytes delta</source>
         <translation>Ağ gönderim baytları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="944"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="952"/>
         <source>Network receive rate</source>
         <translation>Ağ alım oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="945"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="953"/>
         <source>Network send rate</source>
         <translation>Ağ gönderim oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="948"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="956"/>
         <source>Disk total rate</source>
         <translation>Disk toplam oran</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="949"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="957"/>
         <source>Disk reads</source>
         <translation>Disk okumaları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="950"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="958"/>
         <source>Disk writes</source>
         <translation>Disk yazmaları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="951"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="959"/>
         <source>Disk read bytes</source>
         <translation>Disk okuma baytları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="952"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="960"/>
         <source>Disk write bytes</source>
         <translation>Disk yazma baytları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="954"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="962"/>
         <source>Disk reads delta</source>
         <translation>Disk okumaları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="955"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="963"/>
         <source>Disk writes delta</source>
         <translation>Disk yazmaları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="956"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="964"/>
         <source>Disk read bytes delta</source>
         <translation>Disk okuma baytları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="957"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="965"/>
         <source>Disk write bytes delta</source>
         <translation>Disk yazma baytları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="959"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="967"/>
         <source>Disk read rate</source>
         <translation>Disk okuma oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ProcessModel.cpp" line="960"/>
+        <location filename="GUI/Models/ProcessModel.cpp" line="968"/>
         <source>Disk write rate</source>
         <translation>Disk yazma oranı</translation>
     </message>
@@ -3998,17 +4077,17 @@ Değiştiriciler:
 <context>
     <name>CRunAsDialog</name>
     <message>
-        <location filename="GUI/RunAsDialog.cpp" line="196"/>
+        <location filename="GUI/RunAsDialog.cpp" line="247"/>
         <source>Unable to start the program, Error: %1</source>
         <translation>Program başlatılamıyor, Hata: %1</translation>
     </message>
     <message>
-        <location filename="GUI/RunAsDialog.cpp" line="227"/>
+        <location filename="GUI/RunAsDialog.cpp" line="278"/>
         <source>Select binary</source>
         <translation>İkili dosya seç</translation>
     </message>
     <message>
-        <location filename="GUI/RunAsDialog.cpp" line="227"/>
+        <location filename="GUI/RunAsDialog.cpp" line="278"/>
         <source>All files (*.*)</source>
         <translation>Tüm dosyalar (*.*)</translation>
     </message>
@@ -4548,37 +4627,51 @@ Sınırı değiştirmek için &apos;Options/ResultLimit&apos; seçeneğini ayarl
 <context>
     <name>CServicesView</name>
     <message>
-        <location filename="GUI/SystemInfo/ServicesView.cpp" line="80"/>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="81"/>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="83"/>
         <source>Start</source>
         <translation>Başlat</translation>
     </message>
     <message>
-        <location filename="GUI/SystemInfo/ServicesView.cpp" line="81"/>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="84"/>
         <source>Continue</source>
         <translation>Devam Et</translation>
     </message>
     <message>
-        <location filename="GUI/SystemInfo/ServicesView.cpp" line="82"/>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="85"/>
         <source>Pause</source>
         <translation>Duraklat</translation>
     </message>
     <message>
-        <location filename="GUI/SystemInfo/ServicesView.cpp" line="83"/>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="86"/>
         <source>Stop</source>
         <translation>Durdur</translation>
     </message>
     <message>
-        <location filename="GUI/SystemInfo/ServicesView.cpp" line="86"/>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="89"/>
         <source>Delete</source>
         <translation>Sil</translation>
     </message>
     <message>
-        <location filename="GUI/SystemInfo/ServicesView.cpp" line="88"/>
-        <source>Open key</source>
-        <translation>Anahtarı Aç</translation>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="92"/>
+        <source>Open Key</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/SystemInfo/ServicesView.cpp" line="92"/>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="94"/>
+        <source>Open Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open key</source>
+        <translation type="vanished">Anahtarı Aç</translation>
+    </message>
+    <message>
+        <location filename="GUI/SystemInfo/ServicesView.cpp" line="99"/>
         <source>Show Kernel Services</source>
         <translation>Çekirdek Hizmetlerini Göster</translation>
     </message>
@@ -4586,109 +4679,109 @@ Sınırı değiştirmek için &apos;Options/ResultLimit&apos; seçeneğini ayarl
 <context>
     <name>CSettingsWindow</name>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="33"/>
+        <location filename="GUI/SettingsWindow.cpp" line="34"/>
         <source>Task Explorer - Settings</source>
         <translation>Task Explorer - Ayarlar</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="88"/>
+        <location filename="GUI/SettingsWindow.cpp" line="90"/>
         <source>None</source>
         <translation type="unfinished">Hiçbiri</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="89"/>
+        <location filename="GUI/SettingsWindow.cpp" line="91"/>
         <source>Native</source>
         <translation type="unfinished">Doğal</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="90"/>
+        <location filename="GUI/SettingsWindow.cpp" line="92"/>
         <source>Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="94"/>
+        <location filename="GUI/SettingsWindow.cpp" line="97"/>
         <source>%1</source>
         <translation type="unfinished">%1</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="98"/>
+        <location filename="GUI/SettingsWindow.cpp" line="103"/>
         <source>Select font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="100"/>
+        <location filename="GUI/SettingsWindow.cpp" line="105"/>
         <source>Reset font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="126"/>
+        <location filename="GUI/SettingsWindow.cpp" line="132"/>
         <source>Close to Tray</source>
         <translation>Tepsiye kapat</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="127"/>
+        <location filename="GUI/SettingsWindow.cpp" line="133"/>
         <source>Prompt before Close</source>
         <translation>Kapatmadan önce sor</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="128"/>
+        <location filename="GUI/SettingsWindow.cpp" line="134"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="134"/>
+        <location filename="GUI/SettingsWindow.cpp" line="140"/>
         <source>Show static Icon</source>
         <translation>Sabit simge göster</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="135"/>
+        <location filename="GUI/SettingsWindow.cpp" line="141"/>
         <source>CPU plot</source>
         <translation>CPU çizimi</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="136"/>
+        <location filename="GUI/SettingsWindow.cpp" line="142"/>
         <source>CPU plot and Memory bar</source>
         <translation>CPU çizimi ve Bellek çubuğu</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="137"/>
+        <location filename="GUI/SettingsWindow.cpp" line="143"/>
         <source>CPU plot and RAM bar</source>
         <translation>CPU çizimi ve RAM çubuğu</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="138"/>
+        <location filename="GUI/SettingsWindow.cpp" line="144"/>
         <source>CPU plot and RAM+Swap bars</source>
         <translation>CPU çizimi ve RAM+Takas çubuğu</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="148"/>
+        <location filename="GUI/SettingsWindow.cpp" line="154"/>
         <source>Description (Binary name)</source>
         <translation>Açıklama  (İkili adı)</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="149"/>
+        <location filename="GUI/SettingsWindow.cpp" line="155"/>
         <source>Binary name (Description)</source>
         <translation>İkili adı (Açıklama)</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="150"/>
+        <location filename="GUI/SettingsWindow.cpp" line="156"/>
         <source>Binary name only</source>
         <translation>Yalnızca ikili adı</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="68"/>
+        <location filename="GUI/SettingsWindow.cpp" line="74"/>
         <source>Linux CPU Usage shows 100% per core, i.e. if a process is using 2 cores to 100% it will show as 200% total cpu usage.<byte value="xd"/>
 PartiallyChecked state means apply only to thread std::list.</source>
         <translation>Linux CPU Kullanımı çekirdek başına 100% gösterir, yani bir işlem 2 çekirdeği 100%&apos;e kadar kullanıyorsa toplam CPU kullanımı 200% olarak gösterilir.
 Kısmenİşaretli kutu yalnızca iş parçacığı std::list kısmına uygulanır anlamına gelir.</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="46"/>
+        <location filename="GUI/SettingsWindow.cpp" line="52"/>
         <source>Auto Detection</source>
         <translation>Otomatik Algılama</translation>
     </message>
     <message>
-        <location filename="GUI/SettingsWindow.cpp" line="47"/>
+        <location filename="GUI/SettingsWindow.cpp" line="53"/>
         <source>No Translation</source>
         <translation>Çeviri Yok</translation>
     </message>
@@ -5282,27 +5375,27 @@ Kısmenİşaretli kutu yalnızca iş parçacığı std::list kısmına uygulanı
 <context>
     <name>CStringView</name>
     <message>
-        <location filename="GUI/Search/StringView.cpp" line="59"/>
+        <location filename="GUI/Search/StringView.cpp" line="60"/>
         <source>Edit memory</source>
         <translation>Belleği düzenle</translation>
     </message>
     <message>
-        <location filename="GUI/Search/StringView.cpp" line="61"/>
+        <location filename="GUI/Search/StringView.cpp" line="62"/>
         <source>Save string(s)</source>
         <translation>Dizileri kaydet</translation>
     </message>
     <message>
-        <location filename="GUI/Search/StringView.cpp" line="117"/>
+        <location filename="GUI/Search/StringView.cpp" line="134"/>
         <source>Memory Editor: %1 (%2) 0x%3</source>
         <translation>Bellek Düzenleyici: %1 (%2) 0x%3</translation>
     </message>
     <message>
-        <location filename="GUI/Search/StringView.cpp" line="126"/>
+        <location filename="GUI/Search/StringView.cpp" line="143"/>
         <source>Dump String</source>
         <translation>Dizi Dök</translation>
     </message>
     <message>
-        <location filename="GUI/Search/StringView.cpp" line="126"/>
+        <location filename="GUI/Search/StringView.cpp" line="143"/>
         <source>Dump files (*.dmp);;All files (*.*)</source>
         <translation>Döküm dosyaları (*.dmp);;Tüm dosyalar (*.*)</translation>
     </message>
@@ -5429,7 +5522,7 @@ Kısmenİşaretli kutu yalnızca iş parçacığı std::list kısmına uygulanı
 <context>
     <name>CTaskExplorer</name>
     <message>
-        <location filename="main.cpp" line="343"/>
+        <location filename="main.cpp" line="369"/>
         <source>You are attempting to run the 32-bit version of Task Explorer on 64-bit Windows. Most features will not work correctly.
 
 Please run the 64-bit version of Task Explorer instead.</source>
@@ -5438,47 +5531,47 @@ Please run the 64-bit version of Task Explorer instead.</source>
 Lütfen bunun yerine Task Explorer uygulamasının 64 bit sürümünü çalıştırın.</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="107"/>
+        <location filename="GUI/TaskExplorer.cpp" line="111"/>
         <source>TaskExplorer v%1</source>
         <translation>TaskExplorer v%1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="210"/>
+        <location filename="GUI/TaskExplorer.cpp" line="214"/>
         <source>Run...</source>
         <translation>Çalıştır...</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="212"/>
+        <location filename="GUI/TaskExplorer.cpp" line="216"/>
         <source>Run as...</source>
         <translation>Farklı çalıştır...</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="215"/>
+        <location filename="GUI/TaskExplorer.cpp" line="219"/>
         <source>Run as TrustedInstaller...</source>
         <translation>TrustedInstaller olarak çalıştır...</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="222"/>
+        <location filename="GUI/TaskExplorer.cpp" line="228"/>
         <source>Restart Elevated</source>
         <translation>Yükseltilmiş olarak başlat</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="224"/>
+        <location filename="GUI/TaskExplorer.cpp" line="230"/>
         <source>Exit</source>
         <translation>Çıkış</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="243"/>
+        <location filename="GUI/TaskExplorer.cpp" line="249"/>
         <source>&amp;View</source>
         <translation>&amp;Görünüm</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="244"/>
+        <location filename="GUI/TaskExplorer.cpp" line="250"/>
         <source>System Tabs</source>
         <translation>Sistem Sekmesi</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="129"/>
+        <location filename="GUI/TaskExplorer.cpp" line="133"/>
         <source> (Administrator)</source>
         <translation> (Yönetici)</translation>
     </message>
@@ -5507,722 +5600,727 @@ Lütfen bunun yerine Task Explorer uygulamasının 64 bit sürümünü çalışt
         <translation type="vanished">En Yüksek</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="123"/>
+        <location filename="GUI/TaskExplorer.cpp" line="127"/>
         <source> - [%1KSI%2]</source>
         <oldsource> - [KSI Level %1]</oldsource>
         <translation type="unfinished"> - [KSI Seviyesi %1]</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="131"/>
+        <location filename="GUI/TaskExplorer.cpp" line="135"/>
         <source> (root)</source>
         <translation> (kök)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="209"/>
+        <location filename="GUI/TaskExplorer.cpp" line="213"/>
         <source>&amp;Tasks</source>
         <translation>G&amp;örevler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="219"/>
+        <location filename="GUI/TaskExplorer.cpp" line="223"/>
         <source>Computer</source>
         <translation>Bilgisayar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="220"/>
+        <location filename="GUI/TaskExplorer.cpp" line="224"/>
         <source>Users</source>
         <translation>Kullanıcılar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="227"/>
+        <location filename="GUI/TaskExplorer.cpp" line="233"/>
         <source>Lock</source>
         <translation>Kilitle</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="228"/>
+        <location filename="GUI/TaskExplorer.cpp" line="234"/>
         <source>Logout</source>
         <translation>Oturumu Kapat</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="230"/>
+        <location filename="GUI/TaskExplorer.cpp" line="236"/>
         <source>Standby</source>
         <translation>Hazırda Beklet</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="231"/>
+        <location filename="GUI/TaskExplorer.cpp" line="237"/>
         <source>Hibernate</source>
         <translation>Uyku</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="233"/>
+        <location filename="GUI/TaskExplorer.cpp" line="239"/>
         <source>Restart</source>
         <translation>Yeniden Başlat</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="234"/>
+        <location filename="GUI/TaskExplorer.cpp" line="240"/>
         <source>Force Restart</source>
         <translation>Yeniden Başlatmaya Zorla</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="235"/>
+        <location filename="GUI/TaskExplorer.cpp" line="241"/>
         <source>Restart to Boot Menu</source>
         <translation>Önyükleme Menüsüne Yeniden Başlat</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="237"/>
+        <location filename="GUI/TaskExplorer.cpp" line="243"/>
         <source>Shutdown</source>
         <translation>Bilgisayarı Kapat</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="238"/>
+        <location filename="GUI/TaskExplorer.cpp" line="244"/>
         <source>Force Shutdown</source>
         <translation>Bilgisayarı Kapatmaya Zorla</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="239"/>
+        <location filename="GUI/TaskExplorer.cpp" line="245"/>
         <source>Hybrid Shutdown</source>
         <translation>Karma Kapama</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="261"/>
+        <location filename="GUI/TaskExplorer.cpp" line="267"/>
         <source>Task Tabs</source>
         <translation>Görev Sekmeleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="271"/>
+        <location filename="GUI/TaskExplorer.cpp" line="277"/>
         <source>System Info</source>
         <translation>Sistem Bilgisi</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="274"/>
+        <location filename="GUI/TaskExplorer.cpp" line="280"/>
         <source>Pause Refresh</source>
         <translation>Yenilemeyi Duraklat</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="276"/>
+        <location filename="GUI/TaskExplorer.cpp" line="282"/>
         <source>Refresh Now</source>
         <translation>Şimdi Yenile</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="277"/>
+        <location filename="GUI/TaskExplorer.cpp" line="283"/>
         <source>Reset all Panels</source>
         <translation>Tüm Panelleri Sıfırla</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="279"/>
+        <location filename="GUI/TaskExplorer.cpp" line="285"/>
         <source>Tree/List</source>
         <translation>Ağaç/Liste</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="282"/>
+        <location filename="GUI/TaskExplorer.cpp" line="288"/>
         <source>Expand Process Tree</source>
         <translation>İşlem Ağacını Genişlet</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="285"/>
-        <location filename="GUI/TaskExplorer.cpp" line="452"/>
+        <location filename="GUI/TaskExplorer.cpp" line="291"/>
+        <location filename="GUI/TaskExplorer.cpp" line="458"/>
         <source>Filter Processes</source>
         <translation>İşlemleri Filtrele</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="287"/>
+        <location filename="GUI/TaskExplorer.cpp" line="293"/>
         <source>Select Filters</source>
         <translation>Filtre Seç</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="288"/>
+        <location filename="GUI/TaskExplorer.cpp" line="294"/>
         <source>Windows Processes</source>
         <translation>Windows İşlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="290"/>
+        <location filename="GUI/TaskExplorer.cpp" line="296"/>
         <source>System Processes</source>
         <translation>Sistem İşlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="292"/>
+        <location filename="GUI/TaskExplorer.cpp" line="298"/>
         <source>Service Processes</source>
         <translation>Hizmet İşlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="294"/>
+        <location filename="GUI/TaskExplorer.cpp" line="300"/>
         <source>Processes of Other Logged-In Users</source>
         <translation>Diğer Oturum Açmış Kullanıcıların İşlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="301"/>
+        <location filename="GUI/TaskExplorer.cpp" line="307"/>
         <source>&amp;Find</source>
         <translation>&amp;Bul</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="302"/>
+        <location filename="GUI/TaskExplorer.cpp" line="308"/>
         <source>Find Hidden Processes</source>
         <translation>Gizli İşlemleri Bul</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="304"/>
+        <location filename="GUI/TaskExplorer.cpp" line="310"/>
         <source>Find Handles</source>
         <translation>Tanıtıcıları Bul</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="306"/>
+        <location filename="GUI/TaskExplorer.cpp" line="312"/>
         <source>Find Module (dll)</source>
         <translation>Bileşenleri (DLL) Bul</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="307"/>
+        <location filename="GUI/TaskExplorer.cpp" line="313"/>
         <source>Find String in Memory</source>
         <translation>Bellekteki Dizeyi Bul</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="309"/>
+        <location filename="GUI/TaskExplorer.cpp" line="315"/>
         <source>&amp;Options</source>
         <translation>&amp;Seçenekler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="310"/>
+        <location filename="GUI/TaskExplorer.cpp" line="316"/>
         <source>Settings</source>
         <translation>Ayarlar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="320"/>
+        <location filename="GUI/TaskExplorer.cpp" line="326"/>
         <source>Auto Run</source>
         <translation>Oto Başlat</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="323"/>
+        <location filename="GUI/TaskExplorer.cpp" line="329"/>
         <source>Skip UAC</source>
         <translation>UAC Atla</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="329"/>
+        <location filename="GUI/TaskExplorer.cpp" line="335"/>
         <source>&amp;Tools</source>
         <translation>&amp;Araçlar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="330"/>
+        <location filename="GUI/TaskExplorer.cpp" line="336"/>
         <source>&amp;Services</source>
         <translation>&amp;Hizmetler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="331"/>
+        <location filename="GUI/TaskExplorer.cpp" line="337"/>
         <source>Create new Service</source>
         <translation>Yeni Hizmet oluştur</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="333"/>
+        <location filename="GUI/TaskExplorer.cpp" line="339"/>
         <source>ReLoad all Service</source>
         <translation>Tüm Hizmetleri yeniden yükle</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="335"/>
+        <location filename="GUI/TaskExplorer.cpp" line="341"/>
         <source>Service Control Manager Permissions</source>
         <translation>Hizmet Kontrol Yöneticisi İzinleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="337"/>
+        <location filename="GUI/TaskExplorer.cpp" line="343"/>
         <source>&amp;Free Memory</source>
         <translation>&amp;Bellek Serbest Bırakma</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="338"/>
+        <location filename="GUI/TaskExplorer.cpp" line="344"/>
         <source>Empty Working set</source>
         <translation>Çalışma Kümesini boşalt</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="339"/>
+        <location filename="GUI/TaskExplorer.cpp" line="345"/>
         <source>Empty Modified pages</source>
         <translation>Değiştirilmiş sayfaları boşalt</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1501"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1616"/>
         <source>Found %1 hidden processes and added them to the process std::list.</source>
         <translation>%1 gizli işlem bulundu ve işlem std::list&apos;e eklendi.</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="343"/>
+        <location filename="GUI/TaskExplorer.cpp" line="349"/>
         <source>Combine Pages</source>
         <translation>Sayfaları Birleştir</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="116"/>
+        <location filename="GUI/TaskExplorer.cpp" line="120"/>
         <source>---</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="117"/>
+        <location filename="GUI/TaskExplorer.cpp" line="121"/>
         <source>--</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="118"/>
+        <location filename="GUI/TaskExplorer.cpp" line="122"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="119"/>
+        <location filename="GUI/TaskExplorer.cpp" line="123"/>
         <source>~</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="120"/>
+        <location filename="GUI/TaskExplorer.cpp" line="124"/>
         <source>+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="121"/>
+        <location filename="GUI/TaskExplorer.cpp" line="125"/>
         <source>++</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="123"/>
+        <location filename="GUI/TaskExplorer.cpp" line="127"/>
         <source>Limited </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="312"/>
+        <location filename="GUI/TaskExplorer.cpp" line="226"/>
+        <source>Window Finder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/TaskExplorer.cpp" line="318"/>
         <source>Driver Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="346"/>
+        <location filename="GUI/TaskExplorer.cpp" line="352"/>
         <source>Persistence Options</source>
         <translation>Kalıcı Ön Ayarlar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="349"/>
+        <location filename="GUI/TaskExplorer.cpp" line="355"/>
         <source>Flush Dns Cache</source>
         <translation>DNS Önbelleğini Boşalt</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="351"/>
+        <location filename="GUI/TaskExplorer.cpp" line="357"/>
         <source>Security Explorer</source>
         <translation>Güvenlik Gezgini</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="357"/>
+        <location filename="GUI/TaskExplorer.cpp" line="363"/>
         <source>Use Driver to Monitor System</source>
         <translation>Sistemi İzlemek için Sürücüyü Kullan</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="360"/>
+        <location filename="GUI/TaskExplorer.cpp" line="366"/>
         <source>Monitor ETW Events</source>
         <translation>ETW Olaylarını İzle</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="365"/>
+        <location filename="GUI/TaskExplorer.cpp" line="371"/>
         <source>Monitor Windows Firewall</source>
         <translation>Windows Güvenlik Duvarını İzle</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="371"/>
-        <location filename="GUI/TaskExplorer.cpp" line="469"/>
+        <location filename="GUI/TaskExplorer.cpp" line="377"/>
+        <location filename="GUI/TaskExplorer.cpp" line="475"/>
         <source>Monitor Debug Output</source>
         <translation>Hata Ayıklama Çıktısını İzle</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="387"/>
+        <location filename="GUI/TaskExplorer.cpp" line="393"/>
         <source>&amp;Help</source>
         <translation>&amp;Yardım</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="388"/>
+        <location filename="GUI/TaskExplorer.cpp" line="394"/>
         <source>Support TaskExplorer on Patreon</source>
         <translation>Patreon&apos;da TaskExplorer&apos;ı destekleyin</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="391"/>
+        <location filename="GUI/TaskExplorer.cpp" line="397"/>
         <source>About ProcessHacker Library</source>
         <translation>ProcessHacker Kütüphanesi Hakkında</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="393"/>
+        <location filename="GUI/TaskExplorer.cpp" line="399"/>
         <source>About the Qt Framework</source>
         <translation>Qt Framework Hakkında</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="395"/>
-        <location filename="GUI/TaskExplorer.cpp" line="1891"/>
+        <location filename="GUI/TaskExplorer.cpp" line="401"/>
+        <location filename="GUI/TaskExplorer.cpp" line="2012"/>
         <source>About TaskExplorer</source>
         <translation>TaskExplorer Hakkında</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="408"/>
+        <location filename="GUI/TaskExplorer.cpp" line="414"/>
         <source>Refresh Now/Reset Hold</source>
         <translation>Şimdi Yenile/Tutulanları Sıfırla</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="413"/>
+        <location filename="GUI/TaskExplorer.cpp" line="419"/>
         <source>Extremly fast (30Hz)</source>
         <translation>Son derece hızlı (30Hz)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="414"/>
+        <location filename="GUI/TaskExplorer.cpp" line="420"/>
         <source>Ultra fast (0.1s)</source>
         <translation>Ultra hızlı (0,1sn)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="415"/>
+        <location filename="GUI/TaskExplorer.cpp" line="421"/>
         <source>Very fast (0.25s)</source>
         <translation>Çok hızlı (0.25sn)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="416"/>
+        <location filename="GUI/TaskExplorer.cpp" line="422"/>
         <source>Fast (0.5s)</source>
         <translation>Hızlı (0.5sn)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="417"/>
+        <location filename="GUI/TaskExplorer.cpp" line="423"/>
         <source>Normal (1s)</source>
         <translation>Normal (1s)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="418"/>
+        <location filename="GUI/TaskExplorer.cpp" line="424"/>
         <source>Slow (2s)</source>
         <translation>Yavaş (2s)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="419"/>
+        <location filename="GUI/TaskExplorer.cpp" line="425"/>
         <source>Very slow (5s)</source>
         <translation>Çok yavaş (5s)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="420"/>
+        <location filename="GUI/TaskExplorer.cpp" line="426"/>
         <source>Extremely slow (10s)</source>
         <translation>Son derece yavaş (10s)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="430"/>
+        <location filename="GUI/TaskExplorer.cpp" line="436"/>
         <source>Hold ALL removed items</source>
         <translation>Tüm kaldırılan öğeleri tut</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="435"/>
+        <location filename="GUI/TaskExplorer.cpp" line="441"/>
         <source>Short persistence (2.5s)</source>
         <translation>Kısa süreli kalıcılık (2,5sn)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="436"/>
+        <location filename="GUI/TaskExplorer.cpp" line="442"/>
         <source>Normal persistence (5s)</source>
         <translation>Normal süreli kalıcılık (5sn)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="437"/>
+        <location filename="GUI/TaskExplorer.cpp" line="443"/>
         <source>Long persistence (10s)</source>
         <translation>Uzun süreli kalıcılık (10sn)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="438"/>
+        <location filename="GUI/TaskExplorer.cpp" line="444"/>
         <source>Very long persistence (60s)</source>
         <translation>Çok uzun süreli kalıcılık (60sn)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="439"/>
+        <location filename="GUI/TaskExplorer.cpp" line="445"/>
         <source>Extremely long persistence (5m)</source>
         <translation>Son derece uzun süreli kalıcılık (5dk)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="440"/>
+        <location filename="GUI/TaskExplorer.cpp" line="446"/>
         <source>Pseudo static persistence (1h)</source>
         <translation>Sahte statik süreli kalıcılık (1sa)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="487"/>
+        <location filename="GUI/TaskExplorer.cpp" line="493"/>
         <source>Search...</source>
         <translation>Ara...</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="611"/>
+        <location filename="GUI/TaskExplorer.cpp" line="617"/>
         <source>TaskExplorer is ready...</source>
         <translation>TaskExplorer hazır...</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="711"/>
+        <location filename="GUI/TaskExplorer.cpp" line="724"/>
         <source>Do you want to close TaskExplorer?</source>
         <translation>TaskExplorer&apos;ı kapatmak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="828"/>
+        <location filename="GUI/TaskExplorer.cpp" line="941"/>
         <source>CPU: %1%    </source>
         <translation>CPU: %1%    </translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="838"/>
+        <location filename="GUI/TaskExplorer.cpp" line="951"/>
         <source>GPU-%1: %2%    </source>
         <translation>GPU-%1: %2%    </translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="855"/>
+        <location filename="GUI/TaskExplorer.cpp" line="968"/>
         <source>Memory: %1/%2/(%3 + %4)    </source>
         <translation>Bellek: %1/%2/(%3 + %4)    </translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="857"/>
+        <location filename="GUI/TaskExplorer.cpp" line="970"/>
         <source>Memory: %1/%2/%3    </source>
         <translation>Bellek: %1/%2/%3    </translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="860"/>
+        <location filename="GUI/TaskExplorer.cpp" line="973"/>
         <source>Installed: %1</source>
         <translation>Takılı: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="861"/>
+        <location filename="GUI/TaskExplorer.cpp" line="974"/>
         <source>Swap: %1</source>
         <translation>Takas: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="862"/>
+        <location filename="GUI/TaskExplorer.cpp" line="975"/>
         <source>Commited: %1</source>
         <translation>Adanmış: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="863"/>
+        <location filename="GUI/TaskExplorer.cpp" line="976"/>
         <source>Physical: %1</source>
         <translation>Fiziksel: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="870"/>
+        <location filename="GUI/TaskExplorer.cpp" line="983"/>
         <source>R: %1</source>
         <translation>Okuma: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="872"/>
+        <location filename="GUI/TaskExplorer.cpp" line="985"/>
         <source>W: %1</source>
         <translation>Yazma: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="876"/>
+        <location filename="GUI/TaskExplorer.cpp" line="989"/>
         <source>FileIO; Read: %1; Write: %2; Other: %3</source>
         <translation>DosyaGÇ; Okuma: %1; Yazma: %2; Diğer: %3</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="877"/>
+        <location filename="GUI/TaskExplorer.cpp" line="990"/>
         <source>MMapIO; Read: %1; Write: %2</source>
         <translation>BelEşGÇ; Okuma: %1; Yazma: %2</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="880"/>
+        <location filename="GUI/TaskExplorer.cpp" line="993"/>
         <source>DiskIO; Read: %1; Write: %2</source>
         <translation>DiskGÇ; Okuma: %1; Yazma: %2</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="896"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1009"/>
         <source>TCP/IP; Download: %1; Upload: %2</source>
         <translation>TCP/IP; İndirme: %1; Yükleme: %2</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="897"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1010"/>
         <source>VPN/RAS; Download: %1; Upload: %2</source>
         <translation>VPN/RAS; İndirme: %1; Yükleme: %2</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1096"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1209"/>
         <source>Do you really want to %1?</source>
         <translation>Gerçekten %1 istiyor musun?</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1154"/>
-        <location filename="GUI/TaskExplorer.cpp" line="1241"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1267"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1354"/>
         <source>Failed to %1, due to: %2</source>
         <translation>%2 yüzünden %1 başarısız oldu</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1165"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1278"/>
         <source>Users (%1)</source>
         <translation>Kullanıcılar (%1)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1179"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1292"/>
         <source>Connect</source>
         <translation>Bağlan</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1180"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1293"/>
         <source>Disconnect</source>
         <translation>Bağlantıyı Kes</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1181"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1294"/>
         <source>Logoff</source>
         <translation>Oturumdan Çık</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1189"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1302"/>
         <source>%1: %2 (%3)</source>
         <translation>%1: %2 (%3)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1216"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1329"/>
         <source>Connect to session, enter Password:</source>
         <translation>Oturuma bağlanmak için Şifre girin:</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1489"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1604"/>
         <source>Memory opertion failed; Error: %1</source>
         <translation>Bellek işlemi başarısız oldu; Hata: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1503"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1618"/>
         <source>No hidden processes found.</source>
         <translation>Gizli işlem bulunamadı.</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1710"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1831"/>
         <source>Graph background</source>
         <translation>Grafik arka planı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1711"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1832"/>
         <source>Graph text</source>
         <translation>Grafik metni</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1713"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1834"/>
         <source>Plot background</source>
         <translation>Çizim arka planı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1714"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1835"/>
         <source>Plot text</source>
         <translation>Çizim metni</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1715"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1836"/>
         <source>Plot grid</source>
         <translation>Çizim ızgarası</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1717"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1838"/>
         <source>List grid color</source>
         <translation>Çizim ızgarası rengi</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1718"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1839"/>
         <source>Default background</source>
         <translation>Varsayılan arka plan</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1721"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1842"/>
         <source>New items</source>
         <translation>Yeni öğeler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1722"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1843"/>
         <source>Removed items</source>
         <translation>Kaldırılan öğeler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1725"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1846"/>
         <source>Dangerous process</source>
         <translation>Tehlikeli işlemler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1727"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1848"/>
         <source>System processes</source>
         <translation>Sistem işlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1728"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1849"/>
         <source>Current user processes</source>
         <translation>Mevcut kullanıcı işlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1729"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1850"/>
         <source>Service processes</source>
         <translation>Hizmet işlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1731"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1852"/>
         <source>Sandboxed processes</source>
         <translation>Korumalı alan işlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1732"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1853"/>
         <source>Job processes</source>
         <translation>İş işlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1733"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1854"/>
         <source>Pico processes</source>
         <translation>Pico işlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1734"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1855"/>
         <source>Immersive processes</source>
         <translation>Immersive işlemler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1735"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1856"/>
         <source>.NET processes</source>
         <translation>.NET işlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1737"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1858"/>
         <source>Elevated processes</source>
         <translation>Yükseltilmiş işlemler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1739"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1860"/>
         <source>Kernel Services (Driver)</source>
         <translation>Çekirdek Hizmetleri (Sürücü)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1740"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1861"/>
         <source>Gui threads</source>
         <translation>GUI iş parçacıkları</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1741"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1862"/>
         <source>Inherited handles</source>
         <translation>Devralınan tanıtıcılar</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1742"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1863"/>
         <source>Protected handles/Critical tasks</source>
         <translation>Korumalı tanıtıcılar/Kritik görevler</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1745"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1866"/>
         <source>Executable memory</source>
         <translation>Yürütülebilir bellek</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="890"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1003"/>
         <source>D: %1</source>
         <translation>İnd: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="296"/>
+        <location filename="GUI/TaskExplorer.cpp" line="302"/>
         <source>Processes of the Current User</source>
         <translation>Mevcut Kullanıcının İşlemleri</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="340"/>
+        <location filename="GUI/TaskExplorer.cpp" line="346"/>
         <source>Empty Standby std::list</source>
         <translation>Hazırda bekleyen std::listesini boşalt</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="341"/>
+        <location filename="GUI/TaskExplorer.cpp" line="347"/>
         <source>Empty Priority 0 std::list</source>
         <translation>Öncelik 0 std::listesini boşalt</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="592"/>
+        <location filename="GUI/TaskExplorer.cpp" line="598"/>
         <source>TaskExplorer with kernel driver is ready...</source>
         <translation>Çekirdek sürücüsüyle TaskExplorer hazır...</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="892"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1005"/>
         <source>U: %1</source>
         <translation>Yük: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1023"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1136"/>
         <source>Operation failed for %1 item(s).</source>
         <translation>İşlem %1 öğe için başarısız oldu.</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="905"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1018"/>
         <source>Task Explorer<byte value="xd"/>
 CPU: %1%<byte value="xd"/>
 Ram: %2%</source>
@@ -6231,14 +6329,14 @@ CPU: %1%
 Ram: %2%</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="908"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1021"/>
         <source><byte value="xd"/>
 Swap: %1%</source>
         <translation>
 Takas: %1%</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="257"/>
+        <location filename="main.cpp" line="283"/>
         <source>Disable KTaskExplorer driver. Note: this will limit the aplications functionality!</source>
         <translation>KTaskExplorer sürücüsünü devre dışı bırakın. Not: Bu, uygulamanın işlevselliğini sınırlayacaktır!</translation>
     </message>
@@ -6248,33 +6346,33 @@ Takas: %1%</translation>
         <translation>DynData güncelleniyor</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1875"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1996"/>
         <source>&lt;p&gt;TaskExplorer is a powerfull multi-purpose Task Manager that helps you monitor system resources, debug software and detect malware.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;On Windows TaskExplorer is powered by the ProsessHacker Library.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Visit &lt;a href=&quot;https://github.com/DavidXanatos/TaskExplorer&quot;&gt;TaskExplorer on github&lt;/a&gt; for more information.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Config Dir: %1&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Icons from &lt;a href=&quot;https://icons8.com&quot;&gt;icons8.com&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;TaskExplorer, sistem kaynaklarını izlemenize, yazılımlardan hata ayıklamanıza ve kötü amaçlı yazılımları tespit etmenize yardımcı olan güçlü, çok amaçlı bir Görev Yöneticisidir.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Windows&apos;ta TaskExplorer, ProsessHacker Kütüphanesi tarafından desteklenmektedir.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Daha fazla bilgi için &lt;a href=&quot;https://github.com/DavidXanatos/TaskExplorer&quot;&gt;Github&apos;da TaskExplorer&lt;/a&gt; adresini ziyaret edin.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Yapılandırma Dizini: %1&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Simgeler &lt;a href=&quot;https://icons8.com&quot;&gt;icons8.com&lt;/a&gt; adresinden&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="223"/>
+        <location filename="main.cpp" line="249"/>
         <source>Failed to update DynData, %1, Error: 0x%2 (%3).
 Do you want to continue anyways (Ok), or terminate (Cancel)?</source>
         <translation>DynData güncellenemedi, %1, Hata: 0x%2 (%3). Yine de devam etmek (Tamam) istiyor musunuz yoksa sonlandırmak (İptal) mı istiyorsunuz?</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="231"/>
+        <location filename="main.cpp" line="257"/>
         <source>The current DynData for the KTaskExplorer driver does not yet supported on your windows kernel version.&lt;br /&gt;You can check for &lt;a href=&quot;https://github.com/DavidXanatos/TaskExplorer/releases&quot;&gt;TaskExplorer updates on github&lt;/a&gt;, or grab the latest ksidyn.bin and ksidyn.sig from &lt;a href=&quot;https://systeminformer.sourceforge.io/downloads&quot;&gt;the latest SystemInformer&lt;/a&gt; and put them in the instalaltion directors next to KSystemInformer.sys.&lt;br /&gt;Instalation Directory: %4&lt;br /&gt;&lt;br /&gt;Operating System Details:&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Windows %1&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Windows Kernel %2&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;TaskExplorer %3&lt;br /&gt;&lt;br /&gt;</source>
         <translation>KTaskExplorer sürücüsü için geçerli DynData henüz Windows çekirdek sürümünüzde desteklenmiyor.&lt;br /&gt;Github&apos;da &lt;a href=&quot;https://github.com/DavidXanatos/TaskExplorer/releases&quot;&gt;TaskExplorer güncellemelerini&lt;/a&gt; denetleyebilir veya &lt;a href=&quot;https://systeminformer.sourceforge.io/downloads&quot;&gt;en son SystemInformer&lt;/a&gt;&apos;dan en son ksidyn.bin ve ksidyn.sig&apos;i alabilir ve bunları KSystemInformer.sys&apos;nin yanındaki kurulum dizinlerine yerleştirebilirsiniz.&lt;br /&gt;Kurulum Dizini: %4&lt;br /&gt;&lt;br /&gt;İşletim Sistemi Ayrıntıları:&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Windows %1&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Windows Çekirdeği %2&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Görev Gezgini %3&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="244"/>
+        <location filename="main.cpp" line="270"/>
         <source>Update did not help, do you want to continue anyways (Ok), or terminate (Cancel)?</source>
         <translation>Güncelleme işe yaramadı, devam etmek (Tamam) mi istiyorsunuz yoksa sonlandırmak (İptal) mı istiyorsunuz?</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="246"/>
+        <location filename="main.cpp" line="272"/>
         <source>Do you want to try to download updated DynData (Yes), start without the driver (No), or terminate (Cancel)?</source>
         <translation>Güncellenmiş DynData&apos;yı indirmeyi (Evet), sürücüsüz başlatmayı (Hayır) veya sonlandırmayı (İptal) denemek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="251"/>
+        <location filename="main.cpp" line="277"/>
         <source>Failed to load KTaskExplorer driver, %1, Error: 0x%2 (%3).
 Do you want to continue anyways (Ok), or terminate (Cancel)?</source>
         <translation>KTaskExplorer sürücüsü yüklenemedi, %1, Hata: 0x%2 (%3). Yine de devam etmek (Tamam) mi istiyorsunuz yoksa sonlandırmak (İptal) mı istiyorsunuz?</translation>
@@ -6304,9 +6402,8 @@ Do you want to continue anyways (Ok), or terminate (Cancel)?</source>
         <translation>DynData başarıyla güncellendi</translation>
     </message>
     <message>
-        <location filename="API/Windows/ProcessHacker.cpp" line="1014"/>
         <source>Latest SI build already downloaded</source>
-        <translation>En son SI sürümü zaten indirilmiş</translation>
+        <translation type="vanished">En son SI sürümü zaten indirilmiş</translation>
     </message>
     <message>
         <location filename="API/Windows/ProcessHacker.cpp" line="1029"/>
@@ -6343,63 +6440,73 @@ Do you want to continue anyways (Ok), or terminate (Cancel)?</source>
         <translation type="vanished">KSystemInformer kullan</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1870"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1991"/>
         <source>&lt;h3&gt;About TaskExplorer&lt;/h3&gt;&lt;p&gt;Version %1&lt;/p&gt;&lt;p&gt;Copyright (C) 2019-2025 David Xanatos (xanasoft.com)&lt;/p&gt;</source>
         <translation>&lt;h3&gt;TaskExplorer Hakkında&lt;/h3&gt;&lt;p&gt;Sürüm %1&lt;/p&gt;&lt;p&gt;Telif Hakkı (C) 2019-2025 David Xanatos (xanasoft.com)&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1803"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1924"/>
         <source>Reset Columns</source>
         <translation>Sütunları Sıfırla</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1804"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1925"/>
         <source>Copy Cell</source>
         <translation>Hücreyi Kopyala</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1805"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1926"/>
         <source>Copy Row</source>
         <translation>Satırı Kopyala</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1806"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1927"/>
         <source>Copy Panel</source>
         <translation>Paneli Kopyala</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1807"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1928"/>
         <source>Case Sensitive</source>
         <translation>Harfe Duyarlı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1808"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1929"/>
         <source>RegExp</source>
         <translation>Düzİfa</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1809"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1930"/>
         <source>Highlight</source>
         <translation>Vurgula</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1810"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1931"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1811"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1932"/>
         <source>&amp;Find ...</source>
         <translation>&amp;Bul ...</translation>
     </message>
     <message>
-        <location filename="GUI/TaskExplorer.cpp" line="1812"/>
+        <location filename="GUI/TaskExplorer.cpp" line="1933"/>
         <source>All columns</source>
         <translation>Tüm sütunlar</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="264"/>
+        <location filename="main.cpp" line="290"/>
         <source>Failed to update DynData, %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/WndFinder.cpp" line="143"/>
+        <source>Drag the Finder Tool over a window to select it, then release the mouse to open process properties.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/WndFinder.cpp" line="213"/>
+        <source>TaskExplorer - Window Finder</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6634,258 +6741,279 @@ Do you want to continue anyways (Ok), or terminate (Cancel)?</source>
 <context>
     <name>CThreadModel</name>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="128"/>
-        <location filename="GUI/Models/ThreadModel.cpp" line="302"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="136"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="325"/>
         <source>Critical</source>
         <translation>Kritik</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="201"/>
-        <location filename="GUI/Models/ThreadModel.cpp" line="202"/>
-        <location filename="GUI/Models/ThreadModel.cpp" line="203"/>
-        <location filename="GUI/Models/ThreadModel.cpp" line="205"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="215"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="216"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="217"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="219"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="220"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="276"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="293"/>
         <source>Thread</source>
         <translation>İş parçacığı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="277"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="297"/>
         <source>CPU graph</source>
         <translation>CPU grafiği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="278"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="298"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="279"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="299"/>
         <source>Cycles delta</source>
         <translation>Döngü farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="281"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="301"/>
         <source>Start address</source>
         <translation>Başlangıç adresi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="292"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="312"/>
         <source>Priority</source>
         <translation>Öncelik</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="282"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="302"/>
         <source>Service</source>
         <translation>Hizmet</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="175"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="184"/>
         <source>%1 (%2): %3</source>
         <translation>%1 (%2): %3</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="283"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="295"/>
+        <source>LXSS TID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ThreadModel.cpp" line="303"/>
         <source>Name</source>
         <translation>Ad</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="284"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="304"/>
         <source>Type</source>
         <translation>Tür</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="286"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="306"/>
         <source>Created</source>
         <translation>Oluşturuldu</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="288"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="308"/>
         <source>Start module</source>
         <translation>Başlangıç bileşeni</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="290"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="310"/>
         <source>Context switches</source>
         <translation>Bağlam değişimleri</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="291"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="311"/>
         <source>Context switches delta</source>
         <translation>Bağlam değişimleri farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="293"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="313"/>
         <source>Base priority</source>
         <translation>Temel öncelik</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="294"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="315"/>
+        <source>Base priority (actual)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ThreadModel.cpp" line="317"/>
         <source>Page priority</source>
         <translation>Sayfa önceliği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="295"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="318"/>
         <source>I/O priority</source>
         <translation>G/Ç önceliği</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="296"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="319"/>
         <source>Cycles</source>
         <translation>Döngüler</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="297"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="320"/>
         <source>State</source>
         <translation>Durum</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="298"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="321"/>
         <source>Kernel time</source>
         <translation>Çekirdek zamanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="299"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="322"/>
         <source>User time</source>
         <translation>Kullanıcı zamanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="301"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="324"/>
         <source>Ideal processor</source>
         <translation>İdeal işlemci</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="303"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="326"/>
         <source>Impersonation Token</source>
         <translation>Kimlik taklidi belirteci</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="304"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="327"/>
         <source>App Domain</source>
         <translation>Uygulama alanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="306"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="329"/>
         <source>Pending IRP</source>
         <translation>Bekleyen IRP</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="307"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="330"/>
         <source>Last system call</source>
         <translation>Son sistem çağrısı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="308"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="331"/>
         <source>Last status code</source>
         <translation>Son durum kodu</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="309"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="332"/>
         <source>COM apartment</source>
         <translation>COM apartmanı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="310"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="333"/>
+        <source>COM flags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ThreadModel.cpp" line="334"/>
         <source>Fiber</source>
         <translation>Fiber</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="311"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="335"/>
         <source>Priority boost</source>
         <translation>Öncelik arttırımı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="312"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="336"/>
         <source>Stack usage</source>
         <translation>Yığın kullanımı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="313"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="337"/>
         <source>Wait time</source>
         <translation>Bekleme süresi</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="314"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="338"/>
         <source>I/O reads</source>
         <translation>G/Ç okumaları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="315"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="339"/>
         <source>I/O writes</source>
         <translation>G/Ç yazmaları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="316"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="340"/>
         <source>I/O other</source>
         <translation>G/Ç diğer</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="317"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="341"/>
         <source>I/O read bytes</source>
         <translation>G/Ç okuma baytları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="318"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="342"/>
         <source>I/O write bytes</source>
         <translation>G/Ç yazma baytları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="319"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="343"/>
         <source>I/O other bytes</source>
         <translation>G/Ç diğer baytları</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="321"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="345"/>
         <source>I/O reads delta</source>
         <translation>G/Ç okumalar farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="322"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="346"/>
         <source>I/O writes delta</source>
         <translation>G/Ç yazmalar farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="323"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="347"/>
         <source>I/O other delta</source>
         <translation>G/Ç diğer fark</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="325"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="349"/>
         <source>I/O read bytes delta</source>
         <translation>G/Ç okuma baytları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="326"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="350"/>
         <source>I/O write bytes delta</source>
         <translation>G/Ç yazma baytları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="327"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="351"/>
         <source>I/O other bytes delta</source>
         <translation>G/Ç diğer baytları farkı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="329"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="353"/>
         <source>I/O read rate</source>
         <translation>I/O okuma oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="330"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="354"/>
         <source>I/O write rate</source>
         <translation>I/O yazma oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="331"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="355"/>
         <source>I/O other rate</source>
         <translation>I/O diğer oranı</translation>
     </message>
     <message>
-        <location filename="GUI/Models/ThreadModel.cpp" line="334"/>
+        <location filename="GUI/Models/ThreadModel.cpp" line="357"/>
         <source>Power throttling</source>
         <translation>Güç azaltma</translation>
+    </message>
+    <message>
+        <location filename="GUI/Models/ThreadModel.cpp" line="359"/>
+        <source>RPC usage</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7196,7 +7324,7 @@ Bu seçeneği daha sonra ayarlardan değiştirebilirsiniz.</translation>
     </message>
     <message>
         <location filename="GUI/TaskInfo/TokenView.cpp" line="204"/>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="707"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="708"/>
         <source>Package</source>
         <translation>Paket</translation>
     </message>
@@ -7285,7 +7413,7 @@ Bu seçeneği daha sonra ayarlardan değiştirebilirsiniz.</translation>
     </message>
     <message>
         <location filename="GUI/TaskInfo/TokenView.cpp" line="293"/>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="980"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="981"/>
         <source>Linked Token</source>
         <translation>Bağlantılı belirteç</translation>
     </message>
@@ -7400,75 +7528,75 @@ Bu seçeneği daha sonra ayarlardan değiştirebilirsiniz.</translation>
         <translation>Giriş Oturumu</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="623"/>
         <location filename="GUI/TaskInfo/TokenView.cpp" line="624"/>
         <location filename="GUI/TaskInfo/TokenView.cpp" line="625"/>
         <location filename="GUI/TaskInfo/TokenView.cpp" line="626"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="627"/>
         <source>0x%1</source>
         <translation>0x%1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="653"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="654"/>
         <source>True</source>
         <translation>Doğru</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="653"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="654"/>
         <source>False</source>
         <translation>Yanlış</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="672"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="673"/>
         <source>%1: %2</source>
         <translation>%1: %2</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="705"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="706"/>
         <source>Full name</source>
         <translation>Tam adı</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="706"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="707"/>
         <source>Capability</source>
         <translation>Yetenek</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="708"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="709"/>
         <source>Guid</source>
         <translation>GUID</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="753"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="754"/>
         <source>Type: %1</source>
         <translation>Tür: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="754"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="755"/>
         <source>Flags: %1 (0x%2)</source>
         <translation>Bayraklar: %1 (0x%2)</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="775"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="776"/>
         <source>Value %1: %2</source>
         <translation>Değer %1: %2</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="924"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="925"/>
         <source>Original Token</source>
         <translation>Orijinal Belirteç</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="950"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="951"/>
         <source>Unable to set the virtualization, error: %1</source>
         <translation>Sanallaştırma ayarlanamıyor, hata: %1</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="962"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="963"/>
         <source>Once lowered, the integrity level of the token cannot be raised again.</source>
         <translation>Belirteç bütünlük seviyesi bir kez düşürüldüğünde tekrar yükseltilemez.</translation>
     </message>
     <message>
-        <location filename="GUI/TaskInfo/TokenView.cpp" line="968"/>
+        <location filename="GUI/TaskInfo/TokenView.cpp" line="969"/>
         <source>Unable to set the integrity level, error: %1</source>
         <translation>Bütünlük seviyesi ayarlanamıyor, hata: %1</translation>
     </message>
@@ -7869,52 +7997,62 @@ Bunun yerine 64-bit bir döküm oluşturulacak.</translation>
         <translation>Tanıtıcı özelliği ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="535"/>
+        <location filename="API/Windows/WinHandle.cpp" line="544"/>
+        <source>N/A</source>
+        <translation type="unfinished">Yok</translation>
+    </message>
+    <message>
+        <location filename="API/Windows/WinHandle.cpp" line="579"/>
+        <source>0x%1</source>
+        <translation type="unfinished">0x%1</translation>
+    </message>
+    <message>
+        <location filename="API/Windows/WinHandle.cpp" line="607"/>
         <source>Commit</source>
         <translation>Adanmış</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="537"/>
+        <location filename="API/Windows/WinHandle.cpp" line="609"/>
         <source>File</source>
         <translation>Dosya</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="539"/>
+        <location filename="API/Windows/WinHandle.cpp" line="611"/>
         <source>Module</source>
         <translation>Bileşen</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="541"/>
+        <location filename="API/Windows/WinHandle.cpp" line="613"/>
         <source>Reserve</source>
         <translation>Rezerv</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="542"/>
+        <location filename="API/Windows/WinHandle.cpp" line="614"/>
         <source>Unknown</source>
         <translation>Bilinmeyen</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="926"/>
+        <location filename="API/Windows/WinHandle.cpp" line="998"/>
         <source>You are about to close one or more handles for a critical process with strict handle checks enabled. This will shut down the operating system immediately!</source>
         <translation>Kritik bir işlem için sıkı tanıtıcı denetimleri etkinleştirilmiş bir veya daha fazla tanıtıcı kapatmak üzeresiniz. Bu, işletim sistemini derhal kapatacaktır!</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="936"/>
+        <location filename="API/Windows/WinHandle.cpp" line="1008"/>
         <source>Failed To close Handle</source>
         <translation>Tanıtıcı kapatılamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="941"/>
+        <location filename="API/Windows/WinHandle.cpp" line="1013"/>
         <source>Unable to open the process</source>
         <translation>İşlem açılamıyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="984"/>
+        <location filename="API/Windows/WinHandle.cpp" line="1056"/>
         <source>Unable to open process handle</source>
         <translation>İşlem tanıtıcısı açılamıyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinHandle.cpp" line="992"/>
+        <location filename="API/Windows/WinHandle.cpp" line="1064"/>
         <source>Unable to open duplicate handle</source>
         <translation>Çoğaltılan tanıtıcı açılamıyor</translation>
     </message>
@@ -8388,117 +8526,127 @@ Bunun yerine 64-bit bir döküm oluşturulacak.</translation>
         <translation>+WCM</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="204"/>
+        <location filename="API/Windows/WinMemory.cpp" line="170"/>
+        <source>%1%%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="API/Windows/WinMemory.cpp" line="172"/>
+        <source> (%1)</source>
+        <translation type="unfinished"> (%1)</translation>
+    </message>
+    <message>
+        <location filename="API/Windows/WinMemory.cpp" line="220"/>
         <source>USER_SHARED_DATA</source>
         <translation>USER_SHARED_DATA</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="206"/>
+        <location filename="API/Windows/WinMemory.cpp" line="222"/>
         <source>HYPERVISOR_SHARED_DATA</source>
         <translation>HYPERVISOR_SHARED_DATA</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="209"/>
+        <location filename="API/Windows/WinMemory.cpp" line="225"/>
         <source>PEB%1</source>
         <translation>PEB%1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="209"/>
-        <location filename="API/Windows/WinMemory.cpp" line="212"/>
-        <location filename="API/Windows/WinMemory.cpp" line="215"/>
-        <location filename="API/Windows/WinMemory.cpp" line="218"/>
-        <location filename="API/Windows/WinMemory.cpp" line="221"/>
-        <location filename="API/Windows/WinMemory.cpp" line="224"/>
+        <location filename="API/Windows/WinMemory.cpp" line="225"/>
+        <location filename="API/Windows/WinMemory.cpp" line="228"/>
+        <location filename="API/Windows/WinMemory.cpp" line="231"/>
+        <location filename="API/Windows/WinMemory.cpp" line="234"/>
+        <location filename="API/Windows/WinMemory.cpp" line="237"/>
+        <location filename="API/Windows/WinMemory.cpp" line="240"/>
         <source> 32-bit</source>
         <translation> 32-bit</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="212"/>
+        <location filename="API/Windows/WinMemory.cpp" line="228"/>
         <source>TEB%1 (thread %2)</source>
         <translation>TEB%1 (iş parçacığı %2)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="215"/>
+        <location filename="API/Windows/WinMemory.cpp" line="231"/>
         <source>Stack%1 (thread %2)</source>
         <translation>Yığın%1 (iş parçacığı %2)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="218"/>
+        <location filename="API/Windows/WinMemory.cpp" line="234"/>
         <source>Heap%1 (ID %2)</source>
         <translation>Öbek%1 (KN %2)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="221"/>
+        <location filename="API/Windows/WinMemory.cpp" line="237"/>
         <source>Heap segment%1 (ID %2)</source>
         <translation>Segment Öbeği%1 (KN %2)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="224"/>
+        <location filename="API/Windows/WinMemory.cpp" line="240"/>
         <source>CFG Bitmap%1</source>
         <translation>CFG Bit Eşlem%1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="226"/>
+        <location filename="API/Windows/WinMemory.cpp" line="242"/>
         <source>ApiSetMap</source>
         <translation>ApiKümeHaritası</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="245"/>
+        <location filename="API/Windows/WinMemory.cpp" line="261"/>
         <source>Unchecked</source>
         <translation>Denetimsiz</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="247"/>
+        <location filename="API/Windows/WinMemory.cpp" line="263"/>
         <source>Unsigned</source>
         <translation>İmzasız</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="249"/>
+        <location filename="API/Windows/WinMemory.cpp" line="265"/>
         <source>Enterprise</source>
         <translation>Kurumsal</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="251"/>
+        <location filename="API/Windows/WinMemory.cpp" line="267"/>
         <source>Developer</source>
         <translation>Geliştirici</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="253"/>
+        <location filename="API/Windows/WinMemory.cpp" line="269"/>
         <source>Authenticode</source>
         <translation>Authenticode</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="255"/>
+        <location filename="API/Windows/WinMemory.cpp" line="271"/>
         <source>StoreApp</source>
         <translation>MağazaUyg</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="257"/>
+        <location filename="API/Windows/WinMemory.cpp" line="273"/>
         <source>Antimalware</source>
         <translation>Antimalware</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="259"/>
+        <location filename="API/Windows/WinMemory.cpp" line="275"/>
         <source>Microsoft</source>
         <translation>Microsoft</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="261"/>
+        <location filename="API/Windows/WinMemory.cpp" line="277"/>
         <source>CodeGen</source>
         <translation>CodeGen</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="263"/>
+        <location filename="API/Windows/WinMemory.cpp" line="279"/>
         <source>Windows</source>
         <translation>Windows</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="265"/>
+        <location filename="API/Windows/WinMemory.cpp" line="281"/>
         <source>WinTcb</source>
         <translation>WinTcb</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="271"/>
+        <location filename="API/Windows/WinMemory.cpp" line="287"/>
         <source>Custom</source>
         <translation>Özel</translation>
     </message>
@@ -8507,32 +8655,32 @@ Bunun yerine 64-bit bir döküm oluşturulacak.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="306"/>
+        <location filename="API/Windows/WinMemory.cpp" line="322"/>
         <source>Unable to change memory protection</source>
         <translation>Bellek koruması değiştirilemiyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="313"/>
+        <location filename="API/Windows/WinMemory.cpp" line="329"/>
         <source>Not dumpable memory item</source>
         <translation>Boşaltılamaz bellek öğesi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="320"/>
+        <location filename="API/Windows/WinMemory.cpp" line="336"/>
         <source>Unable to open the process</source>
         <translation>İşlem açılamıyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="378"/>
+        <location filename="API/Windows/WinMemory.cpp" line="394"/>
         <source>Unable to unmap the section view</source>
         <translation>Kesit görünümünün eşlenmesi kaldırılamıyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="380"/>
+        <location filename="API/Windows/WinMemory.cpp" line="396"/>
         <source>Unable to free the memory region</source>
         <translation>Bellek bölgesi serbest bırakılamıyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinMemory.cpp" line="382"/>
+        <location filename="API/Windows/WinMemory.cpp" line="398"/>
         <source>Unable to decommit the memory region</source>
         <translation>Bellek bölgesi geri bırakılamıyor</translation>
     </message>
@@ -8741,587 +8889,585 @@ Bunun yerine 64-bit bir döküm oluşturulacak.</translation>
 <context>
     <name>CWinProcess</name>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="250"/>
+        <location filename="API/Windows/WinProcess.cpp" line="252"/>
         <source>Unknown process PID: %1</source>
         <translation>Bilinmeyen işlem PID: %1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="289"/>
+        <location filename="API/Windows/WinProcess.cpp" line="291"/>
         <source>System Idle Process</source>
         <translation>Sistem Boşta İşlemi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2011"/>
         <source>x86_64</source>
-        <translation>x86_64</translation>
+        <translation type="vanished">x86_64</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2012"/>
         <source>x86</source>
-        <translation>x86</translation>
+        <translation type="vanished">x86</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2033"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2051"/>
         <source>Native</source>
         <translation>Doğal</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2034"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2052"/>
         <source>Windows</source>
         <translation>Windows</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2035"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2053"/>
         <source>Windows console</source>
         <translation>Windows konsol</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2036"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2054"/>
         <source>OS/2</source>
         <translation>OS/2</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2037"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2055"/>
         <source>POSIX</source>
         <translation>POSIX</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2038"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2056"/>
         <source>Unknown</source>
         <translation>Bilinmeyen</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2159"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2177"/>
         <source>Not responding</source>
         <translation>Cevap vermiyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2159"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2177"/>
         <source>Running</source>
         <translation>Çalışıyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2175"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2193"/>
         <source>10</source>
         <translation>10</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2176"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2194"/>
         <source>8.1</source>
         <translation>8.1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2177"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2195"/>
         <source>8</source>
         <translation>8</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2178"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2196"/>
         <source>7</source>
         <translation>7</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2179"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2197"/>
         <source>Vista</source>
         <translation>Vista</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2180"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2198"/>
         <source>XP</source>
         <translation>XP</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2192"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2210"/>
         <source>ASLR</source>
         <translation>ASLR</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2201"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2219"/>
         <source>DEP</source>
         <translation>DEP</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2205"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2223"/>
         <source>CFG</source>
         <translation>CFG</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2208"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2226"/>
         <source>XFG Audit</source>
         <translation>XFG Audit</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2210"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2228"/>
         <source>XFG</source>
         <translation>XFG</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2213"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2231"/>
         <source>CET strict</source>
         <translation>CET strict</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2215"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2233"/>
         <source>CET</source>
         <translation>CET</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2318"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2336"/>
         <source>Editing environment variable(s) of suspended processes is not supported.</source>
         <translation>Askıya alınmış işlemlerin ortam değişkenlerinin düzenlenmesi desteklenmiyor.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2346"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2364"/>
         <source>Unable to set the environment variable.</source>
         <translation>Ortam değişkeni ayarlanamıyor.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2350"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2368"/>
         <source>Unable to delete the environment variable.</source>
         <translation>Ortam değişkeni silinemiyor.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2360"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2378"/>
         <source>Hidden (!)</source>
         <translation>Gizli (!)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2362"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2380"/>
         <source>Terminated</source>
         <translation>Sonlandırılmış</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2367"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2994"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2385"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3012"/>
         <source>Critical</source>
         <translation>Kritik</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2369"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2387"/>
         <source>Sandboxed</source>
         <translation>Korumalı Alanda</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2371"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2389"/>
         <source>Debugged</source>
         <translation>Hata Ayıklama</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2373"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2391"/>
         <source>Suspended</source>
         <translation>Askıya Alındı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2375"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2393"/>
         <source>Handle Filtered</source>
         <translation>Tanıtıcı Filtrelenmiş</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2378"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2396"/>
         <source>Elevated</source>
         <translation>Yükseltilmiş</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2380"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2398"/>
         <source>Pico</source>
         <translation>Pico</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2382"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2400"/>
         <source>Cross Session</source>
         <translation>Çapraz Oturum</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2384"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2402"/>
         <source>Frozen</source>
         <translation>Donmuş</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2386"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2404"/>
         <source>Background</source>
         <translation>Arka plan</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2388"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2406"/>
         <source>Packaged (UWP)</source>
         <translation>Paketlenmiş (UWP)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2390"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2408"/>
         <source>Secure</source>
         <translation>Güvenli</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2392"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2410"/>
         <source>Immersive</source>
         <translation>Immersive</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2394"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2412"/>
         <source>DotNet</source>
         <translation>DotNet</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2396"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2414"/>
         <source>Packed</source>
         <translation>Paketli</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2398"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2416"/>
         <source>Wow64</source>
         <translation>Wow64</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2400"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2418"/>
         <source>InSignificantJob</source>
         <translation>Önemsizİş</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2402"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2420"/>
         <source>Reflected</source>
         <translation>Yansıtılmış</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2404"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2422"/>
         <source>System Process</source>
         <translation>Sistem İşlemi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2406"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2424"/>
         <source>Secure System</source>
         <translation>Güvenli Sistem</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2413"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2431"/>
         <source>Job</source>
         <translation>İş</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2415"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2433"/>
         <source>Service</source>
         <translation>Hizmet</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2417"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2435"/>
         <source>System</source>
         <translation>Sistem</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2419"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2437"/>
         <source>Owned</source>
         <translation>Sahipli</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2421"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2439"/>
         <source>, </source>
         <translation>, </translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2471"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2489"/>
         <source>Unable to locate the debugger.</source>
         <translation>Hata ayıklayıcı bulunamadı.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2487"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2505"/>
         <source>Failed to create debugger process</source>
         <translation>Hata ayıklayıcı işlemi oluşturulamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2519"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2537"/>
         <source>The process is not being debugged.</source>
         <translation>İşlemde hata ayıklaması yapılmıyor.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2524"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2542"/>
         <source>Failed to detach debugger</source>
         <translation>Hata ayıklayıcıyı ayırma başarısız oldu</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2676"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2694"/>
         <source>Unaware</source>
         <translation>Habersiz</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2677"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2695"/>
         <source>System aware</source>
         <translation>Sistem algılayan</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2678"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2696"/>
         <source>Per-monitor aware</source>
         <translation>Monitör başına duyarlı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2705"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2723"/>
         <source>Light %1</source>
         <translation>Hafif %1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2706"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2724"/>
         <source>Full %1</source>
         <translation>Tam %1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2707"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2967"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2986"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2999"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2725"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2985"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3004"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3017"/>
         <source>Unknown %1</source>
         <translation>Bilinmeyen %1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2712"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2730"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2731"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2749"/>
         <source>KPH %1</source>
         <translation>KPH %1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2845"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2863"/>
         <source>Loader Integrity</source>
         <translation>Yükleyici bütünlüğü</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2845"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2863"/>
         <source>OS signing levels for dependent module loads are enabled.</source>
         <translation>Bağımlı bileşen yüklemeleri için işletim sistemi imzalama seviyeleri etkinleştirildi.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2850"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2868"/>
         <source>Module Tampering</source>
         <translation>Bileşen kurcalama</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2850"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2868"/>
         <source>Module Tampering protection is enabled.</source>
         <translation>Bileşen kurcalama koruması etkinleştirildi.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2855"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2873"/>
         <source>Indirect branch prediction</source>
         <translation>Dolaylı dallanma öngörüsü</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2855"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2873"/>
         <source>Protects against sibling hardware threads (hyperthreads) from interfering with indirect branch predictions.</source>
         <translation>Kardeş donanım iş parçacıklarının (hyperthread&apos;ler) dolaylı dallanma öngörülerine müdahale etmesini önler.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2860"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2878"/>
         <source>Dynamic code (downgrade)</source>
         <translation>Dinamik kod (düşürme)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2860"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2878"/>
         <source>Allows a broker to downgrade the dynamic code policy for a process.</source>
         <translation>Bir aracının bir işlem için dinamik kod ilkesini düşürmesine izin verir.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2865"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2883"/>
         <source>Speculative store bypass</source>
         <translation>Spekülatif mağaza atlaması</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2865"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2883"/>
         <source>Disables spectre mitigations for the process.</source>
         <translation>İşlem için spektre azaltmalarını devre dışı bırakır.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2961"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2979"/>
         <source>Real time</source>
         <translation>Gerçek zamanlı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2962"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2995"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2980"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3013"/>
         <source>High</source>
         <translation>Yüksek</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2963"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2981"/>
         <source>Above normal</source>
         <translation>Normalin üstü</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2964"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2980"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2996"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2982"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2998"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3014"/>
         <source>Normal</source>
         <translation>Normal</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2965"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2981"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2983"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2999"/>
         <source>Below normal</source>
         <translation>Normalin altı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2966"/>
+        <location filename="API/Windows/WinProcess.cpp" line="2984"/>
         <source>Idle</source>
         <translation>Boşta</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2982"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3000"/>
         <source>Medium</source>
         <translation>Orta</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2983"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2997"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3001"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3015"/>
         <source>Low</source>
         <translation>Düşük</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2984"/>
-        <location filename="API/Windows/WinProcess.cpp" line="2998"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3002"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3016"/>
         <source>Very low</source>
         <translation>Çok düşük</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="2985"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3003"/>
         <source>Lowest</source>
         <translation>En düşük</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3024"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3042"/>
         <source>Failed to set Process priority boost</source>
         <translation>İşlem önceliği artışı ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3079"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3097"/>
         <source>Failed to set Process efficiency</source>
         <translation>İşlem verimliliği ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3119"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3137"/>
         <source>Failed to set Process priority</source>
         <translation>İşlem önceliği ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3159"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3177"/>
         <source>Failed to set Page priority</source>
         <translation>Sayfa önceliği ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3199"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3217"/>
         <source>Failed to set I/O priority</source>
         <translation>G/Ç önceliği ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3231"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3249"/>
         <source>64 (100%%) | %1 (%2%%)</source>
         <translation>64 (100%%) | %1 (%2%%)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3235"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3253"/>
         <source>%1 (%2%%) | 0 (0%%)</source>
         <translation>%1 (%2%%) | 0 (0%%)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3252"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3270"/>
         <source>Fail critical</source>
         <translation>Kritik hatalar</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3254"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3272"/>
         <source>GP faults</source>
         <translation>GP hataları</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3256"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3274"/>
         <source>Alignment faults</source>
         <translation>Hizalama hataları</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3258"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3276"/>
         <source>Openfile faults</source>
         <translation>Openfile hataları</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3278"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3296"/>
         <source>0x%1</source>
         <translation>0x%1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3307"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3325"/>
         <source>Failed to set CPU affinity</source>
         <translation>CPU benzeşmesi ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3330"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3348"/>
         <source>You are about to terminate one or more critical processes. This will shut down the operating system immediately.</source>
         <translation>Bir veya daha fazla kritik işlemi sonlandırmak üzeresiniz. Bu, işletim sistemini derhal kapatacaktır.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3350"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3368"/>
         <source>Failed to terminate process</source>
         <translation>İşlem sonlandırılamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3381"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3399"/>
         <source>Failed to suspend process</source>
         <translation>İşlem askıya alınamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3406"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3424"/>
         <source>Failed to resume process</source>
         <translation>İşlem sürdürülemedi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3420"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3438"/>
         <source>Process already frozen</source>
         <translation>İşlem zaten dondurulmuş durumda</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3425"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3443"/>
         <source>Failed to freeze process</source>
         <translation>İşlemi dondurulamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3435"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3453"/>
         <source>Process is not frozen</source>
         <translation>İşlem dondurulmamış</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3439"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3457"/>
         <source>Failed to un-freeze process</source>
         <translation>İşlemin dondurulması çözülemedi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3486"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3504"/>
         <source>If the process ends, the operating system will shut down immediately.</source>
         <translation>İşlem sonlandığında işletim sistemi derhal kapanacaktır.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3498"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3516"/>
         <source>Unable to change the process critical status.</source>
         <translation>İşlemin kritik durumu değiştirilemiyor.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3526"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3544"/>
         <source>Unable to reduce the working set of a process</source>
         <translation>Bir sürecin çalışma kümesini azaltmak mümkün değil</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3649"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3667"/>
         <source>load the DLL into</source>
         <translation>DLL&apos;yi yükleyin</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="3855"/>
+        <location filename="API/Windows/WinProcess.cpp" line="3873"/>
         <source>Failed Flush Heaps</source>
         <translation>Öbek boşaltması başarısız oldu</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="4003"/>
+        <location filename="API/Windows/WinProcess.cpp" line="4021"/>
         <source>Unknown action</source>
         <translation>Bilinmeyen eylem</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinProcess.cpp" line="4004"/>
+        <location filename="API/Windows/WinProcess.cpp" line="4022"/>
         <source>Unknown path</source>
         <translation>Bilinmeyen yol</translation>
     </message>
@@ -9820,75 +9966,75 @@ If you save the recovery information using this program, the additional failure 
 <context>
     <name>CWinThread</name>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="428"/>
-        <location filename="API/Windows/WinThread.cpp" line="435"/>
+        <location filename="API/Windows/WinThread.cpp" line="443"/>
+        <location filename="API/Windows/WinThread.cpp" line="450"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="434"/>
+        <location filename="API/Windows/WinThread.cpp" line="449"/>
         <source>Anonymous</source>
         <translation>Anonim</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="482"/>
+        <location filename="API/Windows/WinThread.cpp" line="497"/>
         <source>Unknown process</source>
         <translation>Bilinmeyen işlem</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="496"/>
+        <location filename="API/Windows/WinThread.cpp" line="511"/>
         <source>Unknown</source>
         <translation>Bilinmeyen</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="501"/>
+        <location filename="API/Windows/WinThread.cpp" line="516"/>
         <source>Wait:</source>
         <translation>Bekle </translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="503"/>
+        <location filename="API/Windows/WinThread.cpp" line="518"/>
         <source>Waiting</source>
         <translation>Bekliyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="510"/>
-        <location filename="API/Windows/WinThread.cpp" line="1121"/>
+        <location filename="API/Windows/WinThread.cpp" line="525"/>
+        <location filename="API/Windows/WinThread.cpp" line="1178"/>
         <source> (%1)</source>
         <translation> (%1)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="536"/>
+        <location filename="API/Windows/WinThread.cpp" line="556"/>
         <source>Time critical</source>
         <translation>Zaman kritik</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="538"/>
+        <location filename="API/Windows/WinThread.cpp" line="558"/>
         <source>Highest</source>
         <translation>En yüksek</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="540"/>
+        <location filename="API/Windows/WinThread.cpp" line="560"/>
         <source>Above normal</source>
         <translation>Normalin üstü</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="542"/>
-        <location filename="API/Windows/WinThread.cpp" line="811"/>
+        <location filename="API/Windows/WinThread.cpp" line="562"/>
+        <location filename="API/Windows/WinThread.cpp" line="833"/>
         <source>Normal</source>
         <translation>Normal</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="544"/>
+        <location filename="API/Windows/WinThread.cpp" line="564"/>
         <source>Below normal</source>
         <translation>Normalin altı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="546"/>
+        <location filename="API/Windows/WinThread.cpp" line="566"/>
         <source>Lowest</source>
         <translation>En düşük</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="549"/>
+        <location filename="API/Windows/WinThread.cpp" line="569"/>
         <source>Idle</source>
         <translation>Boşta</translation>
     </message>
@@ -9897,97 +10043,97 @@ If you save the recovery information using this program, the additional failure 
         <translation></translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="595"/>
+        <location filename="API/Windows/WinThread.cpp" line="617"/>
         <source>Failed to set Thread priority boost</source>
         <translation>İş parçacığı önceliği artışı ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="626"/>
+        <location filename="API/Windows/WinThread.cpp" line="648"/>
         <source>Failed to set Thread priority</source>
         <translation>İş parçacığı önceliği ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="651"/>
+        <location filename="API/Windows/WinThread.cpp" line="673"/>
         <source>Failed to set Page priority</source>
         <translation>Sayfa önceliği ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="676"/>
+        <location filename="API/Windows/WinThread.cpp" line="698"/>
         <source>Failed to set I/O priority</source>
         <translation>G/Ç önceliği ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="701"/>
+        <location filename="API/Windows/WinThread.cpp" line="723"/>
         <source>Failed to set CPU affinity</source>
         <translation>CPU benzeşmesi ayarlanamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="724"/>
+        <location filename="API/Windows/WinThread.cpp" line="746"/>
         <source>You are about to terminate one or more critical threads. This will shut down the operating system immediately.</source>
         <translation>Bir veya daha fazla kritik iş parçacığını sonlandırmak üzeresiniz. Bu, işletim sistemini derhal kapatacaktır.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="740"/>
+        <location filename="API/Windows/WinThread.cpp" line="762"/>
         <source>Failed to terminate thread</source>
         <translation>iş parçacığı sonlandırılamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="771"/>
+        <location filename="API/Windows/WinThread.cpp" line="793"/>
         <source>Failed to suspend thread</source>
         <translation>iş parçacığı askıya alınamadı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="796"/>
+        <location filename="API/Windows/WinThread.cpp" line="818"/>
         <source>Failed to resume thread</source>
         <translation>iş parçacığı sürdürülemedi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="803"/>
+        <location filename="API/Windows/WinThread.cpp" line="825"/>
         <source>%1:%2</source>
         <translation>%1:%2</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="810"/>
+        <location filename="API/Windows/WinThread.cpp" line="832"/>
         <source>Main</source>
         <translation>Ana</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="811"/>
+        <location filename="API/Windows/WinThread.cpp" line="833"/>
         <source>GUI</source>
         <translation>GUI</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="841"/>
+        <location filename="API/Windows/WinThread.cpp" line="863"/>
         <source>If the process ends, the operating system will shut down immediately.</source>
         <translation>İşlem sonlanırsa işletim sistemi derhal kapanacaktır.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="853"/>
+        <location filename="API/Windows/WinThread.cpp" line="875"/>
         <source>Unable to change the thread critical status.</source>
         <translation>İş parçacığının kritik durumu değiştirilemiyor.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="875"/>
+        <location filename="API/Windows/WinThread.cpp" line="897"/>
         <source>There is no synchronous I/O to cancel.</source>
         <translation>İptal edilecek eşzamanlı G/Ç yok.</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="879"/>
+        <location filename="API/Windows/WinThread.cpp" line="901"/>
         <source>Unable to cancel synchronous I/O</source>
         <translation>Eşzamanlı G/Ç iptal edilemiyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1011"/>
+        <location filename="API/Windows/WinThread.cpp" line="1068"/>
         <source>Local TID</source>
         <translation>Yerel TID</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1013"/>
+        <location filename="API/Windows/WinThread.cpp" line="1070"/>
         <source>UUID initialized</source>
         <translation>UUID ilklendirildi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1015"/>
+        <location filename="API/Windows/WinThread.cpp" line="1072"/>
         <source>Inside thread detach</source>
         <translation>İş parçacığı ayrımında</translation>
     </message>
@@ -9996,168 +10142,168 @@ If you save the recovery information using this program, the additional failure 
         <translation type="vanished">İs parçacığı kanalı ilklendirildi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1019"/>
+        <location filename="API/Windows/WinThread.cpp" line="1076"/>
         <source>WOW Thread</source>
         <translation>WOW iş parçacığı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1021"/>
+        <location filename="API/Windows/WinThread.cpp" line="1078"/>
         <source>Thread Uninitializing</source>
         <translation>İş parçacığı ilklendirmesi kaldırılıyor</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1023"/>
+        <location filename="API/Windows/WinThread.cpp" line="1080"/>
         <source>OLE1DDE disabled</source>
         <translation>OLE1DDE devre dışı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1025"/>
+        <location filename="API/Windows/WinThread.cpp" line="1082"/>
         <source>Single threaded (STA)</source>
         <translation>Tek iş parçacıklı (STA)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1027"/>
+        <location filename="API/Windows/WinThread.cpp" line="1084"/>
         <source>Multi threaded (MTA)</source>
         <translation>Çok iş parçacıklı (MTA)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1029"/>
+        <location filename="API/Windows/WinThread.cpp" line="1086"/>
         <source>Impersonating</source>
         <translation>Kimliğe bürünme</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1031"/>
+        <location filename="API/Windows/WinThread.cpp" line="1088"/>
         <source>Eventlogger disabled</source>
         <translation>Olay günlüğü devre dışı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1033"/>
+        <location filename="API/Windows/WinThread.cpp" line="1090"/>
         <source>Neutral threaded (NTA)</source>
         <translation>Tarafsız iş parçacıklı (NTA)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1035"/>
+        <location filename="API/Windows/WinThread.cpp" line="1092"/>
         <source>Dispatch thread</source>
         <translation>Dağıtıcı iş parçacığı</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1037"/>
+        <location filename="API/Windows/WinThread.cpp" line="1094"/>
         <source>HOSTTHREAD</source>
         <translation>HOSTTHREAD</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1039"/>
+        <location filename="API/Windows/WinThread.cpp" line="1096"/>
         <source>ALLOWCOINIT</source>
         <translation>ALLOWCOINIT</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1041"/>
+        <location filename="API/Windows/WinThread.cpp" line="1098"/>
         <source>PENDINGUNINIT</source>
         <translation>PENDINGUNINIT</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1043"/>
+        <location filename="API/Windows/WinThread.cpp" line="1100"/>
         <source>FIRSTMTAINIT</source>
         <translation>FIRSTMTAINIT</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1045"/>
+        <location filename="API/Windows/WinThread.cpp" line="1102"/>
         <source>FIRSTNTAINIT</source>
         <translation>FIRSTNTAINIT</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1047"/>
+        <location filename="API/Windows/WinThread.cpp" line="1104"/>
         <source>APTIN INITIALIZING</source>
         <translation>APTIN INITIALIZING</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1049"/>
+        <location filename="API/Windows/WinThread.cpp" line="1106"/>
         <source>UIMSGS IN MODAL LOOP</source>
         <translation>UIMSGS IN MODAL LOOP</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1051"/>
+        <location filename="API/Windows/WinThread.cpp" line="1108"/>
         <source>Marshaling error object</source>
         <translation>Marshaling hata nesnesi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1053"/>
+        <location filename="API/Windows/WinThread.cpp" line="1110"/>
         <source>WinRT initialized</source>
         <translation>WinRT ilklendirildi</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1055"/>
+        <location filename="API/Windows/WinThread.cpp" line="1112"/>
         <source>ApplicationSTA</source>
         <translation>UygulamaSTA</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1057"/>
+        <location filename="API/Windows/WinThread.cpp" line="1114"/>
         <source>IN_SHUTDOWN_CALLBACKS</source>
         <translation>IN_SHUTDOWN_CALLBACKS</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1059"/>
+        <location filename="API/Windows/WinThread.cpp" line="1116"/>
         <source>POINTER_INPUT_BLOCKED</source>
         <translation>POINTER_INPUT_BLOCKED</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1061"/>
+        <location filename="API/Windows/WinThread.cpp" line="1118"/>
         <source>IN_ACTIVATION_FILTER</source>
         <translation>IN_ACTIVATION_FILTER</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1063"/>
+        <location filename="API/Windows/WinThread.cpp" line="1120"/>
         <source>ASTATOASTAEXEMPT_QUIRK</source>
         <translation>ASTATOASTAEXEMPT_QUIRK</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1065"/>
+        <location filename="API/Windows/WinThread.cpp" line="1122"/>
         <source>ASTATOASTAEXEMPT_PROXY</source>
         <translation>ASTATOASTAEXEMPT_PROXY</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1067"/>
+        <location filename="API/Windows/WinThread.cpp" line="1124"/>
         <source>ASTATOASTAEXEMPT_INDOUBT</source>
         <translation>ASTATOASTAEXEMPT_INDOUBT</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1069"/>
+        <location filename="API/Windows/WinThread.cpp" line="1126"/>
         <source>DETECTED_USER_INITIALIZED</source>
         <translation>DETECTED_USER_INITIALIZED</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1071"/>
+        <location filename="API/Windows/WinThread.cpp" line="1128"/>
         <source>BRIDGE_STA</source>
         <translation>BRIDGE_STA</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1073"/>
+        <location filename="API/Windows/WinThread.cpp" line="1130"/>
         <source>NA_INITIALIZING</source>
         <translation>NA_INITIALIZING</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1094"/>
+        <location filename="API/Windows/WinThread.cpp" line="1151"/>
         <source>%1 (0x%2)</source>
         <translation>%1 (0x%2)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1096"/>
-        <location filename="API/Windows/WinThread.cpp" line="1117"/>
+        <location filename="API/Windows/WinThread.cpp" line="1153"/>
+        <location filename="API/Windows/WinThread.cpp" line="1174"/>
         <source>0x%1</source>
         <translation>0x%1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1098"/>
+        <location filename="API/Windows/WinThread.cpp" line="1155"/>
         <source> (Arg0: 0x%1)</source>
         <translation> (Arg0: 0x%1)</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1103"/>
+        <location filename="API/Windows/WinThread.cpp" line="1160"/>
         <source> - %1</source>
         <translation> - %1</translation>
     </message>
     <message>
-        <location filename="API/Windows/WinThread.cpp" line="1017"/>
+        <location filename="API/Windows/WinThread.cpp" line="1074"/>
         <source>Channel thread initialized</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10804,6 +10950,11 @@ If you save the recovery information using this program, the additional failure 
     <message>
         <location filename="Forms/DriverWindow.ui" line="182"/>
         <source>(Requires Restart)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Forms/DriverWindow.ui" line="189"/>
+        <source>Get latest DynData</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

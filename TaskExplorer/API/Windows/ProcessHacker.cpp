@@ -966,9 +966,9 @@ STATUS TryUpdateDynData(const QString& AppDir)
 
 		if (bin == -1 || sig == -1) {
 			FailWithMessage(CTaskExplorer::tr("DynData not found in archive."));
-#ifndef _DEBUG
+//#ifndef _DEBUG
 			QFile::remove(FileName);
-#endif
+//#endif
 			return;
 		}
 
@@ -989,15 +989,15 @@ STATUS TryUpdateDynData(const QString& AppDir)
 
 		if (!Archive.Extract(&Files)) {
 			FailWithMessage(CTaskExplorer::tr("Failed to extreact files."));
-#ifndef _DEBUG
+//#ifndef _DEBUG
 			QFile::remove(FileName);
-#endif
+//#endif
 			return;
 		}
 
-#ifndef _DEBUG
+//#ifndef _DEBUG
 		QFile::remove(FileName);
-#endif
+//#endif
 		Archive.Close(); Progress.OnProgressMessage(CTaskExplorer::tr("Updated DynData successfully"));
 		QTimer::singleShot(3000, [&] {Progress.close(); });
 	};
@@ -1010,13 +1010,13 @@ STATUS TryUpdateDynData(const QString& AppDir)
 		QString FileName = Folder + "\\" + DlUrl.fileName();
 
 		if (QFile::exists(FileName)) {
-#ifdef _DEBUG
-			Progress.OnProgressMessage(CTaskExplorer::tr("Latest SI build already downloaded"));
-			ApplyUpdate(FileName);
-			return;
-#else
+//#ifdef _DEBUG
+//			Progress.OnProgressMessage(CTaskExplorer::tr("Latest SI build already downloaded"));
+//			ApplyUpdate(FileName);
+//			return;
+//#else
 			QFile::remove(FileName);
-#endif
+//#endif
 		}
 
 		QNetworkRequest DlRequest(DlUrl);

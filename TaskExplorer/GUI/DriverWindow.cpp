@@ -117,10 +117,47 @@ void CDriverWindow::Refresh()
 	}
 }
 
+bool IsOnARM64();
+extern "C" NTSTATUS KsiGetDynData(const QString &Path, _Out_ PBYTE* DynData, _Out_ PULONG DynDataLength, _Out_ PBYTE* Signature, _Out_ PULONG SignatureLength);
+
 void CDriverWindow::GetDynData()
 {
 	QString AppDir = QApplication::applicationDirPath().replace("/", "\\");
 	STATUS Status = TryUpdateDynData(AppDir);
-	if(!Status)
+	if (Status)
+	{
+		QString FileName = theConf->GetString("OptionsKSI/FileName", "SystemInformer.sys");
+		if (!FileName.contains("\\")) 
+		{
+			if (IsOnARM64())
+				FileName = AppDir + "\\ARM64\\" + FileName;
+			else
+				FileName = AppDir + "\\AMD64\\" + FileName;
+		}
+		FileName = FileName.replace("/", "\\");
+
+		PBYTE dynData = NULL;
+		ULONG dynDataLength;
+		PBYTE signature = NULL;
+		ULONG signatureLength;
+
+		NTSTATUS status = KsiGetDynData(Split2(FileName, "\\", true).first, &dynData, &dynDataLength, &signature, &signatureLength);
+		if (!NT_SUCCESS(status))
+			Status = ERR("Unsupported windows version.", STATUS_UNKNOWN_REVISION);
+		else
+		{
+			status = KphActivateDynData(dynData, dynDataLength, signature, signatureLength);
+			if (!NT_SUCCESS(status))
+				Status = ERR("KphActivateDynData Failed.", status);
+			else
+				g_KsiDynDataLoaded = true;
+		}
+
+		if (signature)
+			PhFree(signature);
+		if (dynData)
+			PhFree(dynData);
+	}
+	if (!Status)
 		CTaskExplorer::CheckErrors(QList<STATUS>() << Status);
 }

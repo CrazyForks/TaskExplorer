@@ -100,11 +100,25 @@ PKPH_PROCESS_CONTEXT KphpPerformProcessTracking(
 
     if (!CreateInfo)
     {
+#ifdef IS_KTE
+        //
+        // We want to untrack the process only once its really terminated to avoid untracking and re tracking it
+        // to this end we only mark the process as exited here and do the actual untracking in KteCidEnumCleanupProcesses
+        // after chekcing for the process object to be signaled.
+        //
+        process = KphGetProcessContext(ProcessId);
+#else
         process = KphUntrackProcessContext(ProcessId);
+#endif
         if (!process)
         {
             return NULL;
         }
+
+#ifdef KERNEL_DEBUG
+        //DbgPrintEx(DPFLTR_DEFAULT_ID, 0xFFFFFFFF, "BAM KphpPerformProcessTracking UnTracking: %s (%d)\n", PsGetProcessImageFileName(process->EProcess), (ULONG)(UINT_PTR)process->ProcessId);
+        DbgPrintEx(DPFLTR_DEFAULT_ID, 0xFFFFFFFF, "BAM KphpPerformProcessTracking Prepare UnTracking: %s (%d)\n", PsGetProcessImageFileName(Process), (ULONG)(UINT_PTR)ProcessId);
+#endif
 
         KphTracePrint(TRACE_LEVEL_VERBOSE,
                       TRACKING,
@@ -132,6 +146,10 @@ PKPH_PROCESS_CONTEXT KphpPerformProcessTracking(
 
         return NULL;
     }
+
+#ifdef KERNEL_DEBUG
+    DbgPrintEx(DPFLTR_DEFAULT_ID, 0xFFFFFFFF, "BAM KphpPerformProcessTracking Tracking: %s (%d)\n", PsGetProcessImageFileName(Process), (ULONG)(UINT_PTR)ProcessId);
+#endif
 
     process->CreateNotification = TRUE;
     process->CreatorClientId.UniqueProcess = PsGetCurrentProcessId();
@@ -161,6 +179,106 @@ PKPH_PROCESS_CONTEXT KphpPerformProcessTracking(
 
     return process;
 }
+
+#ifdef IS_KTE
+
+static ULONG KteProcessCleanupCounter = 0;
+
+_Function_class_(KPH_ENUM_CID_CONTEXTS_CALLBACK)
+_Must_inspect_result_
+BOOLEAN KSIAPI KteCidEnumCleanupProcesses(
+    _In_ PVOID Context,
+    _In_opt_ PVOID Parameter
+)
+{
+    PKPH_OBJECT_TYPE objectType;
+    PKPH_PROCESS_CONTEXT process;
+
+    KPH_PAGED_CODE_PASSIVE();
+
+    UNREFERENCED_PARAMETER(Parameter);
+
+    objectType = KphGetObjectType(Context);
+
+    if (objectType == KphProcessContextType)
+    {
+        process = Context;
+
+        //
+        // non set (process tracked from KphApplyObProtections) or booth set (process tracked from KphpPerformProcessTracking and termination notified)
+        //
+        // A process may be tracked from KphApplyObProtections after termination notification
+        // in which case neider ExitNotification nor CreateNotification or TrackedFromEnum be set.
+        // In that case we have to check if the process terminated here and untrack it.
+        // The otehr case is when both ExitNotification and CreateNotification or TrackedFromEnum are set meaning
+        // the process was tracked by creation notification or enumerated and then received a termination notification.
+        // In that case we can also untrack it, after waiting for the process to fully terminate.
+        //
+
+        if ((!!process->ExitNotification == (process->TrackedFromEnum || process->CreateNotification)) || KteProcessCleanupCounter == 0) 
+        {
+            NTSTATUS status;
+            LARGE_INTEGER timeout;
+
+            timeout.QuadPart = 0;
+            status = KeWaitForSingleObject(process->EProcess,
+                Executive,
+                KernelMode,
+                FALSE,
+                &timeout);
+
+            if (status != STATUS_TIMEOUT)
+            {
+                KphTracePrint(TRACE_LEVEL_VERBOSE,
+                    TRACKING,
+                    "KeWaitForSingleObject(processObject) "
+                    "reported: %!STATUS!",
+                    status);
+
+                // Note: this error message is itself prone to a race condition the cleanup condition may be false but ocne we are done with KeWaitForSingleObject the process may have terminated, hence we re check the condition
+                if (!(!!process->ExitNotification == (process->TrackedFromEnum || process->CreateNotification)))
+                {
+                    KphTracePrint(TRACE_LEVEL_ERROR,
+                        TRACKING,
+                        "KteCidEnumCleanupProcesses missed cleanup of process %wZ (%lu)"
+                        ", ExitNotification =%d, CreateNotification=%d, TrackedFromEnum=%d",
+                        &process->ImageName,
+                        HandleToULong(process->ProcessId), 
+                        process->ExitNotification, process->CreateNotification, process->TrackedFromEnum);
+
+                    DbgPrintEx(DPFLTR_DEFAULT_ID, 0xFFFFFFFF, "KteCidEnumCleanupProcesses missed cleanup of process %wZ (%lu)"
+                        ", ExitNotification =%d, CreateNotification=%d, TrackedFromEnum=%d",
+                        &process->ImageName,
+                        HandleToULong(process->ProcessId), 
+                        process->ExitNotification, process->CreateNotification, process->TrackedFromEnum);
+                }
+
+#ifdef KERNEL_DEBUG
+                DbgPrintEx(DPFLTR_DEFAULT_ID, 0xFFFFFFFF, "BAM KphpCidEnumCleanupProcesses UnTracking: %s (%d)\n", PsGetProcessImageFileName(process->EProcess), (ULONG)(UINT_PTR)process->ProcessId);
+#endif
+
+                process = KphUntrackProcessContext(process->ProcessId);   
+                if (process)
+                {
+                    KphDereferenceObject(process);
+                }
+            }
+        }
+    }
+
+    return FALSE;
+}
+
+_IRQL_requires_max_(APC_LEVEL)
+VOID KteCleanupProcesses()
+{
+    // this code runs every 100ms we wil check every 100 calls (~10s) if we have missed something
+    if (KteProcessCleanupCounter++ >= 100)
+        KteProcessCleanupCounter = 0;
+
+    KphEnumerateCidContexts(KteCidEnumCleanupProcesses, NULL);
+}
+#endif
 
 /**
  * \brief Informs any clients of process notify routine invocations.

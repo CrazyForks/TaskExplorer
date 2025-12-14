@@ -1506,6 +1506,9 @@ BOOLEAN KSIAPI KphpCidEnumPostPopulate(
     if (objectType == KphProcessContextType)
     {
         process = Context;
+#ifdef IS_KTE
+        process->TrackedFromEnum = TRUE;
+#endif
         KphVerifyProcessAndProtectIfAppropriate(process);
     }
 

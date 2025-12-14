@@ -166,7 +166,7 @@ NTSTATUS KphProcessIsLsass(
 #ifdef IS_KTE
     // Quick check if LSA protection is present, we dont need dyn data 
     PS_PROTECTION Protection = PsGetProcessProtection(Process);
-    if (Protection.Signer == PsProtectedSignerLsa)
+    if (Protection.Type != PsProtectedTypeNone && Protection.Signer == PsProtectedSignerLsa)
     {
         *IsLsass = TRUE;
         return STATUS_SUCCESS;
