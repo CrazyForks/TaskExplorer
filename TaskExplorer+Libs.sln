@@ -33,6 +33,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtsingleapp", "qtsingleapp\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TaskHelper", "TaskHelper\TaskHelper.vcxproj", "{10CE701D-5494-442D-8ECE-2A322911F290}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UpdUtil", "UpdUtil\UpdUtil.vcxproj", "{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -139,12 +141,24 @@ Global
 		{10CE701D-5494-442D-8ECE-2A322911F290}.Release|x64.Build.0 = Release|x64
 		{10CE701D-5494-442D-8ECE-2A322911F290}.Release|x86.ActiveCfg = Release|Win32
 		{10CE701D-5494-442D-8ECE-2A322911F290}.Release|x86.Build.0 = Release|Win32
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Debug|ARM64.Build.0 = Debug|ARM64
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Debug|x64.ActiveCfg = Debug|x64
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Debug|x64.Build.0 = Debug|x64
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Debug|x86.ActiveCfg = Debug|Win32
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Debug|x86.Build.0 = Debug|Win32
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Release|ARM64.ActiveCfg = Release|ARM64
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Release|ARM64.Build.0 = Release|ARM64
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Release|x64.ActiveCfg = Release|x64
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Release|x64.Build.0 = Release|x64
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Release|x86.ActiveCfg = Release|Win32
+		{6DA9D833-9E5B-4BC6-B446-6DA34E5E616A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		Qt5Version = msvc2019
 		SolutionGuid = {86D52BD5-2C96-42CC-8A92-362C17ADA44D}
+		Qt5Version = msvc2019
 	EndGlobalSection
 EndGlobal
