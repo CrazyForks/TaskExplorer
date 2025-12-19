@@ -665,6 +665,12 @@
     <ClCompile Include="API\Windows\WinHelpers\WindowFromPointEx.cpp">
       <Filter>API\Windows\WinHelpers</Filter>
     </ClCompile>
+    <ClCompile Include="GUI\OnlineUpdater.cpp">
+      <Filter>TaskExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="API\Windows\WinHelper.cpp">
+      <Filter>API\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -879,6 +885,9 @@
     </ClInclude>
     <ClInclude Include="API\Windows\WinHelpers\FindTool.h">
       <Filter>API\Windows\WinHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="API\Windows\WinHelper.h">
+      <Filter>API\Windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1286,6 +1295,9 @@
     </QtMoc>
     <QtMoc Include="Common\StatusEx.h">
       <Filter>Common</Filter>
+    </QtMoc>
+    <QtMoc Include="GUI\OnlineUpdater.h">
+      <Filter>TaskExplorer</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

@@ -1403,7 +1403,7 @@ VOID KphReleaseUnicodeString(
     );
 
 // lsa
-
+#ifndef IS_KTE
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _Must_inspect_result_
 NTSTATUS KphProcessIsLsass(
@@ -1415,6 +1415,7 @@ _IRQL_requires_max_(PASSIVE_LEVEL)
 VOID KphInvalidateLsass(
     _In_ HANDLE ProcessId
     );
+#endif
 
 // vm
 

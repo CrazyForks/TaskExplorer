@@ -830,17 +830,19 @@ void CProcessTree::OnCrashDump()
 		QMessageBox::warning(this, "TaskExplorer", tr("Failed to create dump file, reason: %1").arg(status.GetText()));
 	else
 	{
-		CProgressDialog* pDialog = new CProgressDialog(tr("Dumping %1").arg(pProcess->GetName()), this);
-		pDialog->show();
+		CProgressDialog Dialog(tr("Dumping %1").arg(pProcess->GetName()), this);
+		Dialog.show();
 
-		connect(pDumper, SIGNAL(ProgressMessage(const QString&, int)), pDialog, SLOT(OnProgressMessage(const QString&, int)));
-		connect(pDumper, SIGNAL(StatusMessage(const QString&, int)), pDialog, SLOT(OnStatusMessage(const QString&, int)));
-		connect(pDialog, SIGNAL(Cancel()), pDumper, SLOT(Cancel()));
-		connect(pDumper, SIGNAL(finished()), pDialog, SLOT(OnFinished()));
+		connect(pDumper, SIGNAL(ProgressMessage(const QString&, int)), &Dialog, SLOT(OnProgressMessage(const QString&, int)));
+		connect(pDumper, SIGNAL(StatusMessage(const QString&, int)), &Dialog, SLOT(OnStatusMessage(const QString&, int)));
+		connect(&Dialog, SIGNAL(Cancel()), pDumper, SLOT(Cancel()));
+		connect(pDumper, SIGNAL(finished()), &Dialog, SLOT(OnFinished()));
 
 		connect(pDumper, SIGNAL(finished()), pDumper, SLOT(deleteLater()));
 
 		pDumper->start();
+
+		Dialog.exec();
 	}
 }
 

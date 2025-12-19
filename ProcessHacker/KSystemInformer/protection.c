@@ -166,7 +166,9 @@ NTSTATUS KphpShouldSuppressObjectProtections(
     )
 {
     NTSTATUS status;
+#ifndef IS_KTE
     BOOLEAN isLsass;
+#endif
 
     KPH_PAGED_CODE_PASSIVE();
 
@@ -192,6 +194,7 @@ NTSTATUS KphpShouldSuppressObjectProtections(
         return STATUS_SUCCESS;
     }
 
+#ifndef IS_KTE
     status = KphProcessIsLsass(Actor->EProcess, &isLsass);
     if (!NT_SUCCESS(status))
     {
@@ -215,6 +218,7 @@ NTSTATUS KphpShouldSuppressObjectProtections(
 
         *Suppress = TRUE;
     }
+#endif
 
     return STATUS_SUCCESS;
 }
@@ -492,19 +496,21 @@ NTSTATUS KphStartProtectingProcess(
     )
 {
     NTSTATUS status;
+#ifndef IS_KTE
     PKPH_DYN dyn;
+#endif
     BOOLEAN releaseLock;
     SECURITY_SUBJECT_CONTEXT subjectContext;
     BOOLEAN accessGranted;
+#ifndef IS_KTE
     KPH_ENUM_FOR_PROTECTION context;
+#endif
 
     KPH_PAGED_CODE_PASSIVE();
 
     releaseLock = FALSE;
 
-#ifdef IS_KTE
-    dyn = NULL;
-#else
+#ifndef IS_KTE
     dyn = KphReferenceDynData();
     if (!dyn)
     {
@@ -548,54 +554,21 @@ NTSTATUS KphStartProtectingProcess(
                   &Process->ImageName,
                   HandleToULong(Process->ProcessId));
 
+#ifdef IS_KTE
+    if (Process->VerifyTimeout)
+    {
+        status = STATUS_HANDLE_REVOKED;
+        goto Exit;
+    }
+    
+    status = STATUS_SUCCESS;
+#endif
+
     Process->Protected = TRUE;
     Process->ProcessAllowedMask = ProcessAllowedMask;
     Process->ThreadAllowedMask = ThreadAllowedMask;
 
-#ifdef IS_KTE
-    dyn = KphReferenceDynData();
-    if (!dyn)
-    {
-        // if the process wasn't marked as potentially tainted we are done
-        if (!Process->VerifyTimeout)
-        {
-            //DbgPrintEx(DPFLTR_DEFAULT_ID, 0xFFFFFFFF, "BAM KphStartProtectingProcess: Skipping KphEnumerateProcessContexts, no dyn data available and process wasn't accessed\n");
-            status = STATUS_SUCCESS;
-        }
-        else
-        {
-            //DbgPrintEx(DPFLTR_DEFAULT_ID, 0xFFFFFFFF, "BAM KphStartProtectingProcess: Fail protection process was accessed, and there are no dyn data\n");
-            status = STATUS_NOINTERFACE;
-        }
-        goto Exit;
-    }
-	
-    //DbgPrintEx(DPFLTR_DEFAULT_ID, 0xFFFFFFFF, "BAM KphStartProtectingProcess: KphpEnumProcessContextsForProtection\n");
-
-    context.Dyn = dyn;
-    context.Status = STATUS_SUCCESS;
-    context.Process = Process;
-
-    KphEnumerateProcessContexts(KphpEnumProcessContextsForProtection, &context);
-
-    status = context.Status;
-
-Exit:
-
-    Process->DecidedOnProtection = TRUE;
-
-    if (releaseLock)
-    {
-        if (!NT_SUCCESS(status))
-        {
-            Process->Protected = FALSE;
-            Process->ProcessAllowedMask = 0;
-            Process->ThreadAllowedMask = 0;
-        }
-
-        KphReleaseRWLock(&Process->ProtectionLock);
-    }
-#else
+#ifndef IS_KTE
     context.Dyn = dyn;
     context.Status = STATUS_SUCCESS;
     context.Process = Process;
@@ -610,6 +583,7 @@ Exit:
         Process->ProcessAllowedMask = 0;
         Process->ThreadAllowedMask = 0;
     }
+#endif
 
 Exit:
 
@@ -617,12 +591,13 @@ Exit:
     {
         KphReleaseRWLock(&Process->ProtectionLock);
     }
-#endif
 
+#ifndef IS_KTE
     if (dyn)
     {
         KphDereferenceObject(dyn);
     }
+#endif
 
     return status;
 }

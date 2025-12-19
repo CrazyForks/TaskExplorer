@@ -26,6 +26,7 @@ HEADERS += ./stdafx.h \
     ./GUI/WsWatchDialog.h \
     ./GUI/WaitChainDialog.h \
     ./GUI/RunDialog.h \
+    ./GUI/OnlineUpdater.h \
     ./GUI/TaskInfo/EnvironmentView.h \
     ./GUI/TaskInfo/HandlesView.h \
     ./GUI/TaskInfo/MemoryView.h \
@@ -212,6 +213,7 @@ SOURCES += ./main.cpp \
     ./GUI/TaskView.cpp \
     ./GUI/WaitChainDialog.cpp \
     ./GUI/WsWatchDialog.cpp \
+    ./GUI/OnlineUpdater.cpp \
     ./GUI/TaskInfo/DebugView.cpp \
     ./GUI/TaskInfo/DotNetView.cpp \
     ./GUI/TaskInfo/EnvironmentView.cpp \

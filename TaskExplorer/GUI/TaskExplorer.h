@@ -8,11 +8,14 @@
 #include "../MiscHelpers/Common/Settings.h"
 #include "../MiscHelpers/Common/FlexError.h"
 #include "../MiscHelpers/Common/CustomTheme.h"
+#include "../MiscHelpers/Common/ProgressDialog.h"
+#include "../Common/StatusEx.h"
 
 
 class CGraphBar;
 class CHistoryGraph;
 class CCustomItemDelegate;
+class COnlineUpdater;
 
 class CTaskExplorer : public QMainWindow
 {
@@ -94,6 +97,8 @@ public:
 
 	CCustomTheme* GetTheme() { return &m_CustomTheme; }
 
+	COnlineUpdater*		GetOnlineUpdater() { return m_pUpdater; }
+
 	static int			GetGraphLimit(bool bLong = false);
 
 	static bool			CheckErrors(QList<STATUS> Errors);
@@ -116,6 +121,8 @@ public slots:
 	void				UpdateOptions();
 
 	void				UpdateUserMenu();
+
+	void				UpdateLabel();
 
 	void				OpenTaskInfoWnd(quint64 PID);
 
@@ -186,6 +193,8 @@ private slots:
 	void				OnSysTray(QSystemTrayIcon::ActivationReason Reason);
 
 	void				OnAbout();
+	void				OnHelp();
+	void				OnCheckForUpdates();
 
 	void				OnGraphsResized(int Size);
 
@@ -319,6 +328,8 @@ private:
 	QMenu*				m_pMenuHelp;
 	QAction*			m_pMenuAbout;
 	QAction*			m_pMenuSupport;
+	QAction*			m_pMenuForum;
+	QAction*			m_pMenuCheckUpdates;
 #ifdef WIN32
 	QAction*			m_pMenuAboutPH;
 #endif
@@ -345,12 +356,15 @@ private:
 	QLabel*				m_pStausIO;
 	QLabel*				m_pStausNET;
 
+	QLabel*				m_pUpdateLabel;
 
 	bool				m_bExit;
 
 	CHistoryGraph*		m_pTrayGraph;
 
 	CCustomItemDelegate* m_pCustomItemDelegate;
+
+	COnlineUpdater*		m_pUpdater;
 
 	void				LoadLanguage();
 	void				LoadLanguage(const QString& Lang, const QString& Module, int Index);

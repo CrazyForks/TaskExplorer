@@ -2358,16 +2358,16 @@ KPH_PROCESS_STATE KphGetProcessState(
 
     if (KphProtectionsSuppressed())
     {
-//#ifndef IS_KTE
+#ifndef IS_KTE
         //
         // This ultimately permits low state callers into the driver. But still
         // check for verification. We still want to exercise the code below,
         // regardless.
         //
         processState = ~KPH_PROCESS_VERIFIED_PROCESS;
-//#else
+#else
         processState = KPH_PROCESS_NOT_BEING_DEBUGGED;
-//#endif
+#endif
     }
     else
     {
@@ -2398,6 +2398,13 @@ KPH_PROCESS_STATE KphGetProcessState(
     {
         processState |= KPH_PROCESS_NOT_BEING_DEBUGGED;
     }
+
+#ifdef IS_KTE
+    if (!Process->VerifyTimeout)
+    {
+        processState |= KPH_PROCESS_NO_VERIFY_TIMEOUT;
+    }
+#endif
 
     if (!Process->FileObject)
     {

@@ -13,6 +13,8 @@
 
 #include <trace.h>
 
+#ifndef IS_KTE
+
 KPH_PROTECTED_DATA_SECTION_RO_PUSH();
 static const UNICODE_STRING KphpLsaPortName = RTL_CONSTANT_STRING(L"\\SeLsaCommandPort");
 KPH_PROTECTED_DATA_SECTION_RO_POP();
@@ -163,16 +165,6 @@ NTSTATUS KphProcessIsLsass(
 
     *IsLsass = FALSE;
 
-#ifdef IS_KTE
-    // Quick check if LSA protection is present, we dont need dyn data 
-    PS_PROTECTION Protection = PsGetProcessProtection(Process);
-    if (Protection.Type != PsProtectedTypeNone && Protection.Signer == PsProtectedSignerLsa)
-    {
-        *IsLsass = TRUE;
-        return STATUS_SUCCESS;
-    }
-#endif
-
     status = KphpGetLsassProcessId(&processId);
     if (!NT_SUCCESS(status))
     {
@@ -225,3 +217,5 @@ VOID KphInvalidateLsass(
 
     InterlockedCompareExchangePointer(&KphpLsassProcessId, NULL, ProcessId);
 }
+
+#endif // !IS_KTE

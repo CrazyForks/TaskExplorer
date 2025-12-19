@@ -89,6 +89,8 @@
         <file alias="Font">Actions/Font.png</file>
         <file alias="ResetFont">Actions/ResetFont.png</file>
         <file alias="Finder">Actions/finder.png</file>
+        <file alias="Support">Actions/Support.png</file>
+        <file alias="Forum">Actions/Forum.png</file>
     </qresource>
     <qresource prefix="/NtObjects">
         <file alias="Device">NtObjects/device16.png</file>

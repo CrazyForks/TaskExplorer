@@ -106,6 +106,28 @@ void CDriverWindow::Refresh()
 		case KphLevelMax: sLevel = tr("Maximum"); break;
 		}
 		ui.verification->setText(sLevel);
+
+		QStringList Info;
+		KPH_PROCESS_STATE processState = KphGetCurrentProcessState();
+		if ((processState != 0) && (processState & KPH_PROCESS_STATE_MAXIMUM) != KPH_PROCESS_STATE_MAXIMUM)
+		{
+			if (!BooleanFlagOn(processState, KPH_PROCESS_SECURELY_CREATED))
+				Info.append("not securely created");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_VERIFIED_PROCESS))
+				Info.append("unverified primary image");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_PROTECTED_PROCESS))
+				Info.append("inactive protections");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_NO_UNTRUSTED_IMAGES))
+				Info.append("unsigned images (likely an unsigned plugin)");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_NOT_BEING_DEBUGGED))
+				Info.append("process is being debugged");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_NO_VERIFY_TIMEOUT))
+				Info.append("verify time out");
+			if ((processState & KPH_PROCESS_STATE_MINIMUM) != KPH_PROCESS_STATE_MINIMUM)
+				Info.append("tampered primary image");
+		}
+
+		ui.verification->setToolTip(Info.join("\n"));
 	}
 	else
 	{
@@ -114,6 +136,7 @@ void CDriverWindow::Refresh()
 		ui.dyn_data->setText(tr("N/A"));
 
 		ui.verification->setText(tr("N/A"));
+		ui.verification->setToolTip("");
 	}
 }
 

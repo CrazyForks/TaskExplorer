@@ -243,11 +243,10 @@ int main(int argc, char *argv[])
 	while (DrvStatus.IsError() || DynDataUpdate == 2)
 	{
 		QString Message;
-		QDialogButtonBox::StandardButtons buttons = QDialogButtonBox::Ok | QDialogButtonBox::Cancel;
+		QDialogButtonBox::StandardButtons buttons = QDialogButtonBox::Ok;
 		if (DynDataUpdate == -1)
 		{
-			Message = CTaskExplorer::tr("Failed to update DynData, %1, Error: 0x%2 (%3).\n"
-				"Do you want to continue anyways (Ok), or terminate (Cancel)?").arg(DrvStatus.GetText()).arg((quint32)DrvStatus.GetStatus(), 8, 16, QChar('0')).arg(CastPhString(PhGetNtMessage(DrvStatus.GetStatus())));
+			Message = CTaskExplorer::tr("Failed to update DynData, %1, Error: 0x%2 (%3).").arg(DrvStatus.GetText()).arg((quint32)DrvStatus.GetStatus(), 8, 16, QChar('0')).arg(CastPhString(PhGetNtMessage(DrvStatus.GetStatus())));
 		}
 		else if (DrvStatus.GetStatus() == STATUS_SI_DYNDATA_UNSUPPORTED_KERNEL || DrvStatus.GetStatus() == STATUS_UNKNOWN_REVISION || DynDataUpdate != 0) 
 		{
@@ -267,15 +266,14 @@ int main(int argc, char *argv[])
 				"<br />").arg(windowsVersion).arg(kernelVersion).arg(CTaskExplorer::GetVersion()).arg(AppDir);
 
 			if (DynDataUpdate == 1)
-				Message += CTaskExplorer::tr("Update did not help, do you want to continue anyways (Ok), or terminate (Cancel)?");
+				Message += CTaskExplorer::tr("Update did not resolve the issue.");
 			else {
-				Message += CTaskExplorer::tr("Do you want to try to download updated DynData (Yes), start without the driver (No), or terminate (Cancel)?");
+				Message += CTaskExplorer::tr("Do you want to try to download updated DynData Yes, start without the driver No?");
 				buttons = QDialogButtonBox::Yes | QDialogButtonBox::No | QDialogButtonBox::Cancel;
 			}
 		} 
 		else {
-			Message = CTaskExplorer::tr("Failed to load KTaskExplorer driver, %1, Error: 0x%2 (%3).\n"
-				"Do you want to continue anyways (Ok), or terminate (Cancel)?").arg(DrvStatus.GetText()).arg((quint32)DrvStatus.GetStatus(), 8, 16, QChar('0')).arg(CastPhString(PhGetNtMessage(DrvStatus.GetStatus())));
+			Message = CTaskExplorer::tr("Failed to load KTaskExplorer driver, %1, Error: 0x%2 (%3).").arg(DrvStatus.GetText()).arg((quint32)DrvStatus.GetStatus(), 8, 16, QChar('0')).arg(CastPhString(PhGetNtMessage(DrvStatus.GetStatus())));
 		}
 
 		bool State = false;
@@ -297,9 +295,6 @@ int main(int argc, char *argv[])
 			}
 			continue;
 		}
-
-		if (Ret == QDialogButtonBox::Cancel)
-			return -1;
 
 		if (State)
 			theConf->SetValue("OptionsKSI/KsiEnable", false);

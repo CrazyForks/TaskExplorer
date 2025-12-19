@@ -578,6 +578,7 @@
     <ClCompile Include="API\Windows\WindowsAPI.cpp" />
     <ClCompile Include="API\Windows\WindowsHelpers.cpp" />
     <ClCompile Include="API\Windows\WinHeap.cpp" />
+    <ClCompile Include="API\Windows\WinHelper.cpp" />
     <ClCompile Include="API\Windows\WinHelpers\FindTool.cpp" />
     <ClCompile Include="API\Windows\WinHelpers\FuncHook\Detours\creatwth.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -760,6 +761,7 @@
     <ClCompile Include="GUI\Models\WindowModel.cpp" />
     <ClCompile Include="GUI\MultiErrorDialog.cpp" />
     <ClCompile Include="GUI\NewService.cpp" />
+    <ClCompile Include="GUI\OnlineUpdater.cpp" />
     <ClCompile Include="GUI\PersistenceConfig.cpp" />
     <ClCompile Include="GUI\RunDialog.cpp" />
     <ClCompile Include="GUI\Search\HandleSearch.cpp" />
@@ -879,11 +881,13 @@
     <ClCompile Include="SVC\TaskService.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="API\Windows\WinHelper.h" />
     <ClInclude Include="API\Windows\WinHelpers\FindTool.h" />
     <ClInclude Include="API\Windows\WinHelpers\FuncHook\Detours\detours.h" />
     <ClInclude Include="API\Windows\WinHelpers\FuncHook\Detours\detver.h" />
     <ClInclude Include="API\Windows\WinHelpers\FuncHook\HookUtils.h" />
     <QtMoc Include="Common\StatusEx.h" />
+    <QtMoc Include="GUI\OnlineUpdater.h" />
     <ClInclude Include="version.h" />
     <QtMoc Include="SVC\TaskService.h">
       <ForceInclude Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdafx.h;../../SVC/%(Filename)%(Extension)</ForceInclude>

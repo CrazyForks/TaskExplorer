@@ -714,10 +714,12 @@ VOID KphpCreateProcessNotifyRoutine(
 
     KPH_PAGED_CODE_PASSIVE();
 
+#ifndef IS_KTE
     if (!CreateInfo)
     {
         KphInvalidateLsass(ProcessId);
     }
+#endif
 
     process = KphpPerformProcessTracking(Process, ProcessId, CreateInfo);
     if (process)

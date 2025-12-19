@@ -164,6 +164,11 @@ VOID KtepProcessVerificationItem(
     if(workItem->Canceled)
     {
         workItem->Process->VerifyTimeout = TRUE;
+
+        if (workItem->Process->Protected)
+        {
+            KphStopProtectingProcess(workItem->Process);
+        }
     }
 
     KeSetEvent(&workItem->CompletionEvent, IO_NO_INCREMENT, FALSE);

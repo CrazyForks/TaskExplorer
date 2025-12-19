@@ -32,6 +32,7 @@ extern "C" {
 #include "../../MiscHelpers/Archive/Archive.h"
 #include "../../MiscHelpers/Archive/ArchiveFS.h"
 #include "TaskInfo/TaskInfoWindow.h"
+#include "OnlineUpdater.h"
 
 
 QIcon g_ExeIcon;
@@ -146,6 +147,8 @@ CTaskExplorer::CTaskExplorer(QWidget *parent)
 
 	// a shared item deleagate for all lists
 	m_pCustomItemDelegate = new CCustomItemDelegate(GetCellHeight() + 1, this);
+
+	// Initialize progress dialog for async operations
 
 	LoadDefaultIcons();
 	InitColors();
@@ -316,6 +319,7 @@ CTaskExplorer::CTaskExplorer(QWidget *parent)
 		m_pMenuSettings = m_pMenuOptions->addAction(MakeActionIcon(":/Actions/Settings"), tr("Settings"), this, SLOT(OnSettings()));
 #ifdef WIN32
 		m_pMenuDriverConf = m_pMenuOptions->addAction(MakeActionIcon(":/Actions/Driver"), tr("Driver Options"), this, SLOT(OnDriverConf()));
+		m_pMenuDriverConf->setEnabled(theAPI->RootAvaiable());
 
 		//m_pMenuUseDriver = m_pMenuOptions->addAction(tr("Use KSystemInformer"), this, SLOT(OnUseDriver()));
 		//m_pMenuUseDriver->setEnabled(theAPI->RootAvaiable());
@@ -391,13 +395,15 @@ CTaskExplorer::CTaskExplorer(QWidget *parent)
 #endif
 
 	m_pMenuHelp = menuBar()->addMenu(tr("&Help"));
-		m_pMenuSupport = m_pMenuHelp->addAction(tr("Support TaskExplorer on Patreon"), this, SLOT(OnAbout()));
+		m_pMenuSupport = m_pMenuHelp->addAction(MakeActionIcon(":/Actions/Support"), tr("Support TaskExplorer on Patreon"), this, SLOT(OnHelp()));
+		m_pMenuForum = m_pMenuHelp->addAction(MakeActionIcon(":/Actions/Forum"), tr("Visit Support Forum"), this, SLOT(OnHelp()));
+		m_pMenuHelp->addSeparator();
+		m_pMenuCheckUpdates = m_pMenuHelp->addAction(MakeActionIcon(":/Actions/Refresh"), tr("Check for Updates"), this, SLOT(OnCheckForUpdates()));
 		m_pMenuHelp->addSeparator();
 #ifdef WIN32
 		m_pMenuAboutPH = m_pMenuHelp->addAction(tr("About ProcessHacker Library"), this, SLOT(OnAbout()));
 #endif
 		m_pMenuAboutQt = m_pMenuHelp->addAction(tr("About the Qt Framework"), this, SLOT(OnAbout()));
-		//m_pMenuHelp->addSeparator();
 		m_pMenuAbout = m_pMenuHelp->addAction(QIcon(":/TaskExplorer.png"), tr("About TaskExplorer"), this, SLOT(OnAbout()));
 
 	m_pToolBar = new QToolBar();
@@ -535,10 +541,10 @@ CTaskExplorer::CTaskExplorer(QWidget *parent)
 
 	m_pToolBar->addSeparator();
 	m_pToolBar->addWidget(new QLabel("        "));
-	QLabel* pSupport = new QLabel("<a href=\"https://www.patreon.com/DavidXanatos\">Support TaskExplorer on Patreon</a>");
-	pSupport->setTextInteractionFlags(Qt::TextBrowserInteraction);
-	connect(pSupport, SIGNAL(linkActivated(const QString&)), this, SLOT(OnAbout()));
-	m_pToolBar->addWidget(pSupport);
+	m_pUpdateLabel = new QLabel("<a href=\"https://xanasoft.com/go.php?to=patreon\">Support TaskExplorer on Patreon</a>");
+	m_pUpdateLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
+	connect(m_pUpdateLabel, SIGNAL(linkActivated(const QString&)), this, SLOT(OnHelp()));
+	m_pToolBar->addWidget(m_pUpdateLabel);
 	m_pToolBar->addWidget(new QLabel("        "));
 
 	
@@ -617,6 +623,11 @@ CTaskExplorer::CTaskExplorer(QWidget *parent)
 		statusBar()->showMessage(tr("TaskExplorer is ready..."), 30000);
 
 	ApplyOptions();
+
+	// Initialize Online Updater
+	m_pUpdater = new COnlineUpdater(this);
+	connect(m_pUpdater, SIGNAL(StateChanged()), this, SLOT(UpdateLabel()));
+	UpdateLabel(); // Initial label update
 
 	m_LastTimer = 0;
 	//m_uTimerCounter = 0;
@@ -866,7 +877,10 @@ void CTaskExplorer::timerEvent(QTimerEvent* pEvent)
 	
 	if(!m_pMenuPauseRefresh->isChecked())
 		UpdateAll();
-	
+
+	// Process online updater
+	m_pUpdater->Process();
+
 	//if(m_pMainSplitter->sizes()[0] > 0)
 		m_pGraphBar->UpdateGraphs();
 
@@ -1960,6 +1974,29 @@ void CTaskExplorer::LoadLanguage(const QString& Lang, const QString& Module, int
 	}
 }
 
+void CTaskExplorer::OnCheckForUpdates()
+{
+	m_pUpdater->CheckForUpdates(true);
+}
+
+void CTaskExplorer::UpdateLabel()
+{
+	QString PendingUpdate = theConf->GetString("Updater/PendingUpdate");
+
+	if (!PendingUpdate.isEmpty()) {
+		// Show update available message
+		m_pUpdateLabel->setText(tr("<a href=\"#update\">Update to TaskExplorer %1 available!</a>").arg(PendingUpdate));
+		m_pUpdateLabel->disconnect();
+		connect(m_pUpdateLabel, SIGNAL(linkActivated(const QString&)), this, SLOT(OnCheckForUpdates()));
+	}
+	else {
+		// Show default Patreon support message
+		m_pUpdateLabel->setText("<a href=\"https://xanasoft.com/go.php?to=patreon\">Support TaskExplorer on Patreon</a>");
+		m_pUpdateLabel->disconnect();
+		connect(m_pUpdateLabel, SIGNAL(linkActivated(const QString&)), this, SLOT(OnHelp()));
+	}
+}
+
 QString CTaskExplorer::GetVersion()
 {
 	QString Version = QString::number(VERSION_MJR) + "." + QString::number(VERSION_MIN) //.rightJustified(2, '0')
@@ -1971,6 +2008,14 @@ QString CTaskExplorer::GetVersion()
 #endif
 		;
 	return Version;
+}
+
+void CTaskExplorer::OnHelp()
+{
+	if (sender() == m_pMenuForum)
+		QDesktopServices::openUrl(QUrl("https://xanasoft.com/go.php?to=forum"));
+	else
+		QDesktopServices::openUrl(QUrl("https://xanasoft.com/go.php?to=patreon"));
 }
 
 void CTaskExplorer::OnAbout()
@@ -2033,6 +2078,4 @@ void CTaskExplorer::OnAbout()
 #endif
 	else if (sender() == m_pMenuAboutQt)
 		QMessageBox::aboutQt(this);
-	else
-		QDesktopServices::openUrl(QUrl("https://www.patreon.com/DavidXanatos"));
 }

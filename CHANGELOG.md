@@ -7,9 +7,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.7.1] - 2025-12-??
 
+### Added
+- added sandboxie style online updater
+
 ### Changed
 - improved "Reset all Panels" behavioure
 - improved KSI Driver's proces protection behavioure
+  - Protection is now more strict then KSystemInformers one, if you fail to achive securtiy level high with this build please let me know
 
 ### Fixed
 - fixed crash issue in CWinProcess::GetArchString()

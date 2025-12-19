@@ -115,6 +115,7 @@ MISCHELPERS_EXPORT void SetPaleteTexture(QPalette& palette, QPalette::ColorRole 
 MISCHELPERS_EXPORT QAction* MakeActionCheck(QMenu* pParent, const QString& Text, const QVariant& Data, bool bTriState);
 
 MISCHELPERS_EXPORT void SafeShow(QWidget* pWidget);
+MISCHELPERS_EXPORT void SetFocus(QWidget* pWidget);
 
 template <typename T>
 QSet<T> ListToSet(const QList<T>& qList) { return QSet<T>(qList.begin(), qList.end()); }

@@ -462,9 +462,7 @@ NTSTATUS KsiGetDynData(
 	*Signature = NULL;
 	*SignatureLength = 0;
 
-	bool bUseNew = QFile::exists(Path + "\\new_ksidyn.bin");
-
-	status = KsiReadConfiguration(Path, bUseNew ? L"new_ksidyn.bin" : L"ksidyn.bin", &data, &dataLength);
+	status = KsiReadConfiguration(Path, L"ksidyn.bin", &data, &dataLength);
 	if (!NT_SUCCESS(status))
 		goto CleanupExit;
 
@@ -472,7 +470,7 @@ NTSTATUS KsiGetDynData(
 	//if (!NT_SUCCESS(status))
 	//	goto CleanupExit;
 
-	status = KsiReadConfiguration(Path, bUseNew ? L"new_ksidyn.sig" : L"ksidyn.sig", &sig, &sigLength);
+	status = KsiReadConfiguration(Path, L"ksidyn.sig", &sig, &sigLength);
 	if (!NT_SUCCESS(status))
 		goto CleanupExit;
 	
@@ -785,83 +783,80 @@ STATUS InitKSI(const QString& AppDir)
 		if (dynData)
 			PhFree(dynData);
 
-		// Medium level indicates protection failed to be applied presumably due to missing dyndata
-		// if level is other we try restarting procedure to gain higher trust level
-		// is we got stuck on medium level and dyndata load failes we bug out
-		if (NT_SUCCESS(status) || level != KphLevelMed)
+
+		QStringList Info;
+
+		KPH_PROCESS_STATE processState = KphGetCurrentProcessState();
+		if ((processState != 0) && (processState & KPH_PROCESS_STATE_MAXIMUM) != KPH_PROCESS_STATE_MAXIMUM)
 		{
-			QStringList Info;
+			if (!BooleanFlagOn(processState, KPH_PROCESS_SECURELY_CREATED))
+				Info.append("not securely created");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_VERIFIED_PROCESS))
+				Info.append("unverified primary image");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_PROTECTED_PROCESS))
+				Info.append("inactive protections");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_NO_UNTRUSTED_IMAGES))
+				Info.append("unsigned images (likely an unsigned plugin)");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_NOT_BEING_DEBUGGED))
+				Info.append("process is being debugged");
+			if (!BooleanFlagOn(processState, KPH_PROCESS_NO_VERIFY_TIMEOUT))
+				Info.append("verify time out");
+			if ((processState & KPH_PROCESS_STATE_MINIMUM) != KPH_PROCESS_STATE_MINIMUM)
+				Info.append("tampered primary image");
+		}
 
-			KPH_PROCESS_STATE processState = KphGetCurrentProcessState();
-			if ((processState != 0) && (processState & KPH_PROCESS_STATE_MAXIMUM) != KPH_PROCESS_STATE_MAXIMUM)
+		Status = OK;
+
+		if (level != KphLevelMax)
+		{
+			Status = ERR(QString("Unable to access the kernel driver: %1.").arg(Info.join(", ")), STATUS_ACCESS_DENIED);
+
+			if (config.Flags.AllowDebugging || !NtCurrentPeb()->BeingDebugged)
 			{
-				if (!BooleanFlagOn(processState, KPH_PROCESS_SECURELY_CREATED))
-					Info.append("not securely created");
-				if (!BooleanFlagOn(processState, KPH_PROCESS_VERIFIED_PROCESS))
-					Info.append("unverified primary image");
-				if (!BooleanFlagOn(processState, KPH_PROCESS_PROTECTED_PROCESS))
-					Info.append("inactive protections");
-				if (!BooleanFlagOn(processState, KPH_PROCESS_NO_UNTRUSTED_IMAGES))
-					Info.append("unsigned images (likely an unsigned plugin)");
-				if (!BooleanFlagOn(processState, KPH_PROCESS_NOT_BEING_DEBUGGED))
-					Info.append("process is being debugged");
-				if ((processState & KPH_PROCESS_STATE_MINIMUM) != KPH_PROCESS_STATE_MINIMUM)
-					Info.append("tampered primary image");
-			}
-
-			Status = OK;
-
-			if ((level != KphLevelMax))
-			{
-				Status = ERR(QString("Unable to access the kernel driver: %1.").arg(Info.join(", ")), STATUS_ACCESS_DENIED);
-
-				if (config.Flags.AllowDebugging || !NtCurrentPeb()->BeingDebugged)
+				if ((level == KphLevelHigh) && !g_KphStartupMax)
 				{
-					if ((level == KphLevelHigh) && !g_KphStartupMax)
-					{
-						PH_STRINGREF commandline = PH_STRINGREF_INIT(L" -kx");
-						status = PhRestartSelf(&commandline);
-					}
-
-					if ((level < KphLevelHigh) && !g_KphStartupMax && !g_KphStartupHigh)
-					{
-						PH_STRINGREF commandline = PH_STRINGREF_INIT(L" -kh");
-						status = PhRestartSelf(&commandline);
-					}
-
-					if (!NT_SUCCESS(status))
-						Status = ERR("PhRestartSelf failed.", STATUS_ACCESS_DENIED);
-				}
-			}
-
-			if (level == KphLevelMax)
-			{
-				ACCESS_MASK process = 0;
-				ACCESS_MASK thread = 0;
-
-				if (theConf->GetBool("OptionsKSI/EnableUnloadProtection", false)) {
-					if(NT_SUCCESS(KphAcquireDriverUnloadProtection(NULL, NULL)))
-						KsiEnableUnloadProtection = TRUE;
+					PH_STRINGREF commandline = PH_STRINGREF_INIT(L" -kx");
+					status = PhRestartSelf(&commandline);
 				}
 
-				switch (theConf->GetInt("OptionsKSI/ClientProcessProtectionLevel", 0))
+				if ((level < KphLevelHigh) && !g_KphStartupMax && !g_KphStartupHigh)
 				{
-				case 2:
-					process |= (PROCESS_VM_READ | PROCESS_QUERY_INFORMATION);
-					thread |= (THREAD_GET_CONTEXT | THREAD_QUERY_INFORMATION);
-					__fallthrough;
-				case 1:
-					process |= (PROCESS_TERMINATE | PROCESS_SUSPEND_RESUME);
-					thread |= (THREAD_TERMINATE | THREAD_SUSPEND_RESUME | THREAD_RESUME);
-					__fallthrough;
-				case 0:
-				default:
-					break;
+					PH_STRINGREF commandline = PH_STRINGREF_INIT(L" -kh");
+					status = PhRestartSelf(&commandline);
 				}
 
-				if (process != 0 || thread != 0)
-					KphStripProtectedProcessMasks(NtCurrentProcess(), process, thread);
+				if (!NT_SUCCESS(status))
+					Status = ERR("PhRestartSelf failed.", STATUS_ACCESS_DENIED);
 			}
+		}
+
+		if (level == KphLevelMax)
+		{
+			ACCESS_MASK process = 0;
+			ACCESS_MASK thread = 0;
+
+			if (theConf->GetBool("OptionsKSI/EnableUnloadProtection", false)) {
+				if(NT_SUCCESS(KphAcquireDriverUnloadProtection(NULL, NULL)))
+					KsiEnableUnloadProtection = TRUE;
+			}
+
+			switch (theConf->GetInt("OptionsKSI/ClientProcessProtectionLevel", 0))
+			{
+			case 2:
+				process |= (PROCESS_VM_READ | PROCESS_QUERY_INFORMATION);
+				thread |= (THREAD_GET_CONTEXT | THREAD_QUERY_INFORMATION);
+				__fallthrough;
+			case 1:
+				process |= (PROCESS_TERMINATE | PROCESS_SUSPEND_RESUME);
+				thread |= (THREAD_TERMINATE | THREAD_SUSPEND_RESUME | THREAD_RESUME);
+				__fallthrough;
+			case 0:
+			default:
+				break;
+			}
+
+			if (process != 0 || thread != 0)
+				KphStripProtectedProcessMasks(NtCurrentProcess(), process, thread);
 		}
 	}
 
@@ -946,7 +941,7 @@ STATUS TryUpdateDynData(const QString& AppDir)
 
 	auto FailWithMessage = [&](const QString& Message) {
 		Status = ERR(Message, STATUS_UNSUCCESSFUL);
-		Progress.OnProgressMessage(Message);
+		Progress.ShowProgress(Message);
 		QTimer::singleShot(3000, [&] {Progress.close();});
 	};
 
@@ -983,11 +978,8 @@ STATUS TryUpdateDynData(const QString& AppDir)
 		else
 			DrvPath = AppDir + "\\AMD64";
 
-		QFile::remove(DrvPath + "\\new_ksidyn.bin");
-		QFile::remove(DrvPath + "\\new_ksidyn.sig");
-
-		Files.insert(bin, new QFile(DrvPath + "\\new_ksidyn.bin"));
-		Files.insert(sig, new QFile(DrvPath + "\\new_ksidyn.sig"));
+		Files.insert(bin, new QFile(DrvPath + "\\ksidyn.bin.tmp"));
+		Files.insert(sig, new QFile(DrvPath + "\\ksidyn.sig.tmp"));
 
 		if (!Archive.Extract(&Files)) {
 			FailWithMessage(CTaskExplorer::tr("Failed to extreact files."));
@@ -1000,7 +992,18 @@ STATUS TryUpdateDynData(const QString& AppDir)
 //#ifndef _DEBUG
 		QFile::remove(FileName);
 //#endif
-		Archive.Close(); Progress.OnProgressMessage(CTaskExplorer::tr("Updated DynData successfully"));
+
+
+		QFile::remove(DrvPath + "\\ksidyn.bin.bak");
+		QFile::remove(DrvPath + "\\ksidyn.sig.bak");
+
+		QFile::rename(DrvPath + "\\ksidyn.bin", DrvPath + "\\ksidyn.bin.bak");
+		QFile::rename(DrvPath + "\\ksidyn.sig", DrvPath + "\\ksidyn.sig.bak");
+
+		QFile::rename(DrvPath + "\\ksidyn.bin.tmp", DrvPath + "\\ksidyn.bin");
+		QFile::rename(DrvPath + "\\ksidyn.sig.tmp", DrvPath + "\\ksidyn.sig");
+
+		Archive.Close(); Progress.ShowProgress(CTaskExplorer::tr("Updated DynData successfully"));
 		QTimer::singleShot(3000, [&] {Progress.close(); });
 	};
 
@@ -1028,7 +1031,7 @@ STATUS TryUpdateDynData(const QString& AppDir)
 
 		QObject::connect(DlReply.data(), &QNetworkReply::downloadProgress, &Manager, [&](qint64 bytes, qint64 bytesTotal) {
 			if (bytesTotal != 0)
-				Progress.OnProgressMessage(CTaskExplorer::tr("Downloading latest SI build"), 100 * bytes / bytesTotal);
+				Progress.ShowProgress(CTaskExplorer::tr("Downloading latest SI build"), 100 * bytes / bytesTotal);
 		});
 
 		QObject::connect(DlReply.data(), &QNetworkReply::finished, &Manager, [&, FileName]() {
@@ -1047,7 +1050,7 @@ STATUS TryUpdateDynData(const QString& AppDir)
 			File.write(DlReply->readAll());
 			File.close();
 
-			Progress.OnProgressMessage(CTaskExplorer::tr("Successfully Downloaded latest SI build"));
+			Progress.ShowProgress(CTaskExplorer::tr("Successfully Downloaded latest SI build"));
 			ApplyUpdate(FileName);
 		});
 	};
