@@ -12,6 +12,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - fixed crash issue on start up affecting soeme systems
 - fixed job object name display issue
+- fixed click "SYSTEM_IDLE_PROCESS_ID" will crash. [#116](https://github.com/DavidXanatos/TaskExplorer/issues/116)
+
 
 
 
