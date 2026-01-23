@@ -11,7 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - fixed crash issue on start up affecting soeme systems
-
+- fixed job object name display issue
 
 
 
