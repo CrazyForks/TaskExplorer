@@ -21,7 +21,7 @@ jobs:
       - name: Setup msbuild
         uses: microsoft/setup-msbuild@v2
         
-      - name: Build Kernel Isolator x64
+      - name: Build KTaskExplorer x64
         run: msbuild /t:build ProcessHacker\KSystemInformer\KSystemInformer.sln /p:Configuration="Release" /p:Platform=x64
 
       - name: Upload Build
@@ -33,7 +33,7 @@ jobs:
             ProcessHacker/KSystemInformer/bin/Release64/*.dll
             ProcessHacker/KSystemInformer/bin/Release64/*.pdb
         
-      - name: Build Kernel Isolator arm64
+      - name: Build KTaskExplorer arm64
         run: msbuild /t:build ProcessHacker\KSystemInformer\KSystemInformer.sln /p:Configuration="Release" /p:Platform=ARM64
             
       - name: Upload Build
