@@ -43,10 +43,6 @@ echo redistr: %redistPath%
 
 mkdir %instPath%
 
-ECHO Copying VC Runtime files
-copy "%redistPath%\*" %instPath%\
-REM copy c:\Windows\System32\ucrtbase.dll %instPath%\
-
 ECHO Copying Qt libraries
 
 echo Copying Qt6 libraries...
@@ -106,6 +102,20 @@ copy /y %~dp0..\x64\Release\*.dll %instPath%\
 copy /y %~dp0..\x64\Release\*.pdb %instPath%\
 
 
+ECHO Copying 32-bit Helper
+
+mkdir %instPath%\x86
+copy /y %~dp0..\Win32\Release\TaskHelper.exe %instPath%\x86\
+
+
+ECHO sign with EV Cert
+REM call sign_files.cmd
+
+
+ECHO Copying VC Runtime files
+copy "%redistPath%\*" %instPath%\
+REM copy c:\Windows\System32\ucrtbase.dll %instPath%\
+
 
 ECHO Copying translations
 
@@ -131,7 +141,7 @@ ECHO Sign Files
 
 call kph-sign-dir.cmd %instPath%\
 del %instPath%\UpdUtil.sig
-del %instPath%\TaskHelper.sig
+REM del %instPath%\TaskHelper.sig
 del %instPath%\x86\TaskHelper.sig
 
 
@@ -140,6 +150,7 @@ del %instPath%\x86\TaskHelper.sig
 ECHO Copying resources
 
 copy /y %~dp0.\Resources\* %instPath%\
+
 
 ECHO Copying drivers
 
@@ -150,7 +161,6 @@ copy /y %~dp0.\Drivers\TaskExplorer_x64\* %instPath%\AMD64\
 
 
 
-ECHO Copying 32-bit Helper
 
-mkdir %instPath%\x86
-copy /y %~dp0..\Win32\Release\TaskHelper.exe %instPath%\x86\
+
+pause

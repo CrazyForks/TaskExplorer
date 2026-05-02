@@ -95,7 +95,7 @@ Type: filesandordirs; Name: "{app}\translations"
 
 [Run]
 ; Start TaskExplorer.
-Filename: "{app}\TaskExplorer.exe"; Parameters: ""; Description: "Start TaskExplorer"; StatusMsg: "Launch TaskExplorer..."; Flags: postinstall nowait; Check: IsOpenApp
+Filename: "{app}\TaskExplorer.exe"; Parameters: ""; Description: "Start TaskExplorer"; StatusMsg: "Launch TaskExplorer..."; Flags: postinstall nowait runascurrentuser; Check: IsOpenApp
 ;Filename: "{app}\TaskExplorer.exe"; Parameters: "-autorun"; StatusMsg: "Launch TaskExplorer..."; Flags: runasoriginaluser nowait; Check: not IsPortable
 
 
@@ -395,7 +395,7 @@ end;
 
 
 //////////////////////////////////////////////////////
-// ksi.dll handling
+// kte.dll handling
 //
 
 procedure PrepareOneDllForUpdate(const FileName: String);
@@ -459,6 +459,6 @@ function PrepareToInstall(var NeedsRestart: Boolean): String;
 begin
   Result := '';
   { Handle both DLLs before file copy }
-  PrepareOneDllForUpdate('AMD64\ksi.dll');
-  PrepareOneDllForUpdate('ARM64\ksi.dll');
+  PrepareOneDllForUpdate('AMD64\kte.dll');
+  PrepareOneDllForUpdate('ARM64\kte.dll');
 end;

@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <codecvt>
 #include <Shlwapi.h>
+#include "..\Common\Strings.h"
 
 // Note: we want to restart early before initlaizzing PHlib so we need some standalone functions 
 
@@ -383,16 +384,14 @@ int SkipUacRun(bool test_only)
 
 													// get arguments
 													{
-														INT numargs = 0;
-														LPWSTR* arga = CommandLineToArgvW(GetCommandLine(), &numargs);
+														int argc = __argc;
+														char **argv = __argv;
 
-														for (INT i = 1; i < numargs; i++) {
+														for (INT i = 1; i < argc; i++) {
 															if (i > 1)
 																args.append(L" ");
-															args.append(arga[i]);
+															args.append(charArrayToWString(argv[i]));
 														}
-
-														LocalFree(arga);
 													}
 
 													variant_t params = args.c_str();

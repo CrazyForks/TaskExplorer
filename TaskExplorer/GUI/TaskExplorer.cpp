@@ -134,7 +134,7 @@ CTaskExplorer::CTaskExplorer(QWidget *parent)
 			case KphLevelHigh: sLevel = tr("+"); break;
 			case KphLevelMax: sLevel =	tr("++"); break;
 		}
-		appTitle.append(tr(" - [%1KSI%2]").arg(g_KsiDynDataLoaded ? "" : tr("Limited ")).arg(sLevel));
+		appTitle.append(tr(" - [%1KTE%2]").arg(g_KsiDynDataLoaded ? "" : tr("Limited ")).arg(sLevel));
 	}
 #endif
 
